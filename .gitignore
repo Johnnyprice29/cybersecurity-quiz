@@ -6,6 +6,7 @@
 # === Private Source Material ===
 *.pdf
 *.PDF
+!reports_pdf/*.pdf
 DOMANDE/
 extracted_*.txt
 *_extracted.txt
