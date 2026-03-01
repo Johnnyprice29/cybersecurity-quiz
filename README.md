@@ -50,9 +50,9 @@ Hub per la visualizzazione delle relazioni tecniche redatte per i laboratori di 
 
 ## 🌐 Link Diretti (GitHub Pages)
 
-- **Quiz**: https://johnnyprice29.github.io/cybersecurity-quiz/quiz_cybersecurity.html
-- **Academic Reports**: https://johnnyprice29.github.io/cybersecurity-quiz/academic_reports_it.html
-- **Flashcard Esami**: https://johnnyprice29.github.io/cybersecurity-quiz/flashcards_esami.html
+- **Quiz**: https://johnnyprice29.github.io/cybersecurity/quiz_cybersecurity.html
+- **Academic Reports**: https://johnnyprice29.github.io/cybersecurity/academic_reports_it.html
+- **Flashcard Esami**: https://johnnyprice29.github.io/cybersecurity/flashcards_esami.html
 
 ---
 
