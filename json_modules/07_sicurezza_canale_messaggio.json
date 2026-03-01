@@ -1,0 +1,624 @@
+[
+    {
+        "module": "Sicurezza di Canale",
+        "question": "Come avviene l'autenticazione del server?",
+        "options": [
+            "Server presenta certificato e client lo sfida a provare conoscenza chiave privata",
+            "Server usa chiave pubblica client per cifrare segreto condiviso",
+            "Client usa chiave pubblica server per cifrare segreto",
+            "Client presenta certificato e client sfida"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Server presenta certificato, client verifica che conosca la chiave privata."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "Considerando DTLS, quale affermazione è corretta?",
+        "options": [
+            "Header contiene sequence number esplicito",
+            "UDP fornisce controllo flusso e riordino",
+            "Possibile usare cifratura stream e blocchi",
+            "DTLS impedisce DoS e flooding"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "DTLS ha sequence number esplicito nell'header."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "Cosa si intende per perfect forward secrecy?",
+        "options": [
+            "Nessuna delle altre",
+            "Inoltro pacchetti con riservatezza",
+            "Chiave privata server usata solo per firmare, non cifrare sessione",
+            "Conoscendo chiave, impossibile risalire a dati futuri"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "PFS: chiave privata server usata solo per firma, chiavi sessione effimere."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "Il principale motivo per usare protocolli sicurezza di canale è:",
+        "options": [
+            "Evitare ARP poisoning",
+            "Evitare DoS",
+            "Evitare IP Smurfing",
+            "Evitare MITM"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Sicurezza di canale principalmente per prevenire MITM."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "In SSL l'autenticazione è:",
+        "options": [
+            "Obbligatoria server, facoltativa client",
+            "Obbligatoria entrambi",
+            "Facoltativa entrambi",
+            "Obbligatoria client, facoltativa server"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "SSL/TLS: autenticazione server obbligatoria, client opzionale."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "In TLS, cosa si intende per metodi effimeri?",
+        "options": [
+            "Algoritmi per info di bassa importanza",
+            "Chiavi private generate ogni handshake per non ripudio",
+            "Algoritmi obsoleti",
+            "Chiavi private ogni handshake per perfect forward secrecy"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Metodi effimeri: chiavi generate ogni handshake per PFS."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "Quale affermazione descrive le correzioni in TLS 1.1?",
+        "options": [
+            "IV implicito sostituito con IV esplicito per prevenire attacchi noti",
+            "Procedura chiusura connessione su errore richiede handshake full",
+            "TLS 1.0 IV random vulnerabile, TLS 1.1 IV implicito",
+            "TLS 1.1 mantiene IV implicito",
+            "Alert Protocol con messaggi errore specifici"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "TLS 1.1: IV implicito→esplicito per CBC."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "Quale affermazione descrive le correzioni in TLS 1.2?",
+        "options": [
+            "Estensioni per info aggiuntive durante negoziazione",
+            "Rimosse estensioni, solo cipher suite",
+            "Server verifica client su ogni riapertura con session-ID",
+            "Client richiede nuovo session-ID ogni connessione"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "TLS 1.2: estensioni per negoziazione."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "Quale affermazione descrive le correzioni in TLS 1.3?",
+        "options": [
+            "Handshake modificato con 0-RTT per velocità",
+            "Eliminate tutte le estensioni",
+            "Introdotta compressione dati",
+            "Da AEAD ad AE"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "TLS 1.3: handshake 0-RTT per ridurre latenza."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "Quale affermazione riguardante Heartbeat Extension è corretta?",
+        "options": [
+            "Attacco: messaggio con parola e lunghezza arbitraria per estrarre memoria",
+            "Problema: impossibilità mantenere connessione attiva",
+            "Implementata per migliorare sicurezza",
+            "Problema: incompatibilità con versioni precedenti"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Heartbleed: messaggio con lunghezza arbitraria per leggere memoria."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "Quale affermazione riguardante Dynamic Port Forwarding SSH è corretta?",
+        "options": [
+            "Non più utilizzato",
+            "Apre canale SSH verso host che dirige traffico verso destinazioni finali",
+            "Local/Remote Port Forwarding ugualmente flessibili",
+            "Traffico inoltrato a porta specifica destinazione"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Dynamic Port Forwarding: canale SSH come proxy SOCKS."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "Quale affermazione riguardante OpenVPN e IPsec è corretta?",
+        "options": [
+            "OpenVPN più efficace per traffic shaping",
+            "OpenVPN non richiede client auth",
+            "OpenVPN usa TLS per creare canali sicuri e VPN",
+            "IPsec più affidabile e stabile"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "OpenVPN usa TLS per canali sicuri come alternativa a IPsec."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "Quale affermazione riguardante SSH è corretta?",
+        "options": [
+            "Chiave privata server cifrata con passphrase",
+            "SSH per aprire shell remota",
+            "Handshake pesante per negoziazione",
+            "Chiave privata client in chiaro",
+            "SSH usa certificati per server"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "SSH serve per aprire shell remota su altra macchina."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "Quali campi sono obbligatoriamente scambiati al termine dell'handshaking TLS?",
+        "options": [
+            "Pre-master secret",
+            "Algoritmo digest",
+            "Certificato client",
+            "Chiave privata client",
+            "Timestamp fine handshake",
+            "Algoritmo cifratura simmetrica"
+        ],
+        "correct": [
+            0,
+            1,
+            5
+        ],
+        "justification": "Obbligatori: pre-master secret, algoritmo digest, algoritmo cifratura simmetrica."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "Con session-ID TLS, quale affermazione descrive la riapertura comunicazione?",
+        "options": [
+            "Server verifica session-ID valido, usa parametri precedenti aggiornando random, salta negoziazione",
+            "Server verifica client su ogni riapertura",
+            "Negoziazione nuovi parametri e nuovo session-ID",
+            "Client richiede nuovo session-ID"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Session-ID valido: riusa parametri, salta negoziazione."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "Il protocollo SSL/TLS è indipendente dalle applicazioni?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "SSL/TLS è indipendente dalle applicazioni soprastanti."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "SSL/TLS garantisce il non ripudio?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "SSL/TLS non garantisce non ripudio (solo sicurezza di canale)."
+    },
+    {
+        "module": "Sicurezza di Canale",
+        "question": "TLS prevede meccanismi di handshaking per scambiarsi le chiavi?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "TLS ha handshake per negoziare e scambiare chiavi."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Cosa si intende per bayesian poisoning?",
+        "options": [
+            "Tecnica con classificazione bayesiana per nascondere mittente",
+            "Tecnica per superare filtri anti-spam analizzando parole"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Bayesian poisoning: ingannare filtri anti-spam bayesiani."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Cosa si intende per open mail relay?",
+        "options": [
+            "MTA accetta posta solo da suoi utenti",
+            "MTA accetta posta anche per/da suoi utenti",
+            "MTA accetta posta solo per suoi utenti",
+            "MTA accetta posta solo per/da suoi utenti"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Open relay: MTA accetta posta ANCHE da/per non-utenti (non solo)."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Cosa si ottiene utilizzando la sicurezza di messaggio?",
+        "options": [
+            "Necessità modificare applicazioni",
+            "Autenticazione/integrità/segretezza solo in transito",
+            "Nessuna necessità modificare applicazioni",
+            "Nessuna possibilità non ripudio",
+            "Possibilità non ripudio con crittografia asimmetrica",
+            "Autenticazione/integrità/confidenzialità nel messaggio stesso"
+        ],
+        "correct": [
+            0,
+            4,
+            5
+        ],
+        "justification": "Sicurezza messaggio: proprietà nel messaggio, non ripudio possibile, richiede modifica app."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Cos'è lo standard MIME?",
+        "options": [
+            "Estende formato mail, codifiche non binarie, formato multipart unico blocco, recursivo",
+            "Estende formato mail, varie codifiche incluso binari, multipart con parti distinte, recursivo"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "MIME: estensione mail con codifiche varie, multipart, ricorsivo."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Cos'è S-HTTP?",
+        "options": [
+            "Prima versione HTTP sicura con sicurezza di messaggio, incapsulando in busta sicura, rimpiazzata da sicurezza canale",
+            "HTTP sicuro con sicurezza canale, standard de facto"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "S-HTTP: sicurezza messaggio, obsoleto, sostituito da HTTPS (canale)."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Il CMS (PKCS#7 evoluto) supporta:",
+        "options": [
+            "Tutte le precedenti",
+            "Integrità",
+            "Firme multiple parallele",
+            "Autenticazione",
+            "Confidenzialità simmetrica o asimmetrica"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "CMS supporta: integrità, autenticazione, confidenzialità, firme parallele."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Il PKCS#12 (security bag) contiene:",
+        "options": [
+            "Tutte le precedenti",
+            "Certification path utente",
+            "Chiave privata utente",
+            "Certificati utente"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "PKCS#12 contiene: certificati, chiave privata, certification path."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "In che modo si può fare antispam per incoming mail?",
+        "options": [
+            "Filtrare utenti con certificati",
+            "Greylisting",
+            "Accettare solo IP specifico",
+            "Blacklist/whitelist per MTA",
+            "Utilizzando PKCS"
+        ],
+        "correct": [
+            1,
+            3
+        ],
+        "justification": "Antispam incoming: blacklist/whitelist e greylisting."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "In che modo si può fare antispam per outgoing mail?",
+        "options": [
+            "Autenticazione a livello SMTP",
+            "Autenticare mittenti prima di accettare mail",
+            "Filtrare per IP mittente",
+            "Tutte le precedenti"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Antispam outgoing: autenticazione SMTP, verifica mittenti, filtro IP."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "In cosa consiste S/MIME?",
+        "options": [
+            "Standard sicurezza MIME, versioni v2/v3/v4, asimmetrico, AES, ChaCha20, SHA-256",
+            "Standard sicurezza MIME, versioni v2/v3/v4, asimmetrico su retta, AES, Blowfish, SHA-1"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "S/MIME: standard mail sicura con algoritmi moderni."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "La sintassi dell'APOP è:",
+        "options": [
+            "APOP user MD5(password)",
+            "APOP user SHA-512(password)",
+            "APOP user MD5(sfida + password)",
+            "APOP user SHA-512(sfida)"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "APOP: MD5(sfida + password) per evitare password in chiaro."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Per S/MIME, quale algoritmo per micalg?",
+        "options": [
+            "SHA-256",
+            "RSA with SHA-256",
+            "OAEP",
+            "ECDH with curve P-256",
+            "AES-128-GCM"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "S/MIME micalg: SHA-256."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Per S/MIME, quale algoritmo per scambio chiave?",
+        "options": [
+            "OAEP",
+            "AES-128-GCM",
+            "SHA-256",
+            "RSA with SHA-256",
+            "ECDH with curve P-256"
+        ],
+        "correct": [
+            4
+        ],
+        "justification": "S/MIME key exchange: ECDH with P-256."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Per S/MIME, quale algoritmo per firma digitale?",
+        "options": [
+            "AES-128-GCM",
+            "RSA with SHA-256",
+            "OAEP",
+            "SHA-256",
+            "ECDH with curve P-256"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "S/MIME firma: RSA with SHA-256."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Per S/MIME, quale algoritmo per riservatezza?",
+        "options": [
+            "SHA-256",
+            "RSA with SHA-256",
+            "ECDH with curve P-256",
+            "AES-128-GCM",
+            "OAEP"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "S/MIME riservatezza: AES-128-GCM."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Quale affermazione sul formato signedData del CMS è corretta?",
+        "options": [
+            "Version per versione certificato",
+            "Ordine campi arbitrario",
+            "encapContentInfo non contiene info messaggio",
+            "Ordine campi ottimizzato per lettura"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "signedData: ordine campi ottimizzato per parsing efficiente."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Qual è lo scopo del SMTP-Auth?",
+        "options": [
+            "Autenticare client prima di accettare messaggi",
+            "Autenticare client dopo aver accettato messaggi"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "SMTP-Auth: autenticare PRIMA di accettare messaggi."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Quali servizi devono garantire i servizi di sicurezza email?",
+        "options": [
+            "Autenticazione controparte",
+            "Riservatezza in transito e casella",
+            "Non Ripudio mittente",
+            "Integrità messaggio",
+            "Autenticazione mittente",
+            "Disponibilità"
+        ],
+        "correct": [
+            3,
+            4
+        ],
+        "justification": "Email sicure devono garantire: integrità e autenticazione mittente."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Quali sono le problematiche di sicurezza della posta elettronica?",
+        "options": [
+            "Proteggere MSA",
+            "Proteggere MS dove mail immagazzinate",
+            "Cifratura mailing-list",
+            "Sistema store-and-forward non interattivo",
+            "Sistema interattivo",
+            "Differente protocollo mailing-list",
+            "MTA non affidabili",
+            "MUA non affidabili"
+        ],
+        "correct": [
+            1,
+            2,
+            3,
+            6
+        ],
+        "justification": "Problemi: store-and-forward, MTA non affidabili, protezione MS, cifratura mailing-list."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Cos'è il mail spamming?",
+        "options": [
+            "Messaggi automatici in risposta",
+            "Messaggi avviso/notifica indesiderati",
+            "Messaggi indesiderati grande percentuale traffico mail"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Spam: messaggi indesiderati, grande percentuale del traffico email."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Che cos'è il PKCS#7?",
+        "options": [
+            "Standard controllo traffico rete",
+            "Standard formato rappresentazione dati crittografici",
+            "Standard invio dati sicuro su rete pubblica",
+            "Standard autenticazione utente"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "PKCS#7: standard per formato dati crittografici."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Che cos'è il protocollo ESMTP?",
+        "options": [
+            "Estensione SMTP che cambia funzionamento base e canale, supporta MIME, stessi comandi",
+            "Estensione SMTP che non cambia funzionamento base, supporta MIME, supera limitazioni SMTP"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "ESMTP: estende SMTP senza cambiare funzionamento base."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Come vengono protetti i dati nel PKCS#12?",
+        "options": [
+            "Algoritmi asimmetrici",
+            "Algoritmi simmetrici"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "PKCS#12: dati protetti con algoritmi simmetrici (password-based)."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Come viene formattato un messaggio secondo RFC-822?",
+        "options": [
+            "Header + body separati da riga vuota",
+            "Corpo unico senza suddivisione",
+            "Solo US-ASCII 7 bit, righe terminano CR LF",
+            "Solo UNICODE 32 bit, righe terminano CR LF"
+        ],
+        "correct": [
+            0,
+            2
+        ],
+        "justification": "RFC-822: header+body separati da riga vuota, US-ASCII 7 bit."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Con quali protocolli si scarica mail dal Message Store?",
+        "options": [
+            "PKCS",
+            "POP",
+            "IMAP",
+            "ESMTP"
+        ],
+        "correct": [
+            1,
+            2
+        ],
+        "justification": "Mail dal MS: POP e IMAP."
+    },
+    {
+        "module": "Sicurezza di Messaggio",
+        "question": "Qual è la differenza fra MUA classico e Webmail?",
+        "options": [
+            "MUA locale, anche offline; Webmail via browser con http engine e virtual MUA",
+            "Webmail locale; MUA classico via browser"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "MUA classico: software locale; Webmail: browser + http engine."
+    }
+]

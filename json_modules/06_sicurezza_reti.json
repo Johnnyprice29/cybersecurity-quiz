@@ -1,0 +1,509 @@
+[
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quale affermazione sulle misure di protezione DHCP è vera?",
+        "options": [
+            "DHCP include controllo integrità per prevenire MITM",
+            "DHCP permette controllo configurazioni per prevenire DoS",
+            "DHCP snooping rileva risposte non legittime o configurazioni sbagliate",
+            "Autenticazione DHCP con HMAC-MD5 ampiamente adottata"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "DHCP snooping rileva risposte non legittime o configurazioni errate."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quale affermazione descrive le VPN IPsec mediante tunnel IP sicuro?",
+        "options": [
+            "VPN non necessitano crittografia",
+            "Router solo incapsulamento IP over IP senza protezione",
+            "Pacchetti possono essere protetti con MAC, cifratura e protezione replay prima di incapsulamento",
+            "Pacchetti protetti solo con numerazione",
+            "Pacchetti protetti senza numerazione",
+            "Router incapsulano sempre con MAC, cifratura e numerazione"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "In tunnel IPsec i pacchetti POSSONO essere protetti con MAC, cifratura e anti-replay."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Per quali entità è maggiormente consigliato l'uso di ESP in tunnel mode?",
+        "options": [
+            "Dispositivi ISP",
+            "Host",
+            "Gateway",
+            "Entrambi"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "ESP tunnel mode è consigliato per Gateway."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quali attacchi possono essere eseguiti grazie a ICMP?",
+        "options": [
+            "DoS",
+            "Redirect",
+            "Smurfing",
+            "Tutte le altre risposte",
+            "Shadow server",
+            "Spoofing"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "ICMP può essere usato per: DoS, redirect, smurfing, shadow server, spoofing."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "ESP in transport mode può nascondere l'header del pacchetto originale?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Transport mode non nasconde l'header originale; solo tunnel mode lo fa."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quale affermazione sul funzionamento di IPsec in fase di spedizione è corretta?",
+        "options": [
+            "Pacchetto inviato senza protezione perché avviene a livello 2",
+            "SAD controlla algoritmi, chiavi e parametri",
+            "Verifica SAD per protezione, SPD per algoritmi",
+            "SPD controlla algoritmi, chiavi e parametri",
+            "Verifica SPD per protezione, SAD per algoritmi",
+            "Pacchetto immediatamente protetto per performance"
+        ],
+        "correct": [
+            1,
+            4
+        ],
+        "justification": "SPD determina se proteggere; SAD contiene algoritmi, chiavi e parametri."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Per quali entità è consigliato l'uso di ESP in transport mode?",
+        "options": [
+            "Host",
+            "Entrambi",
+            "Gateway",
+            "Dispositivi ISP"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "ESP transport mode è consigliato per Host end-to-end."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quale affermazione sui servizi di sicurezza IPsec è corretta?",
+        "options": [
+            "IPsec fornisce integrità e identificazione ma non riservatezza",
+            "IPsec non fornisce identificazione mittente",
+            "IPsec garantisce autenticazione ma solo protezione parziale replay",
+            "IPsec fornisce autenticazione ma protezione parziale integrità senza anti-replay",
+            "IPsec garantisce riservatezza mediante cifratura simmetrica",
+            "IPsec non fornisce autenticazione"
+        ],
+        "correct": [
+            2,
+            4
+        ],
+        "justification": "IPsec: riservatezza con cifratura simmetrica, autenticazione con protezione parziale replay."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Qual è la definizione di ESP?",
+        "options": [
+            "Enhanced Safety Process",
+            "Encrypting and Storing Protocol",
+            "Encapsulating Security Payload",
+            "Encryption Security Protocol"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "ESP = Encapsulating Security Payload."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quale metodo di autenticazione non è usato da IKE?",
+        "options": [
+            "Public Key Encryption",
+            "Digital Signature",
+            "OTP",
+            "Pre-Shared Key"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "IKE non usa OTP; usa PSK, certificati, firma digitale."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Il servizio IKE parte:",
+        "options": [
+            "Ogni comunicazione con altra entità IPsec",
+            "Ad intervalli predefiniti (24h)",
+            "Su richiesta utente/programma",
+            "Solo quando non si ha associazione nel SAD"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "IKE parte solo se non esiste già una SA nel SAD."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quale affermazione riguardo AH è corretta?",
+        "options": [
+            "Nessuna versione offre protezione replay",
+            "Prima versione solo integrità, obbligatorio HMAC-MD5",
+            "AH non fornisce integrità e autenticazione",
+            "Terza versione algoritmi estesi ad AEAD"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "IPsecv3 ha esteso AH con AEAD."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "ESP in tunnel mode può nascondere l'header del pacchetto originale?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Tunnel mode incapsula tutto il pacchetto originale, nascondendo l'header."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quale misura di sicurezza viene realizzata a livello fisico dello stack ISO/OSI?",
+        "options": [
+            "Controllo accesso fisico con sorveglianza",
+            "Firewall per bloccare traffico",
+            "Crittografia in trasmissione",
+            "VPN per confidenzialità e integrità"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Livello fisico: controllo accesso fisico ai dispositivi."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quali aspetti rendono IP poco sicuro?",
+        "options": [
+            "Indirizzi non autenticati",
+            "Pacchetti non protetti",
+            "Possibilità perdita pacchetti",
+            "Scarsità indirizzi disponibili"
+        ],
+        "correct": [
+            0,
+            1
+        ],
+        "justification": "IP insicuro: indirizzi non autenticati e pacchetti non protetti."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quale misura di sicurezza viene realizzata a livello data link?",
+        "options": [
+            "Crittografia in trasmissione",
+            "Firewall",
+            "Schede di rete cifranti per confidenzialità e integrità",
+            "VPN"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Livello data link: schede di rete cifranti."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quale affermazione sul DHCP è vera?",
+        "options": [
+            "DHCP include rilevamento MITM",
+            "Protocollo debole perché fornisce config senza autenticazione",
+            "DHCP richiede autenticazione, impedisce MITM",
+            "Non possibile config sbagliata, immune DoS",
+            "DHCP broadcast autenticato"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "DHCP è debole: fornisce configurazione senza autenticazione."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Perché una VPN è considerata vantaggiosa per proteggere comunicazioni aziendali?",
+        "options": [
+            "Rende rete accessibile a esterni",
+            "Trasmette dati su rete pubblica implementando comportamento rete privata",
+            "Non richiede apparati condivisi",
+            "Implementa rete privata fisica isolata"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "VPN: rete pubblica con comportamento logico di rete privata."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quale affermazione riguardo IPsec in tunnel mode è corretta?",
+        "options": [
+            "Header e payload originali diventano payload del nuovo pacchetto con header IPsec",
+            "Non protegge campi variabili originali",
+            "Vantaggio principale leggerezza computazionale",
+            "Non utilizzabile per VPN",
+            "Protegge campi variabili originali",
+            "IP sorgente e destinazione rimangono quelli effettivi"
+        ],
+        "correct": [
+            0,
+            4
+        ],
+        "justification": "Tunnel mode: pacchetto originale diventa payload, campi variabili protetti."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quale misura di sicurezza si realizza a livello rete ISO/OSI?",
+        "options": [
+            "Controllo accesso fisico",
+            "VPN per connessioni sicure",
+            "Autenticazione due fattori",
+            "Protocollo TLS"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Livello rete: VPN (es. IPsec)."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Qual è il livello ottimale per realizzare la sicurezza?",
+        "options": [
+            "Livello rete per gestione traffico Internet-wide",
+            "Livello fisico per protezione connessioni hardware",
+            "Livello trasporto con TLS end-to-end",
+            "Non esiste unico livello ottimale",
+            "Livello applicazione per sicurezza specifica"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Non esiste un unico livello ottimale; dipende dal contesto."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quale affermazione riguardo IPsec v1 è corretta?",
+        "options": [
+            "IPsec non con IPv6, solo IPv4",
+            "ESP per integrità/autenticazione, AH per riservatezza",
+            "IPsec supporta IKE per scambio certificati",
+            "IPsec fornisce riservatezza",
+            "IPsec non fornisce integrità",
+            "AH per integrità/autenticazione, ESP per riservatezza"
+        ],
+        "correct": [
+            5
+        ],
+        "justification": "IPsec v1: AH per integrità/autenticazione, ESP per riservatezza."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quali affermazioni sulle Security Association (SA) di IPsec sono vere?",
+        "options": [
+            "Servono due SA per canale bidirezionale completo",
+            "Una SA fornisce protezione bidirezionale",
+            "SA è connessione logica bidirezionale",
+            "SA sono connessione fisica",
+            "Non possibile caratteristiche diverse per singola SA"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "SA è unidirezionale; servono 2 SA per canale bidirezionale."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quali affermazioni riguardo IPsec in transport mode sono corrette?",
+        "options": [
+            "Protegge tutti i campi header IP",
+            "Computazionalmente più pesante",
+            "Protegge payload e alcuni campi header IP",
+            "Protegge intero pacchetto IP",
+            "Header IPsec tra header IP e payload",
+            "Protegge campi variabili header IP",
+            "Header IPsec prima di header IP"
+        ],
+        "correct": [
+            2,
+            4
+        ],
+        "justification": "Transport mode: protegge payload e alcuni campi, header IPsec tra IP header e payload."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quale strategia previene attacchi smurfing dall'esterno?",
+        "options": [
+            "Certificato per autenticazione",
+            "Crittografia per cifrare",
+            "Rifiutare IP broadcast dall'esterno",
+            "Firewall che filtra tutti ICMP"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Anti-smurfing: rifiutare IP broadcast dall'esterno."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Perché una implementazione di IPsec V3 sia valida:",
+        "options": [
+            "Solo ESP obbligatorio",
+            "Solo AH obbligatorio",
+            "ESP e AH obbligatori",
+            "Almeno uno tra ESP e AH"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "IPsec V3: solo ESP è obbligatorio."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quali sono le operazioni di normalizzazione per AH in IPsec?",
+        "options": [
+            "Azzerare campi variabili: TTL/Hop Limit e opzioni con bit C attivo",
+            "Azzerare TTL/Hop Limit, impostare a 1 opzioni con bit C disattivo",
+            "Azzerare tutte le opzioni",
+            "Lasciare invariati TTL/Hop Limit e opzioni con bit C attivo"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Normalizzazione AH: azzerare TTL e opzioni con bit C (change en route) attivo."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Com'è strutturata l'architettura DNS?",
+        "options": [
+            "Root DNS→TLD→Authoritative→Recursive, tutti usano cache",
+            "TLD→Root→Recursive→Authoritative, tutti usano cache"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "DNS: Root→TLD→Authoritative→Recursive, con cache a tutti i livelli."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "In cosa consiste l'attacco DNS flash crowd?",
+        "options": [
+            "Botnet invia grande volume richieste DNS per DoS",
+            "Attaccanti usano DNS per inviare/ricevere dati bypassando policy"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Flash crowd: attacco DDoS con molte richieste DNS."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "In cosa consiste l'attacco DNS shadow server?",
+        "options": [
+            "Server malevolo fa proxy tra client e nameserver, risponde con IP falso, può sporcare cache",
+            "Attaccante fornisce info DNS false per sovrascrivere cache"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Shadow server: proxy malevolo che risponde con IP falso."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "In cosa consiste l'attacco TCP SYN flooding?",
+        "options": [
+            "Invio SYN, server risponde SYN/ACK e preallocca entry, nessun ACK, risorse bloccate, tabella saturata ripetendo entro timeout",
+            "Invio ACK, server risponde SYN/ACK e preallocca, nessun SYN, server bloccato"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "SYN flooding: invio SYN senza completare handshake, satura tabella connessioni."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quali funzionalità aggiunge DNSSEC al DNS?",
+        "options": [
+            "Firma delle query DNS",
+            "Minor dimensione record",
+            "Sicurezza messaggio con firme digitali ai record",
+            "Sicurezza tra client e server locale"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "DNSSEC aggiunge firme digitali ai record DNS per integrità."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quali sono le contromisure per attacco TCP SYN flooding?",
+        "options": [
+            "SYN monitor uccide collegamenti pendenti",
+            "Abbassare timeout rischiando eliminare client lenti",
+            "Aumentare tabella (aggirabile)",
+            "Abbassare timeout (client validi rispondono veloci)",
+            "SYN interceptor uccide collegamenti pendenti",
+            "SYN interceptor sostituisce server, trasferisce se handshake OK",
+            "SYN monitor sostituisce server, trasferisce",
+            "Aumentare tabella (non saturabile)"
+        ],
+        "correct": [
+            1,
+            2,
+            0,
+            5
+        ],
+        "justification": "Contromisure: abbassare timeout, aumentare tabella, SYN monitor/interceptor."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Quali tecniche vengono usate in attacco DNS cache poisoning?",
+        "options": [
+            "Risposte a query non effettuate per sovrascrivere cache",
+            "Richieste a nameserver per bloccare comunicazione",
+            "Query e subito risposta vera per inserire in cache",
+            "Query e subito risposta falsa per inserire in cache"
+        ],
+        "correct": [
+            0,
+            3
+        ],
+        "justification": "Cache poisoning: risposte false a query o risposte a query non effettuate."
+    },
+    {
+        "module": "Sicurezza Reti",
+        "question": "Il servizio DNS è già sicuro, progettato contro spoofing e poisoning?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "DNS non è sicuro nativamente; serve DNSSEC."
+    }
+]

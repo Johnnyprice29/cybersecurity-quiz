@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Flashcards</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #e2e8f0;
+            --primary: #3b82f6;
+            --accent: #f43f5e;
+            --glass: rgba(30, 41, 59, 0.7);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            margin-top: 110px;
+            width: 90%;
+            max-width: 700px;
+            perspective: 1000px;
+            padding-bottom: 80px;
+        }
+
+        .flashcard {
+            width: 100%;
+            min-height: 400px;
+            max-height: 70vh;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .face {
+            position: absolute;
+            width: 100%;
+            min-height: 400px;
+            max-height: 70vh;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 25px 30px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .front {
+            background: var(--card-bg);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .back {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            transform: rotateY(180deg);
+            justify-content: flex-start;
+            align-items: flex-start;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) transparent;
+        }
+
+        .back::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .back::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .back::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+
+
+        .label {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .answer-content {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #e2e8f0;
+            text-align: left;
+            width: 100%;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            padding-bottom: 30px;
+        }
+
+        .answer-content p {
+            margin: 0 0 12px 0;
+        }
+
+        .source-tag {
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            font-size: 0.7rem;
+            opacity: 0.5;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .btn {
+            background: var(--card-bg);
+            border: 1px solid var(--primary);
+            color: var(--text);
+            padding: 15px 30px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .progress {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* Loading */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            z-index: 200;
+        }
+
+        select {
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: rgba(30, 41, 59, 0.9);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="loading"><i class="fas fa-circle-notch fa-spin"></i> &nbsp; Loading Flashcards...</div>
+
+    <header>
+        <h1><i class="fas fa-brain"></i> CyberFlash</h1>
+        <div style="margin-top: 10px;">
+            <select id="source-filter" onchange="filterCards()">
+                <option value="all">Sorgente: Tutte</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="flashcard" id="card" onclick="flipCard()">
+            <div class="face front">
+                <div class="label">Domanda</div>
+                <div class="content" id="q-text">...</div>
+                <div class="source-tag"><i class="fas fa-file"></i> <span id="source-text"></span></div>
+            </div>
+            <div class="face back">
+                <div class="label" style="color: var(--accent)">Risposta</div>
+                <div class="answer-content" id="a-text">...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress" id="progress-text">Card 0 of 0</div>
+
+    <div class="controls">
+        <button class="btn" onclick="prevCard()"><i class="fas fa-arrow-left"></i> Prev</button>
+        <button class="btn" onclick="nextCard()">Next <i class="fas fa-arrow-right"></i></button>
+    </div>
+
+    <script>
+        let allCards = [];
+        let cards = [];
+        let currentIndex = 0;
+        const cardElement = document.getElementById('card');
+
+        async function init() {
+            try {
+                const response = await fetch('flashcards_json/flashcards_data.json');
+                if (!response.ok) throw new Error("JSON not found");
+                allCards = await response.json();
+
+                // Populate Sources
+                const sources = [...new Set(allCards.map(c => c.source))].sort();
+                const select = document.getElementById('source-filter');
+                sources.forEach(s => {
+                    const opt = document.createElement('option');
+                    opt.value = s;
+                    opt.innerText = s;
+                    select.appendChild(opt);
+                });
+
+                // Start with all
+                filterCards();
+
+                document.getElementById('loading').style.display = 'none';
+            } catch (e) {
+                document.getElementById('loading').innerHTML = "Errore caricamento: " + e.message;
+            }
+        }
+
+        function filterCards() {
+            const selectedSource = document.getElementById('source-filter').value;
+            if (selectedSource === 'all') {
+                cards = [...allCards];
+            } else {
+                cards = allCards.filter(c => c.source === selectedSource);
+            }
+
+            currentIndex = 0;
+            if (cards.length > 0) {
+                renderCard();
+            } else {
+                // Should not happen really
+                alert("Nessuna card per questa sorgente");
+            }
+        }
+
+        function renderCard() {
+            if (cards.length === 0) return;
+            const c = cards[currentIndex];
+            cardElement.classList.remove('flipped');
+            setTimeout(() => {
+                document.getElementById('q-text').innerText = c.question;
+                document.getElementById('a-text').innerText = c.answer;
+                document.getElementById('source-text').innerText = c.source;
+                document.getElementById('progress-text').innerText = `Card ${currentIndex + 1} of ${cards.length}`;
+            }, 200);
+        }
+
+        function flipCard() {
+            cardElement.classList.toggle('flipped');
+        }
+
+        function nextCard() {
+            if (currentIndex < cards.length - 1) {
+                currentIndex++;
+                renderCard();
+            } else {
+                currentIndex = 0;
+                renderCard();
+            }
+        }
+
+        function prevCard() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderCard();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextCard();
+            if (e.key === 'ArrowLeft') prevCard();
+            if (e.key === ' ' || e.key === 'Enter') flipCard();
+        });
+
+        init();
+    </script>
+</body>
+
+</html>

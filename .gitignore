@@ -1,0 +1,51 @@
+# ============================================
+# GITIGNORE - Cybersecurity Flashcard Project
+# ============================================
+# Only keep files needed for GitHub Pages site
+
+# === Private Source Material ===
+*.pdf
+*.PDF
+DOMANDE/
+extracted_*.txt
+*_extracted.txt
+summary/
+
+# === Python Extraction Scripts (contain API keys) ===
+extract_flashcards.py
+extract_quiz_flashcards.py
+extract_raccolta_esami.py
+fix_placeholder_answers.py
+extract_questions.py
+generate_module_jsons.py
+merge_jsons.py
+ai_extractor.py
+extract_exams.py
+image_scanner.py
+extract_pdf_text.py
+
+# === Debug and Temporary Files ===
+*.log
+raccolta_raw_*.txt
+*_raw_response.txt
+quiz_data.json
+quiz_data2.json
+quiz_data2 copy.json
+
+# === Environment and OS ===
+.DS_Store
+Thumbs.db
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# === Keep only necessary files for GitHub Pages ===
+# The following are tracked:
+# - flashcards_moodle.html (Quiz Moodle flashcards)
+# - flashcards_esami.html (Open questions from exams)
+# - quiz_cybersecurity.html (Main quiz app)
+# - flashcards_json/ (Data for moodle flashcards)
+# - flashcards_quiz_json/ (Data for exam flashcards)
+# - json_modules/ (Data for quiz app)
+# - README.md

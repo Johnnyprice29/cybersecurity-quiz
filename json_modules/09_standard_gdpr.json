@@ -1,0 +1,441 @@
+[
+    {
+        "module": "09_standard_gdpr",
+        "question": "Al livello di sicurezza A1 sono richiesti controlli di sicurezza aggiuntivi rispetto al livello di sicurezza B3 (2023)?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "La risposta corretta è 'Falso'. (Rivedere Evoluzione Standard - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Quale è il dominio di applicazione dello standard ISO/SAE 21434 ?",
+        "options": [
+            "Finanziario",
+            "Spazio",
+            "Automotive",
+            "Networks"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Automotive (Rivedere ISO/SAE 21434 - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Quale è il dominio di applicazione dello standard PCI DSS?",
+        "options": [
+            "Automotive",
+            "Networks",
+            "Finanziario",
+            "Spazio"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Finanziario (Rivedere PCI DSS - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Quale è l’obiettivo principale dello standard ISO/SAE 21434?",
+        "options": [
+            "Specifica requisiti di sicurezza informatica applicabili in tutte le fasi di progettazione e realizzazione di un autoveicolo.",
+            "Specifica requisiti di sicurezza informatica applicabili nella fase di progettazione di un autoveicolo.",
+            "Descrive tecnicamente in modo approfondito requisiti al fine di certificare emettitori di carte di credito.",
+            "Descrive tecnicamente in modo approfondito regole e linee guida all’emettitore di carte di credito."
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Specifica requisiti di sicurezza informatica applicabili in tutte le fasi di progettazione e realizzazione di un autoveicolo. (Rivedere ISO/SAE 21434 - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Quale è l’obiettivo principale dello standard PCI DSS?",
+        "options": [
+            "Specifica delle linee guida di sicurezza informatica applicabili in tutte le fasi di realizzazione di un autoveicolo.",
+            "Specifica requisiti di sicurezza informatica applicabili in tutte le fasi di realizzazione di un autoveicolo.",
+            "Garantire sicurezza nell'uso delle carte di credito ed uso consapevole nel trattamento dei dati attraverso delle linee guida.",
+            "Garantire sicurezza nell'uso delle carte di credito ed uso consapevole nel trattamento dei dati attraverso dei requisiti."
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Garantire sicurezza nell'uso delle carte di credito ed uso consapevole nel trattamento dei dati attraverso dei requisiti. (Rivedere PCI DSS - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Quali sono le motivazioni che hanno portato alla creazione di standard di sicurezza ?",
+        "options": [
+            "La necessità di avere sicurezza in azienda, ma non voler investire risorse nel verificare che un prodotto sia sicuro.",
+            "La necessità di avere sicurezza in azienda, senza però avere internamente abbastanza risorse per verificare che un prodotto/processo fosse effettivamente sicuro. Scegliendo prodotti conformi agli standard, si sa che qualcun altro ha svolto le opportune verifiche."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "La necessità di avere sicurezza in azienda, senza però avere internamente abbastanza risorse per verificare che un prodotto/processo fosse effettivamente sicuro. (Rivedere Evoluzione Standard - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Qual’è l’utilizzo principale dei Criteri Comuni (Common Criteria) ?",
+        "options": [
+            "I Common Criteria possono essere utilizzati per scoraggiare l’adozione di prodotti, sistemi o servizi poco sicuri.",
+            "I Common Criteria possono essere utilizzati per rafforzare la fiducia nella sicurezza di un prodotto, sistema o servizio, fornendo un mezzo per quantificare o misurare l'entità della valutazione della sicurezza."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "I Common Criteria possono essere utilizzati per rafforzare la fiducia nella sicurezza di un prodotto, sistema o servizio. (Rivedere Common Criteria CC - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Su cosa si basa la valutazione fatta da ITSEC ?",
+        "options": [
+            "Si basa principalmente sulla sicurezza del sistema e poi sulla correttezza del funzionamento. E’ inoltre una valutazione assoluta.",
+            "Si basa principalmente sull’efficacia delle soluzioni proposte, quindi l'adeguatezza delle funzionalità di sicurezza e poi sulla correttezza dell’implementazione. Tuttavia, non è una valutazione assoluta, e produttore e sponsor possono dichiarare le funzionalità ed il livello a cui aspirano."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Si basa principalmente sull’efficacia delle soluzioni proposte... non è una valutazione assoluta. (Rivedere ITSEC - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "A quale tra questi aspetti fanno riferimento i CC?",
+        "options": [
+            "regolamentazioni/leggi",
+            "Nessuna delle precedenti",
+            "metodologia di valutazione",
+            "Processi di sviluppo"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Nessuna delle precedenti (Rivedere Common Criteria CC - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Che cosa sono gli FC-FIPS?",
+        "options": [
+            "Standard applicabili a prodotti di vario genere. L’esposizione dello standard è molto chiara, fornisce una guida alla progettazione, definisce requisiti funzionali e qualitativi separati con possibilità di update e descrive il processo di valutazione",
+            "Standard applicabili a prodotti di vario genere. L’esposizione dello standard è molto chiara, fornisce una guida alla progettazione, definisce requisiti funzionali e qualitativi separati con possibilità di update ma non descrive il processo di valutazione"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Standard applicabili a prodotti di vario genere... ma non descrive il processo di valutazione (Rivedere FC-FIPS - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Che cos’è il BS-7799 / ISO-17799?",
+        "options": [
+            "BS-7799 / ISO-17799 è uno standard sulla gestione della sicurezza. Vengono fornite regole suddivide in 10 aree suddivise in uno o più obiettivi, punti di intervento e misure che devono essere usate.",
+            "BS-7799 / ISO-17799 è uno standard sulla gestione della sicurezza sviluppato originariamente dal BSI poi passato all’ISO. Vengono fornite raccomandazioni e linee guida suddivide in dieci aree suddivise in uno o più obiettivi da cui si definiscono punti di intervento e misure che devono/potrebbero essere usate per perseguirli."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Vengono fornite raccomandazioni e linee guida suddivide in dieci aree... (Rivedere ISO/IEC 27000 - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Che cos’è ITSEC/ITSEM ?",
+        "options": [
+            "E’ uno standard europeo utilizzato per valutare la sicurezza dei sistemi informativi e dei prodotti di vario genere. E’ caratterizzato da requisiti funzionali e qualitativi separati, con un processo di valutazione abbastanza snello. Vi è inoltre la possibilità di fare un upgrade delle classi funzionali.",
+            "E’ uno standard mondiale utilizzato per valutare la sicurezza dei sistemi informativi. E’ caratterizzato da requisiti funzionali e qualitativi separati, il processo di valutazione non è specificato."
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "E’ uno standard europeo... requisiti funzionali e qualitativi separati... con un processo di valutazione abbastanza snello. (Rivedere ITSEC - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Che cos’è la Ri-valutazione di un prodotto certificato (TOE)?",
+        "options": [
+            "E’ una procedura necessaria in caso di modifica del TOE. Prevede quattro casi possibili: (M, sostanziali modifiche nel TOE); (I, modifiche che incidono indirettamente); (D, modifiche nella documentazione);(T, modifiche negli strumenti di sviluppo).",
+            "E’ una procedura necessaria per valutare periodicamente il TOE, anche se non ha subito alcuna modifica."
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "E’ una procedura necessaria in caso di modifica del TOE. (Rivedere Evoluzione Standard - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Che cos’è l’Orange-Book ?",
+        "options": [
+            "Uno tra l’insieme di documenti della rainbow series... Aveva un’esposizione poco chiara e verbosa e una certificazione di scarsa qualità.",
+            "Uno tra l’insieme di documenti che standardizzavano aspetti della cybersecurity (rainbow series), che tratta come creare un sistema parzialmente connesso a internet, al quale si può richiedere la certificazione. Aveva un’esposizione chiara e sintetica e una certificazione ben fatta per l'epoca. Tuttavia, aveva un processo di valutazione non descritto, lungo e costoso, e senza alcuna possibilità di upgrade/update."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Aveva un’esposizione chiara e sintetica e una certificazione ben fatta per l'epoca... processo di valutazione non descritto, lungo e costoso. (Rivedere Evoluzione Standard - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Che cos’è un PP?",
+        "options": [
+            "Un PP è una specifica formale dei requisiti di sicurezza che si basa sulla coerenza percentuale a delle policy di best practice.",
+            "Un PP è una specifica formale dei requisiti di sicurezza che si basa su efficacia della soluzione e di correttezza dell’implementazione, consente di costruire un security target specifico per il prodotto da valutare."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Un PP è una specifica formale dei requisiti di sicurezza che si basa su efficacia della soluzione e di correttezza dell’implementazione. (Rivedere PP - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Che importanza rivestono gli standard di certificazione della cybersecurity ?",
+        "options": [
+            "Avere uno standard di certificazione migliora l’immagine aziendale, richiesta per l’accesso a certi mercati, dovendo però gestire il ciclo di vita delle certificazioni (necessario un aggiornamento dopo qualche cambiamento). Inoltre, sia il processo di valutazione che cosa si è certificato vengono descritti nel dettaglio.",
+            "Avere uno standard di certificazione migliora l’immagine aziendale... senza rendere necessario un aggiornamento della certificazione dopo qualche cambiamento."
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Migliora l’immagine aziendale... dovendo gestire il ciclo di vita delle certificazioni. (Rivedere Evoluzione Standard - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Come vengono definiti i requisiti di correttezza nei CC?",
+        "options": [
+            "I requisiti di correttezza sono specificati tramite componenti elementari di correttezza. Sono proposti 8 livelli di valutazione della correttezza dell’implementazione (simile a TCSEC e ITSEC)",
+            "I requisiti di correttezza sono specificati tramite parametri dinamici di correttezza sulla base del prodotto da valutare."
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "I requisiti di correttezza sono specificati tramite componenti elementari di correttezza. (Rivedere Common Criteria CC - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Cosa specifica l’ISO/IEC 27001?",
+        "options": [
+            "Definisce come creare un Information Security Management System (ISMS), richiede che venga fatta un’analisi dei rischi e le decisioni si basano sui risultati della stessa. Permette di ottenere una certificazione.",
+            "Definisce come creare un Information Security Management System (ISMS)... Non esistono certificazioni dato che si tratta di linee guida.",
+            "Definisce come creare un Information Security Management System (ISMS)... decisioni si basano sulle direttive solo ed esclusivamente del SOC."
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Definisce come creare un ISMS... permette di ottenere una certificazione. (Rivedere ISO/IEC 27001 - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Cosa viene certificato tramite i CC?",
+        "options": [
+            "TSC, Trusted Security Control",
+            "TOE Security Functionality",
+            "TCB, Trusted Computing Base"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "TOE Security Functionality (Rivedere Common Criteria CC - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Cosa viene raccomandato dal protocollo l’ISO/IEC 27000 per la gestione della sicurezza?",
+        "options": [
+            "Introdurre la gestione del ISMS che prevede monitoraggio periodico.",
+            "Gestire i rischi con analisi e mitigazione tramite TCP (typo for Tool/Process potentially)",
+            "Introdurre l’ISMS che prevede monitoraggio continuo e fornisce le procedure per mantenere aggiornato il sistema a livello aziendale",
+            "Gestire i rischi con analisi e mitigazione tramite security control."
+        ],
+        "correct": [
+            1,
+            2
+        ],
+        "justification": "Le risposte corrette sono: Introdurre l’ISMS che prevede monitoraggio continuo..., Gestire i rischi con analisi e mitigazione tramite TCP (Note: TCP might be a typo in source data for another term, but recorded as correct). (Rivedere ISO/IEC 27000 - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "In base a cosa una certificazione viene considerata più o meno attendibile ?",
+        "options": [
+            "In base ad un certo livello di sicurezza, che viene certificato ad un sistema dopo averlo valutato. Tuttavia, non vi è nessuna garanzia che l’utilizzo sia sicuro (ci potrebbero essere bug, manutenzione o utilizzo non corretto) e ogni variante del sistema dovrà essere rivalutata.",
+            "In base a una precisa combinazione di hardware e software del sistema. Tuttavia, non vi è nessuna garanzia che l’utilizzo sia sicuro... ma ogni variante potrà avvalersi della stessa certificazione."
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "In base ad un certo livello di sicurezza... ogni variante del sistema dovrà essere rivalutata. (Rivedere Evoluzione Standard - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "In base a quali fattori viene valutata la \"strength of mechanisms\" ?",
+        "options": [
+            "Tempo.",
+            "Esperienza.",
+            "Indipendenza.",
+            "Tecnologia.",
+            "Minimalità.",
+            "Complicità.",
+            "Attrezzatura.",
+            "Usabilità."
+        ],
+        "correct": [
+            0,
+            1,
+            5,
+            6
+        ],
+        "justification": "Le risposte corrette sono: Tempo., Complicità., Esperienza., Attrezzatura. (Rivedere ITSEC - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "In base a quali fattori viene valutata la correttezza del sistema in ambito ITSEC?",
+        "options": [
+            "La costruzione, dunque sia il processo che l’ambiente di sviluppo.",
+            "Il funzionamento, comprendendo sia la documentazione operativa che il contesto operativo.",
+            "L’operatività, dunque sia la documentazione operativa che l’ambiente operativo.",
+            "La praticità, includendo sia la documentazione pratica che il sistema di esercizio."
+        ],
+        "correct": [
+            0,
+            2
+        ],
+        "justification": "Le risposte corrette sono: La costruzione, dunque sia il processo che l’ambiente di sviluppo., L’operatività, dunque sia la documentazione operativa che l’ambiente operativo. (Rivedere ITSEC - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "In base a quali fattori viene valutata l’efficacia del sistema in ambito ITSEC?",
+        "options": [
+            "Inadeguatezza e separazione delle funzionalità.",
+            "Verifica delle vulnerabilità costruttive e operative.",
+            "Strength of Mechanisms.",
+            "Verifica della robustezza costruttiva e operativa.",
+            "Weakness of Mechanism.",
+            "Adeguatezza e integrazione delle funzionalità.",
+            "Facilità d'uso.",
+            "Complessità."
+        ],
+        "correct": [
+            1,
+            2,
+            5,
+            6
+        ],
+        "justification": "Le risposte corrette sono: Adeguatezza e integrazione delle funzionalità., Strength of Mechanisms., Verifica delle vulnerabilità costruttive e operative., Facilità d'uso. (Rivedere ITSEC - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "La metodologia di valutazione definita per i CC:",
+        "options": [
+            "Viene definita nel CEM",
+            "Segue uno schema di valutazione dei CC globale",
+            "Non è definita",
+            "Segue uno schema di valutazione dei CC nazionale"
+        ],
+        "correct": [
+            0,
+            3
+        ],
+        "justification": "Le risposte corrette sono: Viene definita nel CEM, Segue uno schema di valutazione dei CC nazionale (Rivedere Common Criteria CC - Slide 14_standard.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Cosa si intende per Data Breach? (GDPR)",
+        "options": [
+            "qualunque problema di sicurezza che porti alla distruzione, alterazione, diffusione non autorizzata o accesso ai dati personali;",
+            "La duplicazione dei dati su più database per avere un backup",
+            "La messa in sicurezza dei dati tramite protocolli software e fisici",
+            "La perdita o modifica irreversibile dei dati a seguito di un utilizzo sbagliato"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "La risposta corretta è: qualunque problema di sicurezza che porti alla distruzione, alterazione, diffusione non autorizzata o accesso ai dati personali; (Slide 15_leggi.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Qual è l’obiettivo dichiarato del GDPR?",
+        "options": [
+            "Il GDPR ha come obiettivo quello di tutelare i dati personali e i dati sensibili dei cittadini dell'Unione Europea",
+            "Il GDPR ha come obiettivo quello di tutelare i dati personali... ma non di tutelare i dati sensibili",
+            "Il GDPR ha come obiettivo quello di tutelare i dati sensibili... ma non di tutelare i dati personali",
+            "Il GDPR ha come obiettivo quello di tutelare i dati personali acquisiti tramite sistemi manuali"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "La risposta corretta è: Il GDPR ha come obiettivo quello di tutelare i dati personali e i dati sensibili dei cittadini dell'Unione Europea (Slide 15_leggi.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Quale delle seguenti affermazioni relative al concetto di Privacy by Design (PbD) è vera?",
+        "options": [
+            "Tutti i servizi e processi che usano dati personali devono essere pensati per proteggere tali dati in tutte le fasi di progettazione ed implementazione",
+            "Non è compito dei responsabili del trattamento dimostrare che i principi di rispetto della privacy sono applicati spetta al DPO",
+            "È compito degli incaricati dimostrare al DPO che i dati sono protetti",
+            "I dipartimenti informatici devono proteggere i dati solo in determinate fasi"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "La risposta corretta è: Tutti i servizi e processi che usano dati personali devono essere pensati per proteggere tali dati in tutte le fasi di progettazione ed implementazione. (Slide 15_leggi.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Quale tra le seguenti affermazioni relative al data processing nel contesto del GDPR è FALSA?",
+        "options": [
+            "Il data processing comprende qualunque attività che tratti dati personali.",
+            "Il data controller è il responsabile del trattamento dei dati e, quindi, si occupa in prima persona di effettuare la cancellazione dei dati personali.",
+            "Il data processor è l'entità che svolge le attività di processamento dei dati sotto la supervisione del data controller",
+            "Il data controller è l'entità che decide come e per quali scopi i dati personali vengono processati"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "La risposta corretta è: Il data controller è il responsabile del trattamento dei dati e, quindi, si occupa in prima persona di effettuare la cancellazione dei dati personali, quando non più necessari (This is FALSE because the processor usually executes it, and the statement implies personal physical execution or direct management which is not the controller's role definition). (Slide 15_leggi.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Quale tra le seguenti affermazioni relative alle proprietà dei trattamenti dei dati è vera?",
+        "options": [
+            "I dati non necessitano di essere continuamente aggiornati",
+            "I proprietari dei dati devono essere informati tramite privacy notice",
+            "I dati possono essere raccolti in eccesso per poter essere usati in futuro",
+            "Le richieste di consenso devono necessariamente specificare lo scopo"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "La risposta corretta è: I proprietari dei dati devono essere informati tramite privacy notice. (Slide 15_leggi.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Quale tra le seguenti affermazioni riguardanti i 7 principi nel contesto del trattamento dei dati è FALSA?",
+        "options": [
+            "La protezione dei dati deve avvenire durante tutto il ciclo di vita dei dati",
+            "La protezione dei dati deve essere proattiva e non reattiva",
+            "La protezione dei dati non deve comportare limitazioni delle funzionalità",
+            "La protezione dei dati deve essere integrata nella fase di progettazione",
+            "I dati possono essere conservati senza limiti di tempo purché indicato negli scopi",
+            "Le protezioni devono essere di default le più restrittive possibili"
+        ],
+        "correct": [
+            4
+        ],
+        "justification": "La risposta corretta è: I dati possono essere conservati senza limiti di tempo purché indicato negli scopi (This statement is FALSA). (Slide 15_leggi.pdf)"
+    },
+    {
+        "module": "09_standard_gdpr",
+        "question": "Quale tra le seguenti NON è un compito della figura aziendale del Data Protection Officer (DPO)?",
+        "options": [
+            "Osservare, valutare e organizzare la gestione del trattamento dei dati personali",
+            "Definire le norme di sicurezza informatica per i vari sistemi aziendali",
+            "comunicare data breach al garante",
+            "verificare il rispetto delle norme della privacy europee e nazionali"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "La risposta corretta è: Definire le norme di sicurezza informatica per i vari sistemi aziendali (This is NOT a direct DPO task). (Slide 15_leggi.pdf)"
+    }
+]

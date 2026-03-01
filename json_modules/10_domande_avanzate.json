@@ -1,0 +1,828 @@
+[
+    {
+        "module": "Domande Avanzate",
+        "question": "Alice e Bob vogliono configurare un canale di comunicazione sicuro, ma utilizzano configurazioni differenti. Alice sceglie ESP con AES-128-GCM (AEAD), mentre Bob utilizza AH con HMAC-SHA1. Alice esegue una serie di comandi 'ip xfrm' e Bob ne esegue altri. Seleziona le affermazioni corrette:",
+        "options": [
+            "Le SP sono 2 in totale perché, a differenza delle SA, sono bidirezionali",
+            "Bob ha sbagliato la sua configurazione perchè non ha specificato l’algoritmo crittografico da utilizzare",
+            "Sono presenti in totale 4 SA e 4 SP",
+            "La configurazione è vantaggiosa perchè protegge sia l’integrità del messaggio che la segretezza del payload usando un singolo algoritmo e una singola chiave",
+            "La configurazione di Bob garantisce solo integrità e autenticità, mentre quella di Alice garantisce anche la confidenzialità dei dati trasmessi."
+        ],
+        "correct": [
+            2,
+            3,
+            4
+        ],
+        "justification": "In IPsec, le SA e le SP sono unidirezionali, quindi per un canale bidirezionale servono 2 SA e 2 SP per Alice e 2 SA e 2 SP per Bob (totale 4 SA e 4 SP). AES-GCM è un algoritmo AEAD che fornisce sia cifratura che autenticazione con una singola operazione. AH fornisce solo integrità e autenticazione, mentre ESP fornisce anche confidenzialità. (Rivedere Laboratorio IPsec)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Alice gestisce una rete aziendale e vuole usare un firewall per proteggere i dati personali dei clienti in maniera conforme alle normative GDPR. Quali delle seguenti configurazioni e misure sono corrette?",
+        "options": [
+            "Consentire il traffico in entrata su tutte le porte per facilitare la trasparenza delle comunicazioni.",
+            "Implementare politiche di accesso basate su principi di 'least privilege' per ridurre l'accesso non necessario ai log del firewall",
+            "Impostare una regola per registrare tutti i dettagli del traffico, inclusi dati personali, per un periodo illimitato",
+            "Configurare il firewall per registrare i log tecnici necessari alla sicurezza della rete, assicurandosi che siano conservati per un periodo proporzionato e con scopo dichiarato",
+            "Utilizzare un SIEM (Security Information and Event Management) per analizzare i log generati, rispettando le normative sulla gestione dei dati personali."
+        ],
+        "correct": [
+            1,
+            3,
+            4
+        ],
+        "justification": "Il GDPR richiede il principio di minimizzazione dei dati (least privilege), la limitazione della conservazione (periodo proporzionato) e l'uso di misure di sicurezza adeguate come il monitoraggio tramite SIEM. (Rivedere GDPR - Slide 13)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Alice ha configurato il firewall del suo sistema con i seguenti comandi: 'iptables -F', 'iptables -P INPUT DROP', 'iptables -A INPUT -p icmp -j ACCEPT', 'iptables -A INPUT -p tcp --dport 80 -j ACCEPT'. Quali problemi ci sono con questa configurazione?",
+        "options": [
+            "La policy DROP della chain INPUT blocca tutto il traffico, inclusi i pacchetti ICMP accettati dalla regola esplicita",
+            "Alice non ha configurato una regola per consentire il traffico correlato (es. RELATED, ESTABLISHED), rendendo il firewall inefficace per connessioni bidirezionali.",
+            "Bob non riesce a eseguire una scansione delle porte di Alice.",
+            "Alice non può creare nuove chain per gestire altri tipi di traffico",
+            "Le risposte ai ping inviati da Bob vengono accettate, ma le risposte ai pacchetti TCP (ad esempio HTTPS sulla porta 443 o SSH sulla porta 21) non vengono gestite correttamente.",
+            "Alice non riesce ad avviare una connessione SSH verso Bob perché la default policy DROP della chain INPUT blocca i pacchetti di risposta (SYN+ACK)."
+        ],
+        "correct": [
+            1,
+            4,
+            5
+        ],
+        "justification": "Senza regole per lo stato RELATED/ESTABLISHED, le risposte a connessioni iniziate dall'interno vengono bloccate dalla policy DROP. Alice può ricevere ping e connessioni sulla porta 80, ma non può ricevere risposte per connessioni che lei stessa inizia (come SSH verso Bob). (Rivedere Laboratorio 4 Sez. 2)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Indica quali delle seguenti affermazioni sul formato MIME sono vere:",
+        "options": [
+            "MIME supporta i messaggi multipart, consentendo l'inclusione di vari tipi di contenuto e allegati.",
+            "MIME viene utilizzato per email basate su testo, ma è ormai obsoleto perché non permette di allegare immagini.",
+            "I messaggi MIME sono composti da un header e un body, dove l'header contiene metadati e il body contiene il contenuto del messaggio.",
+            "MIME viene utilizzato solo per email basate su testo e non supporta allegati binari.",
+            "Gli header MIME non includono campi per specificare il mittente o il destinatario del messaggio che sono invece usati solo dal formato RFC822.",
+            "MIME è stato introdotto per superare le limitazioni del formato email originale, come la restrizione ai caratteri ASCII a 7 bit."
+        ],
+        "correct": [
+            0,
+            2,
+            5
+        ],
+        "justification": "MIME (Multipurpose Internet Mail Extensions) estende l'email per supportare caratteri non-ASCII, allegati binari e messaggi multipart. È strutturato con header e body. (Rivedere Sicurezza Messaggio)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Indica quali delle seguenti affermazioni sulla firma digitale, DNSSEC, hash crittografici, certificati digitali, greylisting e attacchi replay sono vere:",
+        "options": [
+            "Anche se un messaggio è crittografato end-to-end, le informazioni di routing (mittente, destinatario, IP address) possono comunque essere visibili agli intermediari. Metadati e traffico sono problemi aperti.",
+            "Un attacco di tipo 'replay' consiste nel riutilizzare un messaggio precedentemente inviato per ottenere un accesso non autorizzato o ingannare il destinatario: timestamp, sequence numbers e altri accorgimenti possono mitigarlo.",
+            "Se un certificato digitale è scaduto, la chiave pubblica contenuta nel certificato diventa automaticamente compromessa e inutilizzabile.",
+            "Il protocollo 'greylisting' introduce intenzionalmente un ritardo nella consegna della mail per poter distinguere meglio i messaggi legittimi da quelli di spam, confidando sul fatto che i server di spam non ritentino l'invio.",
+            "La firma digitale di un messaggio di posta elettronica garantisce l'integrità e l'autenticità del messaggio, ma non la sua riservatezza; per quest'ultima è necessaria la crittografia.",
+            "Un hash crittografico di un messaggio è sempre più lungo del messaggio originale.",
+            "L'utilizzo di DNSSEC può migliorare la sicurezza della posta elettronica indirettamente, contribuendo a prevenire attacchi che reindirizzano il traffico email verso server malevoli."
+        ],
+        "correct": [
+            0,
+            1,
+            3,
+            4,
+            6
+        ],
+        "justification": "La firma digitale fornisce autenticazione e integrità. Metadati (routing) rimangono visibili anche con E2EE. Il replay attack si mitiga con timestamp/sequence numbers. Il greylisting sfrutta il comportamento dei server di spam. DNSSEC protegge la risoluzione dei nomi. (Rivedere Sicurezza Canale e Messaggio)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Indica quali delle seguenti affermazioni sulla struttura e sui protocolli della posta elettronica sono vere:",
+        "options": [
+            "TLS può essere utilizzato per proteggere il canale di comunicazione tra un MUA e un Mail Store (MS).",
+            "Il comando 'EHLO' in ESMTP viene utilizzato dal client per avviare una connessione TLS sicura.",
+            "ESMTP è un'estensione di SMTP che introduce funzionalità aggiuntive, incluso il supporto per miglioramenti della sicurezza.",
+            "SMTP è un protocollo orientato alla connessione utilizzato per l'invio di email.",
+            "Una sfida nella sicurezza della posta elettronica è la presenza di MTA potenzialmente non attendibili nella catena di consegna.",
+            "MUA sta per Mail User Agent, MSA sta per Message Submission Agent e MTA sta per Message Transfer Agent.",
+            "Il comando 'HELO' in ESMTP viene utilizzato dal client per introdurre una nuova comunicazione tra due server."
+        ],
+        "correct": [
+            0,
+            2,
+            3,
+            4,
+            5
+        ],
+        "justification": "MUA, MSA, MTA sono i componenti base. SMTP è orientato alla connessione (TCP). ESMTP estende SMTP. TLS protegge l'accesso al mailbox (POP/IMAP). La catena di MTA è un punto critico perché ogni server intermedio può accedere al messaggio in chiaro se non protetto end-to-end. (Rivedere Struttura Posta Elettronica)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quale approccio riduce al minimo la latenza in una connessione IPsec site-to-site?",
+        "options": [
+            "Utilizzare algoritmi di hashing più complessi come SHA-512.",
+            "Abilitare il rinnovo delle chiavi con IKE ogni 10 pacchetti.",
+            "Usare solo ESP per Autenticazione e confidenzialità invece di usare anche AH.",
+            "Configurare la modalità Transport anziché Tunnel per traffico specifico.",
+            "Ottimizzare i percorsi di instradamento per ridurre i ritardi.",
+            "Usare un VPN concentrator in tunnel mode instead of a server multipurpose."
+        ],
+        "correct": [
+            2,
+            3,
+            4,
+            5
+        ],
+        "justification": "Evitare AH riduce l'overhead (ESP può fare tutto). La modalità Transport evita l'incapsulamento di un secondo header IP. L'instradamento e l'uso di hardware dedicato (concentrator) migliorano le performance. (Rivedere IPsec Ottimizzazione)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quale delle seguenti descrive correttamente le chiavi utilizzate nella crittografia asimmetrica?",
+        "options": [
+            "Due chiavi matematicamente legate da un problema matematico.",
+            "Una chiave pubblica che può essere usata per cifrare i dati.",
+            "Una chiave asimmetrica condivisa tra mittente e destinatario.",
+            "Una chiave di sessione generata casualmente.",
+            "Le chiavi pubbliche e private per alcuni algoritmi sono identiche.",
+            "Una chiave privata che può essere usata solo per decifrare i dati."
+        ],
+        "correct": [
+            0,
+            1
+        ],
+        "justification": "Le chiavi asimmetriche sono una coppia (pubblica/privata) legate matematicamente. La pubblica cifra, la privata decifra (o viceversa per la firma). (Rivedere Crittografia Asimmetrica)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quali protocolli vengono utilizzati da IPsec per garantire sicurezza?",
+        "options": [
+            "ESP (Encapsulating Security Payload)",
+            "HTTPS",
+            "IKE (Internet Key Exchange)",
+            "TCP",
+            "AH (Authentication Header)",
+            "RSSA"
+        ],
+        "correct": [
+            0,
+            2,
+            4
+        ],
+        "justification": "IPsec si basa su AH (autenticazione), ESP (cifratura/autenticazione) e IKE (gestione chiavi). (Rivedere IPsec Protocolli)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quali tra le seguenti affermazioni riguardanti il protocollo AH (Authentication Header) di IPsec sono vere?",
+        "options": [
+            "AH non fornisce riservatezza, poiché non cifra il payload del pacchetto.",
+            "AH può essere utilizzato per garantire riservatezza tramite crittografia simmetrica.",
+            "AH garantisce autenticità e integrità dei pacchetti IP tramite hash.",
+            "AH supporta Perfect Forward Secrecy come ESP.",
+            "AH richiede un certificato digitale per autenticare gli utenti."
+        ],
+        "correct": [
+            0,
+            2
+        ],
+        "justification": "AH fornisce solo autenticazione e integrità dell'intero pacchetto (inclusi gli header IP mutabili esclusi). Non fornisce confidenzialità. (Rivedere IPsec AH)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quali tra le seguenti affermazioni sul padding nella crittografia a blocchi sono vere?",
+        "options": [
+            "In CBC, il padding viene aggiunto solo al blocco finale, indipendentemente dalla lunghezza del messaggio.",
+            "Algoritmi come AES in modalità CBC non richiedono padding se la lunghezza del messaggio è nota.",
+            "Il padding è sempre utilizzato per garantire integrità dei dati cifrati.",
+            "Il padding garantisce che l’input della cifratura a blocchi sia un multiplo della lunghezza del blocco.",
+            "Il padding è necessario in tutte le modalità operative della crittografia a blocchi."
+        ],
+        "correct": [
+            0,
+            3
+        ],
+        "justification": "Il padding (come PKCS#7) serve a rendere il messaggio un multiplo della dimensione del blocco. In CBC è necessario. Alcune modalità (come CTR o GCM) lo trasformano in cifrario a flusso e non lo richiedono. (Rivedere Crittografia a Blocchi)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Alice sta configurando il firewall aziendale per soddisfare gli standard ISO/IEC 27001. Quali delle seguenti azioni sono coerenti con i requisiti dello standard?",
+        "options": [
+            "Impostare il firewall per registrare i tentativi di connessione riusciti, ignorando quelli bloccati.",
+            "Configurare le regole per accettare tutto il traffico proveniente da dispositivi certificati ISO/IEC 27001.",
+            "Implementare regole per limitare l’accesso ai server critici solo a indirizzi IP autorizzati.",
+            "Effettuare revisioni periodiche delle configurazioni del firewall come parte dell’audit di sicurezza.",
+            "Documentare e aggiornare regolarmente le regole del firewall per garantire conformità agli standard."
+        ],
+        "correct": [
+            2,
+            3,
+            4
+        ],
+        "justification": "ISO 27001 richiede controllo degli accessi (least privilege), monitoraggio (audit) e documentazione delle procedure (gestione regole). (Rivedere ISO/IEC 27001 - Slides)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Alice vuole trasferire file confidenziali a Bob. Quali modifiche potrebbe implementare per garantire la sicurezza del trasferimento?",
+        "options": [
+            "Imporre l’uso di funzioni di hash per garantire la riservatezza dei file durante la trasmissione.",
+            "Definire un metodo per condividere la chiave privata di Alice con Bob.",
+            "Configurare un sistema di protezione end-to-end (es. RSA) per proteggere i file, usando chiavi pubbliche per la cifratura e private per la decifratura.",
+            "Implementare l’autenticazione del server e del client tramite TLS con certificati validi.",
+            "Utilizzare cifratura simmetrica (AES) con scambio chiavi sicuro tramite Diffie-Hellman."
+        ],
+        "correct": [
+            3,
+            4
+        ],
+        "justification": "Per la confidenzialità serve la cifratura (simmetrica con scambio DH o asimmetrica). TLS fornisce un canale sicuro con autenticazione. L'hash non fornisce riservatezza. (Rivedere Sicurezza di Canale)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Alice vuole ottenere la certificazione ISO/IEC 27001 implementando un IDS. Quali pratiche sono necessarie per la conformità?",
+        "options": [
+            "Integrare l'IDS con un sistema SIEM per garantire una gestione centralizzata degli eventi.",
+            "Analizzare regolarmente i log generati dall’IDS per identificar potenziali minacce.",
+            "Impostare l'IDS per ignorare automaticamente tutto il traffico autorizzato, senza generare log.",
+            "Definire politiche documentate per l’uso dell’IDS e la gestione delle sue configurazioni."
+        ],
+        "correct": [
+            0,
+            1,
+            3
+        ],
+        "justification": "La conformità richiede monitoraggio attivo (SIEM), analisi dei log e documentazione formale delle politiche. (Rivedere ISO 27001 e IDS)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "L'IDS di Bob segnala costantemente attività sospette su un server critico, ma l'analisi manuale non rileva attacchi (falsi positivi). Cosa dovrebbe fare?",
+        "options": [
+            "Configurare l'IDS per ignorare completamente gli alert relativi al server critico.",
+            "Aggiornare le firme o il modello di rilevamento dell’IDS per migliorare l’accuratezza.",
+            "Disabilitare temporaneamente l'IDS fino a quando il problema non viene risolto.",
+            "Analizzare i log storici per identificare pattern normali e aggiornare i profili di base.",
+            "Regolare la soglia di rilevamento dell'IDS per ridurre i falsi positivi."
+        ],
+        "correct": [
+            1,
+            3,
+            4
+        ],
+        "justification": "I falsi positivi si gestiscono raffinando i modelli (anomaly-based) o aggiornando le firme (signature-based) e regolando le soglie di sensitività. (Rivedere IDS - Slide 9)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Indica quali delle seguenti affermazioni su PKCS (Public Key Cryptography Standards) sono vere:",
+        "options": [
+            "PKCS#10 definisce il formato per le richieste di certificato (CSR).",
+            "PKCS#12 definisce un formato de file per memorizzare chiavi private e certificati protetti da password.",
+            "PKCS#7 è utilizzato per messaggi firmati e/o cifrati (alla base di S/MIME).",
+            "PKCS#1 definisce lo standard per la crittografia RSA.",
+            "PKCS è uno standard proprietario di Microsoft non riconosciuto a livello internazionale."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "PKCS sono standard fondamentali per la PKI: #1 per RSA, #7 per CMS/SMIME, #10 per CSR, #12 per export di certificati/chiavi (pfx/p12). (Rivedere Standard PKCS)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Indica quali delle seguenti affermazioni sullo spam e sulle tecniche anti-spam sono vere:",
+        "options": [
+            "Blacklist e whitelist vengono utilizzate per filtrare le email in base all'indirizzo IP o al dominio del mittente.",
+            "Gli 'open relay' sono MTA che consentono a chiunque di inviare email, rendendoli obiettivi per gli spammer.",
+            "Lo spam si riferisce a email di massa non richieste.",
+            "Una tattica comune degli spammer è falsificare le intestazioni (header spoofing).",
+            "Il greylisting rifiuta temporaneamente le email da mittenti sconosciuti per testare se il mittente riprova (i bot di spam spesso non lo fanno)."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3,
+            4
+        ],
+        "justification": "Tutte le affermazioni descrivono correttamente aspetti dello spam e delle relative contromisure tecniche. (Rivedere Anti-Spam)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quale delle seguenti opzioni descrive correttamente i metodi di funzionamento di IPsec ESP?",
+        "options": [
+            "Tunnel Mode: Solo il payload del pacchetto IP è crittografato.",
+            "Transport Mode: Solo il payload del pacchetto IP è crittografato.",
+            "Tunnel Mode: L'intero pacchetto IP è incapsulato e protetto.",
+            "Transport Mode: L'intero pacchetto IP è incapsulato e protetto."
+        ],
+        "correct": [
+            1,
+            2
+        ],
+        "justification": "In Transport mode si cifra solo il payload. In Tunnel mode l'intero pacchetto originale diventa il payload di un nuovo pacchetto IP. (Rivedere IPsec ESP Modes)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quale ruolo svolge il protocollo IKE in IPsec?",
+        "options": [
+            "Crea AH header e trailer.",
+            "Gestione delle chiavi crittografiche.",
+            "Configura le policy DNS per la risoluzione dei peer.",
+            "Offre diversi metodi di autenticazione tra cui CRA asimmetrico.",
+            "Negoziazione dei parametri di sicurezza tra i peer.",
+            "Fornisce cifratura end-to-end per i dati."
+        ],
+        "correct": [
+            1,
+            3,
+            4
+        ],
+        "justification": "IKE (Internet Key Exchange) serve per negoziare le SA, gestire le chiavi e autenticare i peer. (Rivedere IPsec IKE)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quali affermazioni sulla crittografia sono corrette?",
+        "options": [
+            "La crittografia di flusso è preferibile a quella a blocchi per proteggere comunicazioni in tempo reale.",
+            "La crittografia simmetrica utilizza una sola chiave per cifrare e decifrare.",
+            "La firma digitale garantisce autenticità e integrità, ma non confidenzialità.",
+            "La crittografia end-to-end nei tunnel VPN protegge i dati anche contro attacchi all’interno della rete.",
+            "Un certificato digitale contiene solo la chiave pubblica e nessuna informazione sull'identità."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "La crittografia di flusso è veloce per streaming. La simmetrica usa una sola chiave. La firma non cifra il contenuto (solo l'hash). La VPN E2E protegge il transito. Il certificato X.509 *deve* contenere l'identità del proprietario (Subject). (Rivedere Fondamenti Crittografia)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quali tra le seguenti affermazioni relative all’uso di Diffie-Hellman sono vere?",
+        "options": [
+            "Diffie-Hellman consente lo scambio sicuro di chiavi senza che queste siano mai trasmesse direttamente.",
+            "Diffie-Hellman può essere utilizzato per cifrare i dati direttamente.",
+            "La sicurezza del protocollo si basa sulla difficoltà del logaritmo discreto.",
+            "La sicurezza di Diffie-Hellman è indipendente dalla lunghezza dei numeri primi utilizzati."
+        ],
+        "correct": [
+            0,
+            2
+        ],
+        "justification": "DH è un protocollo di *scambio chiavi*, non di cifratura diretta. Si basa sul problema del logaritmo discreto. La sicurezza dipende dalla grandezza di 'p' e 'g'. (Rivedere Diffie-Hellman)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Scegli le affermazioni corrette riguardo IPsec e la sicurezza delle reti:",
+        "options": [
+            "Il protocollo ARP è sicuro grazie a meccanismi di autenticazione AH.",
+            "Gli attacchi di tipo replay su reti IP possono essere mitigati tramite numeri di sequenza e timestamp.",
+            "Durante l’invio di un pacchetto IPsec, il campo TTL errato causa un errore di integrità. (Falso, TTL non è protetto da AH/ESP perché cambia ad ogni hop).",
+            "IPsec consente la protezione del traffico dati, ma anche integrità degli header tramite AH.",
+            "Gli attacchi di tipo replay non possono essere mitigati in IPsec senza algoritmi asimmetrici."
+        ],
+        "correct": [
+            1,
+            3
+        ],
+        "justification": "Il replay è mitigato da sequence numbers. AH protegge l'header (tranne i campi mutabili come TTL). ARP è intrinsecamente insicuro. (Rivedere Replay Attack e IPsec)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Alice vuole configurare una rete aziendale conforme al GDPR. Quali misure tecniche dovrebbe adottare?",
+        "options": [
+            "Implementare la crittografia end-to-end per proteggere i dati in transito.",
+            "Configurare il firewall per consentire solo traffico crittografato tramite TLS verso i server aziendali.",
+            "Implementare politiche di gestione delle chiavi per garantire la sicurezza dei certificati.",
+            "Registrare nei log i contenuti cifrati dei pacchetti per verifica conformità."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "E2EE, TLS e gestione chiavi sono misure tecniche raccomandate dal GDPR. Loggare il contenuto dei pacchetti (DPI) potrebbe violare la privacy se non strettamente necessario e proporzionato. (Rivedere GDPR e Sicurezza)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Bob gestisce un server che deve supportare VPN (IPsec) e HTTPS (TLS). Quali differenze fondamentali tra i due protocolli dovrebbero influenzare la configurazione?",
+        "options": [
+            "IPsec può fornire sicurezza per tutto il traffico (Layer 3), mentre TLS protegge solo protocolli basati su TCP (Layer 4).",
+            "IPsec opera a livello di rete, mentre TLS opera a livello di trasporto.",
+            "L'autenticazione in TLS è spesso basata su certificati, mentre IPsec supporta anche chiavi precondivise (PSK).",
+            "IPsec è ottimale per pagine web dinamiche, TLS no."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "IPsec protegge l'intero traffico IP (inclusi UDP, ICMP). TLS è legato a TCP. IPsec è tipico delle VPN site-to-site o client-to-site. (Rivedere IPsec vs TLS)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Indica quali affermazioni relative a IDS, IPS e sicurezza di rete sono corrette?",
+        "options": [
+            "Un IDS passivo si limita a rilevare e segnalare attività sospette, senza intervenire attivamente.",
+            "Gli NGFW (Next-Generation Firewall) possono identificare applicazioni e utenti.",
+            "Un IPS è sempre preferibile a un IDS perché previene le intrusioni senza rischi di falsi positivi. (Falso, i falsi positivi nell'IPS bloccano traffico lecito).",
+            "Gli IDS possono utilizzare analisi dei log, monitoraggio del traffico e verifica integrità sistema.",
+            "Un sensore IDS può essere posizionato sia su tratti di rete (NIDS) che su singoli host (HIDS)."
+        ],
+        "correct": [
+            0,
+            1,
+            3,
+            4
+        ],
+        "justification": "L'IDS segnala, l'IPS agisce. L'IPS ha il rischio di 'False Reject'. I NIDS monitorano segmenti, gli HIDS i log dell'host. (Rivedere IDS/IPS)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Indica quali delle seguenti affermazioni su firewall, proxy e DMZ sono corrette?",
+        "options": [
+            "Un forward proxy si trova tra i client di una rete esterna e i server esterni.",
+            "L'utilizzo di una DMZ (De-Militarized Zone) permette di isolare i server pubblici dalla rete interna.",
+            "Un firewall 'a tre gambe' è un'architettura che usa un unico gateway per generare una DMZ e isolare la rete interna.",
+            "I firewall possono essere implementati come software, appliance hardware o servizi cloud.",
+            "Un firewall application layer filter può ispezionare traffico cifrato senza decifrarlo. (Falso)."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "Tutte le affermazioni tranne l'ultima sono concetti base di architettura di rete e firewalling. L'ispezione di traffico cifrato (HTTPS inspection) richiede la decifrazione (Man-in-the-Middle autorizzato). (Rivedere Architettura Firewall)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Indica quali delle seguenti affermazioni sul laboratorio su IPsec e TLS sono corrette:",
+        "options": [
+            "L'opzione '-cipher' in 'openssl s_client' permette di specificare la lista di ciphersuite.",
+            "Il comando 'openssl rsa -in key.pem -out dec.pem' può essere usato per decriptare una chiave privata RSA protetta da passphrase.",
+            "Il comando 'ipsec up host-host' inizia una connessione IKE definita in 'ipsec.conf'.",
+            "Per catturare traffico MITM su TLS con ettercap serve un certificato firmato da una CA fidata (altrimenti il browser avvisa)."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "Questi sono comandi e concetti visti nelle esercitazioni pratiche su OpenSSL, strongSwan e attacchi di rete. (Rivedere Materiale Laboratorio)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Indica quali delle seguenti affermazioni sulla sicurezza dei messaggi sono vere:",
+        "options": [
+            "Sicurezza di messaggio significa garantire riservatezza, integrità, autenticazione e non ripudio.",
+            "Il non ripudio significa che il mittente non può negare di aver inviato il messaggio.",
+            "L'implementazione della sicurezza dei messaggi richiede modifiche alle applicazioni (MUA).",
+            "I primi tentativi di sicurezza mail usavano protocolli di canale come TLS. (Falso, TLS è sicurezza di canale, non di messaggio)."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "La sicurezza di messaggio (es. S/MIME, PGP) è end-to-end e richiede supporto dal client. Il non ripudio si ottiene con la firma digitale. (Rivedere Sicurezza Messaggio)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quali delle seguenti affermazioni sulle differenze tra OpenVPN e IPsec sono vere?",
+        "options": [
+            "OpenVPN utilizza TLS, mentre IPsec usa protocolli propri (ESP/AH).",
+            "IPsec richiede necessariamente certificati per entrambi i peer, OpenVPN può richiederlo solo per il server (in configurazione base).",
+            "In scenari con NAT o streaming multicast, OpenVPN è spesso più flessibile di IPsec.",
+            "Entrambe creano connessioni virtuali private (VPN)."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "OpenVPN è user-space e basato su TLS, rendendolo più facile da gestire attraverso NAT rispetto a IPsec tradizionale. (Rivedere VPN - Slide 7)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quali tra le seguenti affermazioni sull'algoritmo AES sono vere?",
+        "options": [
+            "AES prevede lunghezze chiave di 128, 192 o 256 bit.",
+            "AES opera su blocchi di 128 bit indipendentemente dalla chiave.",
+            "AES è stato progettato solo per confidenzialità e non può essere usato per integrità. (Falso, può essere usato in modalità AEAD come GCM)."
+        ],
+        "correct": [
+            0,
+            1
+        ],
+        "justification": "AES è uno standard a blocchi (Rijndael) con blocco fisso a 128 bit e chiavi variabili. (Rivedere Crittografia Simmetrica)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Seleziona quali parametri della sessione TLS cambiano quando viene sfruttato un SessionID (Session Resumption):",
+        "options": [
+            "chiavi derivate",
+            "numeri casuali (nonces)",
+            "ciphersuite (rimane la stessa)",
+            "master key (rimane la stessa)"
+        ],
+        "correct": [
+            0,
+            1
+        ],
+        "justification": "Nella resumption, la master secret viene riutilizzata, ma vengono scambiati nuovi random per derivare nuove chiavi di sessione (freshness). (Rivedere TLS Handshake Abbreviato)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "In OpenSSL, Alice vuole ottenere un certificato da una CA (Carl). Quali sono le affermazioni corrette?",
+        "options": [
+            "La richiesta (CSR) deve essere firmata da Alice.",
+            "Il file .certreq.pem rappresenta una richiesta in formato PKCS#10.",
+            "La CA assegna un numero di serie (file serial).",
+            "La CA mantiene un database (index.txt) dei certificati emessi."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "Questi sono i passaggi standard dell'operazione di una CA con OpenSSL lab. (Rivedere Laboratorio 3)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Alice vuole inviare un messaggio cifrato a Bob usando la crittografia ibrida. Quali errori rendono la procedura insicura o non funzionante?",
+        "options": [
+            "Ha condiviso la propria chiave privata (rsa.key.alice) invece della pubblica.",
+            "Ha scelto un IV non casuale e non l'ha comunicato a Bob.",
+            "Ha cifrato la chiave simmetrica con la sua chiave privata (firma) invece della pubblica di Bob (riservatezza).",
+            "Ha utilizzato un algoritmo obsoleto."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "La crittografia ibrida richiede: 1. Generare chiave simmetrica casuale. 2. Cifrare messaggio con chiave simmetrica. 3. Cifrare chiave simmetrica con chiave pubblica di Bob. 4. Inviare IV e chiave cifrata. (Rivedere Crittografia Ibrida)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Alice vuole integrare firewall e IDS. Quali combinazioni sono vantaggiose?",
+        "options": [
+            "Firewall stateful con IDS basato su firme (signature-based) per bloccare minacce note.",
+            "Firewall stateful con IDS basato su anomalie per rilevare comportamenti insoliti.",
+            "IDS host-based su server critici e NIDS passivo per monitoraggio rete."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "La difesa in profondità suggerisce di combinare filtri statici (firewall) con analisi dinamica (IDS) a diversi livelli (Network/Host). (Rivedere Firewall e IDS)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quali affermazioni sul GDPR e la crittografia sono corrette?",
+        "options": [
+            "La crittografia è una misura adeguata ma non obbligatoria per ogni singolo dato in transito (dipende dall'analisi dei rischi).",
+            "In caso di furto, se i dati sono cifrati in modo forte, l'obbligo di notifica agli interessati può essere evitato.",
+            "Anche se cifrati, i dati devono essere accessibili solo agli autorizzati (principio di disponibilità/integrità)."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "Il GDPR (Art. 32) cita la pseudonimizzazione e la cifratura come esempi di misure tecniche adeguate basate sul rischio. (Rivedere GDPR - Slide 13)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Indica quali affermazioni su S/MIME e PGP sono vere:",
+        "options": [
+            "S/MIME protegge il messaggio stesso (end-to-end), a differenza di TLS che protegge il canale.",
+            "S/MIME è standardizzato IETF e usa certificati X.509.",
+            "PGP usa una 'web of trust' anziché una gerarchia di CA (anche se esistono versioni aziendali).",
+            "S/MIME garantisce autenticità, integrità e non ripudio tramite firma digitale."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "S/MIME e PGP sono i due standard principali per la sicurezza mail a livello di messaggio. (Rivedere S/MIME)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quali sono le caratteristiche della struttura CMS (Cryptographic Message Syntax)?",
+        "options": [
+            "envelopedData contiene il contenuto cifrato e la chiave di sessione cifrata.",
+            "signedData contiene il contenuto, l'hash e la firma digitale.",
+            "Clear-Signed permette di leggere il messaggio anche senza strumenti crittografici (ma non si verifica la firma)."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "CMS definisce i contenitori per i vari servizi crittografici in S/MIME. (Rivedere CMS Structure)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quali delle seguenti sono tecniche di crittografia simmetrica?",
+        "options": [
+            "AES (Advanced Encryption Standard)",
+            "DES (Data Encryption Standard)",
+            "3DES",
+            "RSA (Asimmetrico)",
+            "ECC (Asimmetrico)"
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "AES, DES e 3DES usano la stessa chiave per cifrare e decifrare. (Rivedere Crittografia Simmetrica)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Alice vuole inviare un messaggio a Bob garantendo sia riservatezza che autenticità. Qual è l'ordine corretto delle operazioni?",
+        "options": [
+            "Alice firma il messaggio con la sua privata, poi cifra tutto con la pubblica di Bob.",
+            "Alice cifra il messaggio con la pubblica di Bob, poi firma il pacchetto con la sua privata.",
+            "Alice invia il messaggio in chiaro e firma solo un hash."
+        ],
+        "correct": [
+            0,
+            1
+        ],
+        "justification": "Entrambi gli approcci (Sign-then-Encrypt o Encrypt-then-Sign) forniscono le proprietà richieste, anche se la scelta dipende dal protocollo specifico (es. CMS predilige Sign-then-Encrypt). (Rivedere Sicurezza Messaggio)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "In un'architettura DMZ con firewall 'a tre gambe', quali sono i vantaggi?",
+        "options": [
+            "Isolamento dei server pubblici dalla rete interna.",
+            "Facilità di applicazione di policy differenziate per Internet, DMZ e LAN.",
+            "Possibilità di monitorare il traffico DMZ senza esporre la LAN."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "Il firewall 'three-legged' centralizza il controllo dei tre segmenti su un unico dispositivo con tre interfacce. (Rivedere Architettura DMZ)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quali rischi comporta abilitare ICMP senza restrizioni?",
+        "options": [
+            "Attacchi DoS (es. Smurf attack).",
+            "Leakage di informazioni (es. network mapping).",
+            "Attacchi di tipo ICMP redirect per dirottare il traffico."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "ICMP è utile per diagnostica ma può essere abusato per mappare la rete o saturare banda. (Rivedere ICMP Security)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quali vulnerabilità sono associate a una configurazione TLS debole?",
+        "options": [
+            "Supporto a versioni obsolete (SSL 3.0, TLS 1.0, 1.1).",
+            "Uso di algoritmi di hash deboli (MD5, SHA-1) per le firme dei certificati.",
+            "Mancato controllo della revoca dei certificati (CRL/OCSP).",
+            "Supporto a ciphersuite deboli (es. RC4, DES, export ciphers)."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "La sicurezza di TLS dipende dalla configurazione del server (disabilitare il 'legacy') e dal controllo dei certificati. (Rivedere TLS Weaknesses)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Qual è la differenza tra PIA (Privacy Impact Assessment) e RMF (Risk Management Framework)?",
+        "options": [
+            "Il PIA si concentra sull'impatto sui diritti e le libertà degli interessati (privacy).",
+            "Il RMF si concentra sull'impatto sugli asset e i sistemi dell'organizzazione (sicurezza).",
+            "Sono processi complementari.",
+            "Il PIA è obbligatorio sotto GDPR in caso di rischi elevati."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "Il PIA (o DPIA) è un requisito legale del GDPR per trattamenti rischiosi, mentre il RMF è una metodologia di gestione del rischio aziendale. (Rivedere GDPR e Rischio)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Cosa afferma il principio di Kerckhoffs?",
+        "options": [
+            "La sicurezza di un sistema crittografico deve dipendere solo dalla segretezza della chiave, non dell'algoritmo.",
+            "L'algoritmo deve poter cadere nelle mani del nemico senza compromettere la sicurezza.",
+            "La sicurezza tramite l'oscurità (security by obscurity) non è affidabile."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "È il pilastro della crittografia moderna: algoritmi pubblici e scrutinati, chiavi private e lunghe. (Rivedere Fondamenti Crittografia)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Quali parametri garantisce una firma digitale?",
+        "options": [
+            "Autenticazione (chi ha inviato).",
+            "Integrità (il messaggio non è cambiato).",
+            "Non ripudio (l'autore non può negare).",
+            "Riservatezza (il messaggio è segreto). (Falso)."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "La firma non cifra il messaggio, lo 'sigilla' solo. Per la riservatezza serve la cifratura. (Rivedere Firma Digitale)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "In un'architettura DMZ con firewall 'a tre gambe', quali sono i vantaggi?",
+        "options": [
+            "Possibilità di monitorare e analizzare il traffico verso i server pubblici senza esporre la rete interna.",
+            "Facilità di applicazione di policy di sicurezza specifiche per ciascun segmento di rete.",
+            "Isolamento dei server pubblici dato il divieto di accesso diretto alla rete interna."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "L'architettura a tre gambe (three-legged) usa un singolo firewall con tre interfacce (WAN, LAN, DMZ), permettendo controlli granulari tra i segmenti. (Rivedere Firewall - Slide 9)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Alice ha configurato il firewall con: 'iptables -A INPUT -p tcp --dport 22 -j ACCEPT', 'iptables -A INPUT -p tcp --dport 80 -j ACCEPT', 'iptables -P INPUT DROP'. Quali comportamenti sono veri?",
+        "options": [
+            "Qualsiasi connessione in ingresso su altre porte verrà bloccata, inclusi i ping.",
+            "Le risposte alle connessioni HTTP stabilite dal server (outbound) non sono influenzate da queste regole (se la policy OUTPUT è ACCEPT).",
+            "Il server accetta connessioni SSH sulla porta 22 e HTTP sulla porta 80."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "La policy DROP blocca tutto ciò che non è esplicitamente permesso. ICMP (ping) non è permesso. (Rivedere Laboratorio 4)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Alice vuole autenticare i client con TLS. Quali affermazioni sono corrette?",
+        "options": [
+            "Il server deve utilizzare un certificato firmato da una CA nota ai client per evitare avvisi.",
+            "Un certificato self-signed può essere usato, ma richiede configurazione manuale di fiducia sui client.",
+            "I certificati garantiscono autenticità della chiave pubblica."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "La fiducia nei certificati si basa sulla catena di certificazione verso una Root CA fidata. (Rivedere TLS Certificati)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Perché è pericoloso abilitare il traffico ICMP senza restrizioni?",
+        "options": [
+            "Può portare ad attacchi DoS di tipo Smurf.",
+            "Può portare a leakage di informazioni (network mapping).",
+            "Può portare ad attacchi di tipo ICMP redirect."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "ICMP redirect può essere usato per Man-in-the-Middle. Smurf è un attacco di amplificazione riflessa. (Rivedere ICMP - Slide 9)"
+    },
+    {
+        "module": "Domande Avanzate",
+        "question": "Cos'è il 'Greylisting'?",
+        "options": [
+            "Una tecnica anti-spam che rifiuta temporaneamente le email da mittenti sconosciuti.",
+            "Si basa sul fatto che i server di spam legittimi (MTA) riprovano l'invio dopo un errore temporaneo 4xx, mentre i bot di spam no.",
+            "Introduce un ritardo nella consegna iniziale."
+        ],
+        "correct": [
+            0,
+            1,
+            2
+        ],
+        "justification": "Il greylisting è molto efficace contro gli spam bot semplici che non gestiscono le code di invio. (Rivedere Anti-Spam)"
+    }
+]

@@ -1,0 +1,117 @@
+[
+    {
+        "module": "Domande Finali",
+        "question": "Scegli le affermazioni corrette sulla firma digitale e i certificati:",
+        "options": [
+            "Cambiare l'ordine delle firme sequenziali può far fallire la verifica di qualche firma digitale.",
+            "Se un documento è firmato da più persone usando firme parallele, è possibile rimuovere una firma senza che gli altri firmatari se ne accorgano.",
+            "Il Time Stamp è la firma digitale di un dato che include un valore temporale e un digest del documento.",
+            "La verifica di una Qualified Electronic Signature richiede che la chiave pubblica provenga da un Qualified Certificate.",
+            "Un esempio di enveloped signature è quella usata dal PKCS#7 (Falso).",
+            "L'uso di detached signature rende più semplice forgiare firme false. (Falso)."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "Le firme parallele sono indipendenti, quindi rimuoverne una non invalida le altre. Il timestamp associa temporalmente un documento a un istante. Le firme sequenziali dipendono dall'ordine perché ogni firmatario firma il risultato precedente. (Rivedere Firma Digitale Avanzata)"
+    },
+    {
+        "module": "Domande Finali",
+        "question": "Scegli le affermazioni corrette su IDS, IPS, SOC e SIEM:",
+        "options": [
+            "Un IPS può permettere di velocizzare ed automatizzare la risposta alle intrusioni rilevate.",
+            "Un SOC dovrebbe includere anche personale che si occupa dell'analisi del cybercrime per mantenere aggiornata l'analisi dei rischi.",
+            "Gli honeypot sono sistemi progettati per simulare vulnerabilità o servizi reali per attirare gli attaccanti.",
+            "Un HIDS può controllare che alcuni file non vengano modificati e analizzare i log del sistema operativo.",
+            "Un NIDS è uno scanner di rete che identifica vulnerabilità note. (Falso, NIDS monitora il traffico, non è uno scanner attivo).",
+            "Un SIEM serve a combinare gli eventi per la gestione di un sistema informativo. (Falso, serve per correlare eventi di sicurezza)."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "IPS (Prevention) agisce, SOC (Center) gestisce persone e processi, Honeypot attrae, HIDS monitora l'host. (Rivedere SOC e Monitoraggio)"
+    },
+    {
+        "module": "Domande Finali",
+        "question": "Scegli le affermazioni corrette su hashing, protocolli e crittografia:",
+        "options": [
+            "I problemi matematici su cui si basa la sicurezza di DH e ECDH sono equivalenti.",
+            "Il calcolo della firma digitale richiede l'uso della chiave privata sul digest del documento.",
+            "Le Key Derivation Function (KDF) sono progettate per essere computazionalmente lente e inefficienti nella gestione della memoria (per contrastare il brute force).",
+            "In RSA, una volta calcolati n e d, non servono più p e q per scopi crittografici (anche se p e q velocizzano il calcolo con il teorema cinese del resto).",
+            "OCSP serve per chiedere se un certificato è valido al momento della richiesta o in un preciso momento precedente. (Falso, OCSP è real-time, per il passato servono altri meccanismi).",
+            "ESP v1 è un esempio di AEAD. (Falso, AEAD è introdotto in versioni successive di ESP, es. con GCM)."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "La sicurezza di DH/ECDH si basa sul logaritmo discreto. La firma usa la privata. Le KDF (es. Argon2, PBKDF2) aumentano il costo della ricerca esaustiva. RSA usa n=p*q ma p,q non servono per cifrare/firmare dopo aver calcolato d. (Rivedere Hashing e RSA)"
+    },
+    {
+        "module": "Domande Finali",
+        "question": "Scegli le affermazioni corrette su Risk Management e valutazione della sicurezza:",
+        "options": [
+            "L'information gathering è un processo essenziale per valutare l'esposizione al rischio.",
+            "Secondo il framework RMF del NIST, la fase di framing include l'identificazione degli asset.",
+            "Durante la fase di risk monitoring si può dover cambiare le formule scelte in precedenza per stimare il rischio.",
+            "OWASP è uno standard per la valutazione della sicurezza web.",
+            "Il sistema semi-quantitativo è più efficace di quello qualitativo. (Falso, dipende dal contesto, non c'è un 'più efficace' assoluto).",
+            "NIST suggerisce di patchare prima i sistemi legacy. (Falso, il patching va prioritizzato in base al rischio)."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "Il risk management è un processo iterativo. Information gathering e framing stabiliscono il contesto e gli asset. Il monitoraggio serve a raffinare il modello. (Rivedere Risk Management)"
+    },
+    {
+        "module": "Domande Finali",
+        "question": "Scegli le affermazioni corrette su TLS e SSH:",
+        "options": [
+            "DTLS serve a creare canali sicuri su UDP.",
+            "Le versioni più recenti di TLS (1.3) non usano più i keyed digest separati (usano AEAD).",
+            "La ciphersuite TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 indica la firma RSA dei parametri effimeri.",
+            "In TLS la confidenzialità è opzionale ma integrità e autenticazione sono obbligatorie.",
+            "Un server SSH memorizza in chiaro le chiavi RSA dei client. (Falso, memorizza le chiavi pubbliche in authorized_keys).",
+            "Un client TLS 1.2 è perfettamente supportato da un server solo TLS 1.3. (Falso, TLS 1.3 ha rimosso molti algoritmi e meccanismi del 1.2)."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "TLS 1.3 semplifica il handshake e usa solo AEAD. DTLS adatta TLS all'inaffidabilità di UDP. La confidenzialità può essere nulla (NULL cipher) ma non l'integrità. (Rivedere TLS e SSH)"
+    },
+    {
+        "module": "Domande Finali",
+        "question": "Scegli le affermazioni corrette sugli attacchi di rete:",
+        "options": [
+            "ettercap avvelena la cache ARP per lanciare attacchi MitM.",
+            "Il port scanning identifica porte aperte, chiuse o filtrate.",
+            "Un SYN interceptor evita la saturazione delle tabelle delle connessioni (SYN flooding).",
+            "L'attacco di Kaminsky permette di avvelenare le cache DNS e si evita con DNSSEC.",
+            "Esiste una tecnica di scanning per distinguere packet filter stateful da stateless sfruttando il 3-way handshake.",
+            "Gli attacchi ARP spoofing si evitano cifrando i pacchetti in uscita. (Falso, si evitano con ispezione dinamica ARP/IP-MAC binding o protocolli sicuri)."
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3,
+            4
+        ],
+        "justification": "Questi sono attacchi classici a vari livelli (L2 ARP, L3/L4 TCP/DNS, L7 Heartbleed). Le contromisure includono monitoraggio (IDS), filtraggio (Firewall) e protocolli sicuri (DNSSEC). (Rivedere Attacchi di Rete)"
+    }
+]

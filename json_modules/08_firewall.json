@@ -1,0 +1,675 @@
+[
+    {
+        "module": "08_firewall",
+        "question": "A quale livello dello stack TCP/IP dovrebbe agire un firewall per effettuare i controlli ?",
+        "options": [
+            "Al livello più basso possibile (tipicamente livello di rete o collegamento) in modo da essere veloci e intercettare subito traffico sospetto, pur peccando di precisione nei controlli avendo meno informazioni.",
+            "Al livello più alto possibile (tipicamente livello di trasporto e applicativo) in modo da fare un controllo molto più preciso, avendo più informazioni, e individuare comportamenti sospetti anche a costo di una minor velocità nei controlli, che vengono fatti in maniera molto fine.",
+            "Non vi è un livello giusto o sbagliato, la scelta del livello dipende dalle esigenze specifiche di sicurezza, emerse dunque da un’analisi dei rischi."
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Non vi è un livello giusto o sbagliato, la scelta del livello dipende dalle esigenze specifiche di sicurezza, emerse dunque da un’analisi dei rischi. (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Che cos’è E(T)DR?",
+        "options": [
+            "Sistema per identificare individui che usano un pc o una rete senza autorizzazione o autorizzati che violano i loro privilegi.",
+            "E’ uno strumento usato per effettuare real-time continuous monitoring, utilizzare strumenti di analisi forense per cercare minacce e attività sospette, specificare regole di reazioni automatiche identificando modalità di attacco e pattern",
+            "E’ un centro/dipartimento che include un team di esperti di sicurezza con il compito di monitorare e analizzare costantemente lo stato di sicurezza della azienda. Responsabili degli asset da proteggere (HW/SW locale, risorse in cloud, risorse di terze parti) che operano misure preventive"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "E’ uno strumento usato per effettuare real-time continuous monitoring, utilizzare strumenti di analisi forense per cercare minacce e attività sospette, specificare regole di reazioni automatiche identificando modalità di attacco e pattern (Rivedere ETDR, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Che cos’è il Layer-7 filter (anche detto Application-Level Filter) ?",
+        "options": [
+            "Tipologia di Filtro che che esamina il contenuto dei pacchetti a livello di trasporto, controllando campi come il numero di sequenza e potendo arrivare anche al payload volendo. Ha dunque regole più granulari rispetto al Packet Filter e dà la possibilità di creare regole complesse tramite strumenti come le regex senza comportare un degrado delle prestazioni.",
+            "Tipologia di Filtro che che esamina il contenuto dei pacchetti a livello applicativo, controllando campi specifici dei protocolli e in teoria anche in grado di analizzare il payload. Ha dunque regole più granulari rispetto al Packet Filter, dando la possibilità di creare regole complesse più facilmente, anche tramite strumenti come le regex, ma la complessità di queste regole comporta un degrado delle prestazioni."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Tipologia di Filtro che che esamina il contenuto dei pacchetti a livello applicativo, controllando campi specifici dei protocolli e in teoria anche in grado di analizzare il payload. Ha dunque regole più granulari rispetto al Packet Filter, dando la possibilità di creare regole complesse più facilmente, anche tramite strumenti come le regex, ma la complessità di queste regole comporta un degrado delle prestazioni. (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Che cos’è l’Application-Level Gateway ?",
+        "options": [
+            "Tipologia di Filtro che esamina il contenuto dei dati e scarta o meno dei pacchetti a livello applicativo, senza richiedere alcuna modifica dell’applicativo client. Nel decidere il filtro si basa sull’header del protocollo applicativo esaminato, senza poter visionare il payload. Il filtro incorpora anche funzioni di autenticazione, e implementa sia la direzionalità che delle regole sofisticate per evitare attacchi applicativi noti (come buffer overflow).",
+            "Tipologia di Filtro che esamina il contenuto dei dati a livello applicativo e per questo spesso richiede la modifica dell’applicativo client, implementa sia la direzionalità che delle regole sofisticate per evitare attacchi applicativi noti (come buffer overflow). Può implementare anche funzioni di autenticazione."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Tipologia di Filtro che esamina il contenuto dei dati a livello applicativo e per questo spesso richiede la modifica dell’applicativo client, implementa sia la direzionalità che delle regole sofisticate per evitare attacchi applicativi noti (come buffer overflow). Può implementare anche funzioni di autenticazione. (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Che cos’è l’HTTP reverse proxy ?",
+        "options": [
+            "Un server HTTP che fa solo da front-end e poi passa le richieste dei client al vero server (esterno alla rete), ottenendo quindi una serie di benefici, come la possibilità di fare determinati controlli, avere la cache delle pagine esterne per tutti gli utenti interni e autenticare e autorizzare gli utenti interni.",
+            "Un server HTTP che fa solo da front-end e poi passa le richieste al vero server (interno alla rete), ottenendo quindi una serie di benefici, come content inspection, network ACL, non dichiarare il vero tipo di server (obfuscation), gestire la sicurezza al posto del server con acceleratore SSL."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Un server HTTP che fa solo da front-end e poi passa le richieste al vero server (interno alla rete), ottenendo quindi una serie di benefici, come content inspection, network ACL, non dichiarare il vero tipo di server (obfuscation), gestire la sicurezza al posto del server con acceleratore SSL. (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Che cos’è un Local Firewall (o Personal Firewall) ?",
+        "options": [
+            "Un tipo di firewall installato nella rete locale del nodo da difendere. Può controllare i nodi che aprono collegamenti in rete verso altri nodi (nodi client) e che ricevono richieste di collegamento / servizio (nodi server). Sono importanti per limitare la diffusione di malware o trojan, o semplici errori di installazione.",
+            "Un tipo di firewall installato direttamente sul nodo da difendere. Comporta una gestione distinta dalla gestione sistemistica e rispetto ad un normale firewall in rete può controllare i processi in cui si aprono collegamenti in rete verso altri nodi (client) e in cui si ricevono richieste di collegamento / servizio (server). Sono importanti per limitare la diffusione di malware o trojan, o semplici errori di installazione."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Un tipo di firewall installato direttamente sul nodo da difendere. Comporta una gestione distinta dalla gestione sistemistica e rispetto ad un normale firewall in rete può controllare i processi in cui si aprono collegamenti in rete verso altri nodi (client) e in cui si ricevono richieste di collegamento / servizio (server). Sono importanti per limitare la diffusione di malware o trojan, o semplici errori di installazione. (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Che cos’è uno Stealth Firewall ?",
+        "options": [
+            "Un tipo di firewall privo di un indirizzo di rete, dunque non attaccabile direttamente. Agisce a livello data-link, intercettando i pacchetti e copiando o scartando il traffico di rete (in base alla propria policy di sicurezza) senza mai alterarlo.",
+            "Un tipo di firewall privo di un indirizzo di rete. Agisce a livello data-link, intercettando i pacchetti e copiando o scartando il traffico di rete (in base alla propria policy di sicurezza) senza mai alterarlo. E’ possibile però attaccare il firewall mediante apposite tecniche, sfruttando il protocollo ARP, quindi è importante adottare le giuste contromisure."
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Un tipo di firewall privo di un indirizzo di rete, dunque non attaccabile direttamente. Agisce a livello data-link, intercettando i pacchetti e copiando o scartando il traffico di rete (in base alla propria policy di sicurezza) senza mai alterarlo. (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Come opera un System Integrity Verifier?",
+        "options": [
+            "Rileva i pattern conosciuti derivanti da attacchi o da tentativi di attacco",
+            "Controlla i file/filesystem di un nodo per rilevare cambiamenti.",
+            "Controlla i file di log per identificare anomalie."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Controlla i file/filesystem di un nodo per rilevare cambiamenti. (Rivedere SIV, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Cosa è un IPS?",
+        "options": [
+            "tecnologia basata su AI che identifica nuove anomalie e inserisce nuove regole nel firewall",
+            "una tecnologia per velocizzare ed automatizzare la risposta alle intrusioni",
+            "prodotto per velocizzare ed automatizzare la risposta alle intrusioni",
+            "prodotto che combina un IDS ed un firewall dinamico distribuito"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "una tecnologia per velocizzare ed automatizzare la risposta alle intrusioni (Rivedere IPS, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Cosa si intende per data breach?",
+        "options": [
+            "Un incidente che provoca la rivelazione o la potenziale esposizione di dati",
+            "Un evento di sicurezza che compromette l’integrità, la confidenzialità o la disponibilità di un asset",
+            "Un incidente per cui è stato confermato che i dati sono stati effettivamente cancellati da persone non autorizzate"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Un incidente che provoca la rivelazione o la potenziale esposizione di dati (Rivedere Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Cosa sono gli HIDS?",
+        "options": [
+            "nodi di un IDS che analizzano il traffico interno ad un host.",
+            "nodi di un IDS che operano all’interno di una singola macchina analizzando log di S.O e attività di rete.",
+            "nodi di un IDS che operano analisi dei log ibridi (H=hybrid IDS).",
+            "nodi di un IDS che analizzano i log ottenuti dall’analisi del traffico di rete sniffato mediante uno specifico host."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "nodi di un IDS che operano all’interno di una singola macchina analizzando log di S.O e attività di rete. (Rivedere HIDS, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Da cosa differisce la DMZ nell’architettura “screened subnet” vr.2 rispetto alla vr.1?",
+        "options": [
+            "Assenza del gateway, sostituito da screening router",
+            "Omissione dei router connessi alla DMZ, sostituito da un dispositivo con tre interfacce di rete",
+            "Rete interna incorporata nella DMZ"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Omissione dei router connessi alla DMZ, sostituito da un dispositivo con tre interfacce di rete (Rivedere screened subnet, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "In cosa consiste l’architettura “Screened Host Gateway” ?",
+        "options": [
+            "Architettura che utilizza un router e un gateway. Il router collega il gateway e la rete interna verso l’esterno. Il traffico che richiede di essere ispezionato, verrà inviato al gateway che deciderà se inoltrarlo o meno. Può essere anche definita una tipologia di traffico che passa direttamente attraverso il router. In questo modo si limita il problema del Gateway come potenziale Bottleneck e Single-Point-Of-Failure (tipico dell’architettura Dual-Homed Gateway), dato che il traffico non deve essere sempre ispezionato.",
+            "Architettura che si avvale di un ulteriore dispositivo con 2 interfacce di rete ben protetto, detto Screened Host Gateway. Questo dispositivo ha diverse funzionalità: riceve il traffico e lo ispeziona, capisce chi sono gli utenti interni, blocca il traffico in funzione di diversi criteri (es. verso certi siti o in determinati orari) ed è anche in grado di ispezionare i pacchetti per capire se vi è un tentativo di attacco."
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Architettura che utilizza un router e un gateway. Il router collega il gateway e la rete interna verso l’esterno. Il traffico che richiede di essere ispezionato, verrà inviato al gateway che deciderà se inoltrarlo o meno. Può essere anche definita una tipologia di traffico che passa direttamente attraverso il router. In questo modo si limita il problema del Gateway come potenziale Bottleneck e Single-Point-Of-Failure. (Rivedere Firewall Architetture - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "In cosa può essere d’aiuto il Circuit-level gateway ?",
+        "options": [
+            "Fungendo da tramite, rende i server più protetti e li isola da tutti gli attacchi contro lo stack TCP/IP, o anche frammentazione dei pacchetti IP.",
+            "Consente un filtraggio dei pacchetti capillare, avendo a disposizione strumenti come le regex che consentono di creare regole molto granulari.",
+            "Consente una gestione degli stati, a differenza del packet filter, riuscendo dunque a interpretare messaggi come il TCP 3-way handshake, e tenendo uno stato della connessione.",
+            "Può implementare funzioni di autenticazione dei client, pur richiedendo in tal caso modifiche alle applicazioni, che devono sapere che stanno parlando con un proxy e che devono subire una sfida."
+        ],
+        "correct": [
+            0,
+            3
+        ],
+        "justification": "Le risposte corrette sono: Fungendo da tramite, rende i server più protetti e li isola da tutti gli attacchi contro lo stack TCP/IP, o anche frammentazione dei pacchetti IP., Può implementare funzioni di autenticazione dei client, pur richiedendo in tal caso modifiche alle applicazioni, che devono sapere che stanno parlando con un proxy e che devono subire una sfida. (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Quale è l’obiettivo di utilizzo dell’UTM?",
+        "options": [
+            "Ridurre la complessità di gestione delle funzionalità di sicurezza ed il numero di sistemi diversi",
+            "Controllare i file/filesystem di un nodo per rilevare cambiamenti.",
+            "Monitorare gli attaccanti tracciando e salvando sui log le operazioni effettuate sugli stessi come prova giuridica dell’azienda in caso di denuncia",
+            "Definire policy per utente e applicazione"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Ridurre la complessità di gestione delle funzionalità di sicurezza ed il numero di sistemi diversi (Rivedere UTM, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Quali funzionalità integra un NGFW (2023)?",
+        "options": [
+            "autenticazione degli utenti",
+            "definisce policy per utente e applicazione",
+            "identificazione degli utenti e applicazioni",
+            "Tutte le precedenti sono corrette",
+            "effettua filtraggio in base a vulnerabilità, minacce e malware"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Tutte le precedenti sono corrette (identificazione utenti/app, policy per utente/app, autenticazione, filtraggio minacce). (Rivedere NGFW, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Quali sono gli elementi di base di un Firewall ?",
+        "options": [
+            "Il Dual-Homed Gateway (Sistema con due connessioni di rete e routing disabilitato, che impedisce il flusso diretto di traffico tra le due reti, esercitando un controllo più stretto sulle comunicazioni tra di loro).",
+            "I Filtri (Componenti che svolgono il lavoro per conto di un altro componente).",
+            "I Filtri (Componenti che intercettano il traffico e fanno passare solo quello autorizzato in base a delle regole di configurazione, implementando così le security policy).",
+            "Il Bastion Host (Sistema con due connessioni di rete e routing disabilitato, che impedisce il flusso diretto di traffico tra le due reti).",
+            "Il Gateway o Proxy (Componente che intercetta il traffico e fa passare solo quello autorizzato in base a delle regole di configurazione).",
+            "Il Gateway o Proxy (Componente che svolge il lavoro per conto di un altro componente).",
+            "Il Dual-Homed Gateway (Sistema sicuro con auditing che protegge il primo punto di attacco).",
+            "Il Bastion Host (Sistema sicuro con auditing abilitato)."
+        ],
+        "correct": [
+            0,
+            2,
+            5,
+            7
+        ],
+        "justification": "Le risposte corrette sono: I Filtri (Componenti che intercettano il traffico e fanno passare solo quello autorizzato in base a delle regole di configurazione, implementando così le security policy)., Il Bastion Host (Sistema sicuro con auditing abilitato)., Il Gateway o Proxy (Componente che svolge il lavoro per conto di un altro componente)., Il Dual-Homed Gateway (Sistema con due connessioni di rete e routing disabilitato, che impedisce il flusso diretto di traffico tra le due reti, esercitando un controllo più stretto sulle comunicazioni tra di loro). (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Quali sono i pro e i contro nell’adottare un Application-Level Gateway ?",
+        "options": [
+            "Ogni applicazione richiede uno specifico componente. Vi è di conseguenza ritardo nel supporto per nuove applicazioni, nonché un maggior consumo di risorse e basse prestazioni.",
+            "l’Application-Level Gateway non è adatto a proteggere i server perché non permette di autenticare i client, che tuttavia hanno la piena trasparenza sulla comunicazione.",
+            "l’Application-Level Gateway è “application independent”. Di conseguenza, può essere sin da subito utilizzato su qualsiasi applicazione, ottenendo un basso consumo di risorse, massime prestazioni e massima sicurezza.",
+            "l’Application-Level Gateway rompe completamente il modello client-server, ottenendo dunque dei server più protetti, con possibilità di autenticare il client, il quale non ha però la piena trasparenza, essendovi il gateway che funge da proxy.",
+            "l’Application-Level Gateway è in grado di proteggere il SO dei firewall, filtrando messaggi potenzialmente ostili.",
+            "l’Application-Level Gateway può esporre il SO del firewall ad attacchi. Onde evitare ciò varie varianti sono emerse, come il transparent proxy, lo strong application proxy e WAF."
+        ],
+        "correct": [
+            0,
+            3,
+            5
+        ],
+        "justification": "Le risposte corrette sono: Ogni applicazione richiede uno specifico componente. Vi è di conseguenza ritardo nel supporto per nuove applicazioni, nonché un maggior consumo di risorse e basse prestazioni., l’Application-Level Gateway rompe completamente il modello client-server, ottenendo dunque dei server più protetti, con possibilità di autenticare il client, il quale non ha però la piena trasparenza, essendovi il gateway che funge da proxy., l’Application-Level Gateway può esporre il SO del firewall ad attacchi. (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Quali sono le fasi seguite da un IDS attivo?",
+        "options": [
+            "Monitoring, learning, reaction",
+            "Reaction, learning, monitoring",
+            "Learning, monitoring, reaction",
+            "Monitoring, reaction, learning"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Learning, monitoring, reaction (Rivedere IDS, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Quali tra i seguenti sono attività che dovrebbero essere svolte da un SOC?",
+        "options": [
+            "Gestire gli incidenti",
+            "Implementare misure preventive",
+            "Tutte le precedenti risposte sono corrette",
+            "Rispondere agli attacchi per minimizzare gli effetti.",
+            "Gestire i processi di monitoring continuo di compliance."
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Tutte le precedenti risposte sono corrette (Gestione incidenti, misure preventive, risposta attacchi, monitoring compliance). (Rivedere SOC, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Qual’è la differenza fra le politiche di autorizzazione di tipo whitelisting e blacklisting?",
+        "options": [
+            "La politica di whitelisting si basa sull’ assunto che tutto ciò che non è espressamente permesso, è vietato. La politica di blacklisting invece si basa sull’assunto che tutto ciò che non è espressamente vietato, è permesso.",
+            "La politica di whitelisting si basa sull’ assunto che tutto ciò che non è espressamente permesso, è vietato. La politica di blacklisting invece si basa sull’assunto che tutto ciò che non è espressamente vietato, è permesso. In questo caso abbiamo un maggior livello di sicurezza per blacklisting.",
+            "La politica di whitelisting si basa sull’ assunto che tutto ciò che non è espressamente permesso, è vietato. Si ottiene dunque un minor livello di sicurezza, guadagnando però in maggior facilità di gestione.",
+            "La politica di blacklisting si basa sull’ assunto che tutto ciò che non è espressamente permesso, è vietato."
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "La politica di whitelisting si basa sull’ assunto che tutto ciò che non è espressamente permesso, è vietato. Si ottiene dunque un maggior livello di sicurezza, pagando però in maggiori difficoltà di gestione. La politica di blacklisting invece si basa sull’assunto che tutto ciò che non è espressamente vietato, è permesso. (Rivedere Firewall Definizioni e Principi - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Scegliere le definizioni corrette per Ingress ed Egress Firewall (2023)?",
+        "options": [
+            "L’egress firewall implementa politiche di autorizzazione per collegamenti in ingresso.",
+            "L’ingress firewall implementa politiche di autorizzazione per collegamenti in ingresso, dunque per selezionare i servizi offerti all'esterno oppure le comunicazinoi relative alle risposte a comunicazioni attivate dall'interno.",
+            "L’egress firewall fornisce l’autorizzazione per collegamenti in uscita, dunque collegamenti relativi ad attività del personale o a risorse pubbliche accessibili.",
+            "L’ingress firewall fornisce l’autorizzazione per collegamenti in uscita."
+        ],
+        "correct": [
+            1,
+            2
+        ],
+        "justification": "Le risposte corrette sono: L’ingress firewall implementa politiche di autorizzazione per collegamenti in ingresso, dunque per selezionare i servizi offerti all'esterno oppure le comunicazinoi relative alle risposte a comunicazioni attivate dall'interno., L’egress firewall fornisce l’autorizzazione per collegamenti in uscita, dunque collegamenti relativi ad attività del personale o a risorse pubbliche accessibili. (Rivedere Firewall Definizioni e Principi - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Scegliete i tre principi inderogabili dei firewall, secondo Cheswick e Bellovin?",
+        "options": [
+            "Il Firewall deve essere un sistema intrinsecamente sicuro.",
+            "Solo il traffico \"approvato dall’utente\" può attraversare il Firewall.",
+            "Il Firewall deve essere l'unico punto di contatto della rete interna con quella esterna.",
+            "Solo il traffico \"autorizzato\" può attraversare il Firewall.",
+            "il Firewall deve essere un sistema composto da elementi intrinsecamente sicuri.",
+            "E’ preferibile che il Firewall sia l'unico punto di contatto della rete interna con quella esterna."
+        ],
+        "correct": [
+            0,
+            2,
+            3
+        ],
+        "justification": "Le risposte corrette sono: Il Firewall deve essere l'unico punto di contatto della rete interna con quella esterna., Solo il traffico \"autorizzato\" può attraversare il Firewall., Il Firewall deve essere un sistema intrinsecamente sicuro. (Rivedere Firewall Definizioni e Principi - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Seleziona le affermazioni vere sul SIEM:",
+        "options": [
+            "combina il SME ed il SMI",
+            "combina il SEM ed il SIM",
+            "permette di identificare individui che usano un pc o una rete senza autorizzazione o autorizzati che violano i loro privilegi.",
+            "permette di osservare e registrare attività di un sistema informativo"
+        ],
+        "correct": [
+            1,
+            3
+        ],
+        "justification": "Le risposte corrette sono: combina il SEM ed il SIM, permette di osservare e registrare attività di un sistema informativo (Rivedere SIEM, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "A quali elementi è connessa la DMZ nell’architettura “screened subnet” (versione 1)?",
+        "options": [
+            "Router",
+            "Gateway",
+            "Middleware",
+            "Rete esterna",
+            "Internet"
+        ],
+        "correct": [
+            0,
+            1
+        ],
+        "justification": "Le risposte corrette sono: Gateway, Router (Rivedere screened subnet, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Che cos’è il Circuit-level gateway (technically)?",
+        "options": [
+            "Tipologia di FIltro che funge da proxy e lavora ai livelli 4/5 dello stack ISO/OSI. Si occupa di creare un «circuito» tra client e server a livello di trasporto, con la possibilità di interpretare i dati in transito. Poi riassembla i segmenti TCP o datagrammi UDP e se rispettano le regole di autorizzazione li salva nel suo database interno.",
+            "Tipologia di Filtro che funge da proxy e lavora ai livelli 4/5 dello stack ISO/OSI. Si occupa di creare un «circuito» tra client e server a livello di trasporto, senza poter però comprendere i dati in transito. Poi riassembla i segmenti TCP o datagrammi UDP e se rispettano le regole di autorizzazione li inoltra su un'altra interfaccia di rete, come può essere un packet filter."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "La risposta corretta è: Tipologia di Filtro che funge da proxy e lavora ai livelli 4/5 dello stack ISO/OSI. Si occupa di creare un «circuito» tra client e server a livello di trasporto, senza poter però comprendere i dati in transito. (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Che cos’è lo Stateful (anche detto Dynamic) Packet Filter ?",
+        "options": [
+            "Tipologia di Filtro simile al Packet Filter stateless, con in più però una parte di \"state-awareness\". Mantiene dunque informazioni di stato dal livello di trasporto e/o da quello applicativo e distingue le nuove connessioni da quelle già aperte, mantenendo tabelle di stato per le connessioni aperte. Ha prestazioni paragonabili ai Packet Filter stateless.",
+            "Tipologia di Filtro simile al Packet Filter stateless, con in più però una parte di \"state-awareness\". Ha prestazioni peggiori rispetto ai Packet Filter stateless, dato l’overhead di mantenimento dello stato. Tuttavia, consente di autenticare facilmente gli utenti."
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "La risposta corretta è: Tipologia di Filtro simile al Packet Filter stateless, con in più però una parte di \"state-awareness\". Mantiene dunque informazioni di stato dal livello di trasporto e/o da quello applicativo e distingue le nuove connessioni da quelle già aperte, mantenendo tabelle di stato per le connessioni aperte. Ha prestazioni paragonabili ai Packet Filter stateless, soffrendo comunque di alcune sue problematiche, come problemi con utenti e protocolli di alto livello. (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Che cos’è l’HTTP (forward) proxy ?",
+        "options": [
+            "Un server HTTP che fa solo da front-end e poi passa le richieste dei client al vero server (esterno alla rete), ottenendo quindi una serie di benefici, come la possibilità di fare determinati controlli, avere la cache delle pagine esterne per tutti gli utenti interni e autenticare e autorizzare gli utenti interni.",
+            "Un server HTTP che fa solo da front-end e poi passa le richieste al vero server (interno alla rete), ottenendo quindi una serie di benefici, come content inspection, network ACL, non dichiarare il vero tipo di server (obfuscation), gestire la sicurezza al posto del server con acceleratore SSL."
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "La risposta corretta è: Un server HTTP che fa solo da front-end e poi passa le richieste dei client al vero server (esterno alla rete), ottenendo quindi una serie di benefici, come la possibilità di fare determinati controlli, avere la cache delle pagine esterne per tutti gli utenti interni e autenticare e autorizzare gli utenti interni. (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Che cos’è un firewall? (Generale)",
+        "options": [
+            "E’ un sistema che controlla e limita il traffico in entrata e in uscita. Il suo scopo principale è quello di prevenire accessi non autorizzati, ottenendo così nella propria rete interna un livello di sicurezza maggiore ed una protezione rispetto al resto di internet.",
+            "E’ un sistema che controlla il traffico in entrata e in uscita. Il suo scopo principale è quello di consentire la comunicazione tra reti domestiche, aziendali e di data center con il resto di Internet in maniera controllata."
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "E’ un sistema che controlla e limita il traffico in entrata e in uscita. Il suo scopo principale è quello di prevenire accessi non autorizzati. (Rivedere Firewall Definizioni e Principi - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Che cos’è un WAF ?",
+        "options": [
+            "E’ un modulo installato di solito su un proxy per filtrare il traffico web. Mediante l'analisi del traffico DNS, il WAF può individuare e bloccare tentativi per sfruttare vulnerabilità nelle applicazioni web.",
+            "E’ un modulo installato di solito su un proxy per analizzare e filtrare il traffico web. Esso conosce i comandi HTTP, l’header HTTP request/response e il contenuto di un messaggio HTTP request/response per poter filtrare il traffico."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "E’ un modulo installato di solito su un proxy per analizzare e filtrare il traffico web. Esso conosce i comandi HTTP, l’header HTTP request/response... (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Come opera un Log File Monitor?",
+        "options": [
+            "Rileva modifiche ai registri di Windows o alla configurazione di cron, cambio privilegi di un utente",
+            "Controlla i file/filesystem di un nodo per rilevare cambiamenti.",
+            "Controlla i file di log per identificare anomalie."
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Controlla i file di log per identificare anomalie. (Rivedere SIV, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Cosa è in generale un incidente informatico?",
+        "options": [
+            "Un incidente che genera la rilevazione o la potenziale esposizione di dati sensibili (es. GDPR)",
+            "Un evento di sicurezza che compromette l’integrità, la confidenzialità o la disponibilità di un asset",
+            "Un data breach per cui è stato confermato che i dati sono stati effettivamente rilevati a persone non autorizzate"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Un evento di sicurezza che compromette l’integrità, la confidenzialità o la disponibilità di un asset (Rivedere Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Cosa ospita un bastion host per controllare i servizi autorizzati?",
+        "options": [
+            "circuit/transport gateway",
+            "network/transport gateway",
+            "circuit/application gateway",
+            "application/transport gateway"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "circuit/application gateway"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Cosa si intende per data disclosure?",
+        "options": [
+            "Un incidente che provoca la rivelazione o la potenziale esposizione di dati",
+            "Un evento di sicurezza che compromette l’integrità, la confidenzialità o la disponibilità di un asset",
+            "Un data breach per cui è stato confermato che i dati sono stati effettivamente ottenuti da persone non autorizzate"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Un data breach per cui è stato confermato che i dati sono stati effettivamente ottenuti da persone non autorizzate (Rivedere Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Cosa sono gli NIDS?",
+        "options": [
+            "nodi di un IDS (es. installati su switch di rete) che operano analisi dei log.",
+            "nodi di un IDS (es. installati su host) che operano analisi dei log.",
+            "nodi di un IDS (es. installati su switch di rete) che attivano strumenti di monitoraggio del traffico di rete.",
+            "nodi di un IDS (es. installati su specifici host) che attivano strumenti di monitoraggio del traffico di rete."
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "nodi di un IDS (es. installati su switch di rete) che attivano strumenti di monitoraggio del traffico di rete. (Rivedere NIDS, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "In cosa consiste l’architettura “Dual-Homed Gateway” ?",
+        "options": [
+            "Architettura che usa un dispositivo (detto Dual-Homed Gateway) per filtrare il traffico sia a livello IP che superiore, implementando un firewall praticamente a costo zero. Inoltre, non necessita di proxy e di modifiche agli applicativi.",
+            "Architettura che si avvale di un router e di dispositivo con 2 interfacce di rete ben protetto, detto Dual-Homed Gateway. Questo dispositivo riceve il traffico e lo ispeziona, capisce chi sono gli utenti interni, blocca il traffico a certi siti in determinati orari ed è anche in grado di ispezionare i pacchetti per capire se vi è un tentativo di attacco."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Architettura che si avvale di un router e di dispositivo con 2 interfacce di rete ben protetto, detto Dual-Homed Gateway. (Rivedere Firewall Architetture - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "In cosa consiste l’architettura “Screening Router” ?",
+        "options": [
+            "Architettura che usa il router per filtrare il traffico con funzioni di packet filter, implementando un firewall praticamente a costo zero (non richiede hardware dedicato se non il router). Inoltre, non necessita di proxy e di modifiche agli applicativi. Pur essendo facile ed economico, è tuttavia un approccio insicuro.",
+            "Architettura che si avvale di un router con 2 interfacce di rete e ben protetto. Questo router ricopre diverse funzionalità: riceve il traffico e lo ispeziona, capisce chi sono gli utenti interni, blocca il traffico a certi siti in determinati orari."
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Architettura che usa il router per filtrare il traffico con funzioni di packet filter, implementando un firewall praticamente a costo zero... Pur essendo facile ed economico, è tuttavia un approccio insicuro. (Rivedere Firewall Architetture - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "In quale caso il firewall risulta essere efficace contro attacchi sui canali al 100%?",
+        "options": [
+            "Utilizzo di firewall semantici",
+            "Sicurezza applicativa",
+            "Utilizzo di VPN",
+            "Nessuna delle precedenti"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Un firewall risulta essere efficace al 100% nel caso in cui blocchi l’intero canale. (Rivedere Protezione offerta da un firewall, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Quale è uno degli scopi degli Honey pot?",
+        "options": [
+            "Parte di sistemi duplicati, sono utilizzati per rendere resilienti il sistema aziendale in caso di attacco informatico.",
+            "Monitorare gli attaccanti tracciando e salvando sui log non modificabili le operazioni effettuate sugli stessi come prova giuridica dell’azienda in caso di denuncia",
+            "Condividere risorse open source utilizzate dalle aziende con accesso dalla rete esterna attraverso la DMZ"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Monitorare gli attaccanti tracciando e salvando sui log non modificabili le operazioni effettuate sugli stessi come prova giuridica dell’azienda in caso di denuncia. (Rivedere Honey pot, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Quali funzioni vengono implementate dagli IDS passivi?",
+        "options": [
+            "Riconoscimento di attack signature",
+            "analisi statistica del funzionamento del sistema",
+            "analisi attiva di traffico dati, sequenze, azioni"
+        ],
+        "correct": [
+            0,
+            1
+        ],
+        "justification": "Le risposte corrette sono: Riconoscimento di attack signature, analisi statistica del funzionamento del sistema. (Rivedere IDS, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Quali sono i principali componenti di un NIDS?",
+        "options": [
+            "Sensor, director, IDS message system",
+            "Sensor, packet filter, IDS message system",
+            "Sensor, director, VPN message system"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Sensor, director, IDS message system (Rivedere SIV, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Quali sono i Pro e i Contro nell’adottare un Static Packet Filter ?",
+        "options": [
+            "Si ottengono ottime prestazioni.",
+            "E’ indipendente dalle applicazioni, ottenendo quindi un ottima scalabilità ma controlli poco precisi.",
+            "Si ottengono basse prestazioni.",
+            "E’ dipendente dalle applicazioni.",
+            "E’ possibile effettuare l'autenticazione degli utenti.",
+            "E’ un sistema a basso costo.",
+            "E’ un sistema in cui è facile supportare servizi con porte allocate dinamicamente, come FTP.",
+            "E’ difficile l'autenticazione degli utenti.",
+            "E’ un sistema a costo medio/alto.",
+            "E’ un sistema in cui è difficile supportare servizi con porte allocate dinamicamente, come FTP."
+        ],
+        "correct": [
+            0,
+            1,
+            5,
+            7,
+            9
+        ],
+        "justification": "Le risposte corrette sono: E’ indipendente dalle applicazioni, ottenendo quindi un ottima scalabilità ma controlli poco precisi., Si ottengono ottime prestazioni., E’ un sistema a basso costo., E’ un sistema in cui è difficile supportare servizi con porte allocate dinamicamente, come FTP., E’ difficile l'autenticazione degli utenti. (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Quali sono le regole che un router deve seguire affinché rispetti l'architettura \"screened host gateway\"?",
+        "options": [
+            "blocca traffico INT>EXT tranne se verso il bastion o verso servizi/protocolli abilitati direttamente, blocca traffico EXT>INT tranne se arriva dal bastion o da servizi/protocolli abilitati direttamente",
+            "blocca traffico INT-->EXT tranne se verso il bastion o verso servizi/protocolli abilitati direttamente",
+            "blocca traffico INT<--EXT tranne se arriva dal bastion",
+            "blocca traffico INT-->EXT tranne se arriva dal bastion o verso servizi/protocolli abilitati direttamente, blocca traffico EXT-->INT tranne se verso il bastion o verso servizi/protocolli abilitati direttamente"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "La risposta corretta è: blocca traffico INT-->EXT tranne se arriva dal bastion o verso servizi/protocolli abilitati direttamente, blocca traffico EXT-->INT tranne se verso il bastion o verso servizi/protocolli abilitati direttamente"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Quali tra le seguenti operazioni è utile per rispondere al meglio agli attacchi informatici?",
+        "options": [
+            "nominare un data controller",
+            "creare un incident response team",
+            "nominare un data protection officier (obbligatorio in caso di dati sensibili)"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "creare un incident response team (Rivedere attacchi informatici, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Qual’è lo scopo di uno IDS?",
+        "options": [
+            "identificare gli individui che usano risorse all’interno di una rete.",
+            "identificare individui che usano un PC o una rete senza autorizzazione o autorizzati che violano i loro privilegi.",
+            "identificare individui autorizzati che usano PC o una rete violando i loro privilegi.",
+            "identificare individui che usano un PC o una rete senza autorizzazione."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "identificare individui che usano un PC o una rete senza autorizzazione o autorizzati che violano i loro privilegi. (Rivedere IDS, Firewall - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Scegliere le tecnologie di filtri? (Check all that apply)",
+        "options": [
+            "Application-level Gateway / Proxy.",
+            "Circuit-level Gateway / Proxy.",
+            "Fixed Data Filter.",
+            "Dynamic Context Inspection.",
+            "Static packet filter.",
+            "Stateful Inspection.",
+            "Navigation-Level Gateway / Proxy.",
+            "Pathway-Level Gateway / Proxy.",
+            "Dynamic Contextual Packet Filter.",
+            "Dynamic stateful packet filter."
+        ],
+        "correct": [
+            0,
+            1,
+            4,
+            5,
+            9
+        ],
+        "justification": "Le risposte corrette sono: Static packet filter., Dynamic stateful packet filter., Circuit-level Gateway / Proxy., Application-level Gateway / Proxy., Stateful Inspection. (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "Scegliete la definizione più corretta di Packet Filter ?",
+        "options": [
+            "Tipologia di Filtro che effettua controlli sui singoli pacchetti IP basandosi sulla quintupla (IP sorgente, IP destinazione, porta sorgente, porta destinazione, protocol type) che è in grado di mantenere uno stato interno.",
+            "Tipologia di Filtro che effettua controlli sui singoli pacchetti IP basandosi, per bloccare o meno un dato pacchetto, sulla quintupla (IP sorgente, IP destinazione, porta sorgente, porta destinazione, protocol type), senza considerare informazioni sulle connessioni (es. TCP 3-way handshake) e avere alcun tipo di stato."
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Tipologia di Filtro che effettua controlli sui singoli pacchetti IP basandosi... senza considerare informazioni sulle connessioni (es. TCP 3-way handshake) e avere alcun tipo di stato. (Rivedere Firewall Componenti - Slide 11_fw.pdf)"
+    },
+    {
+        "module": "08_firewall",
+        "question": "E’ possibile acquistare già un firewall pronto all’uso senza la necessità di progettarlo, perché è possibile trovare il giusto trade-off tra sicurezza e funzionalità al costo minimo tra i prodotti in vendita?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "La risposta corretta è 'Falso'. (Rivedere Firewall Definizioni e Principi - Slide 11_fw.pdf)"
+    }
+]

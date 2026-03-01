@@ -1,0 +1,1355 @@
+[
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Qual è il concetto cardine su cui si basa la crittografia?",
+        "options": [
+            "Complessità",
+            "Numero di bit",
+            "Casualità",
+            "Riservatezza"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "La casualità (randomness) è fondamentale: chiavi, IV, nonce devono essere imprevedibili."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Qual è la semantica delle chiavi asimmetriche?",
+        "options": [
+            "Entrambe segrete per il principio di Kerckhoffs",
+            "Una privata (segreta), l'altra pubblica (distribuita)",
+            "Entrambe pubbliche, sicurezza nell'algoritmo"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Nella crittografia asimmetrica una chiave è privata (segreta) e l'altra pubblica (distribuibile)."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale affermazione descrive correttamente SHA2?",
+        "options": [
+            "Progettati per resistere a tecniche di collisione note da SHA1",
+            "Lunghezza di blocco variabile",
+            "Digest fisso di 160 bit",
+            "Obsoleto e non più sicuro"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "SHA-2 (SHA-256, SHA-512) è stato progettato per resistere agli attacchi di collisione che hanno compromesso SHA-1."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale affermazione è vera sull'algoritmo RSA?",
+        "options": [
+            "e privato e d pubblico",
+            "e pubblico e d privato, dati minori del modulo n pubblico",
+            "n parametro privato"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "RSA usa esponente pubblico 'e' e privato 'd', con modulo 'n' pubblico. I dati devono essere minori di n."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale aspetto distingue l'HMAC da una comune funzione di hash?",
+        "options": [
+            "Lunghezza fissa output",
+            "IV più lunghi",
+            "Hash più sicure di HMAC",
+            "HMAC usa un segreto durante la computazione",
+            "HMAC garantisce solo integrità"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "HMAC include una chiave segreta nel calcolo, garantendo sia integrità che autenticazione dell'origine."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Qual è il ruolo della chiave nel MAC?",
+        "options": [
+            "Determina lunghezza",
+            "Definisce algoritmo cifratura",
+            "Identifica mittente",
+            "Genera e verifica autenticità del messaggio",
+            "Regola lunghezza digest"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "La chiave nel MAC viene usata sia per generare il tag che per verificarne l'autenticità."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale opzione descrive correttamente CBC-MAC?",
+        "options": [
+            "Algoritmo cifratura simmetrica",
+            "Algoritmo hash",
+            "Tecnica autenticazione con cifratura CBC e IV nullo",
+            "Sistema basato su chiavi pubbliche",
+            "Tecnica con IV lungo come chiave",
+            "Sicuro solo per messaggi a lunghezza variabile"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "CBC-MAC usa cifratura a blocchi in modalità CBC con IV=0, usando l'ultimo blocco cifrato come MAC."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale affermazione sull'opzione Authenticate and Encrypt NON è vera?",
+        "options": [
+            "A&E è la più lenta e meno debole",
+            "Si deve decifrare prima di verificare integrità",
+            "È usato da SSH",
+            "Possibili attacchi DoS"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "A&E non è considerata la più sicura; EtA (Encrypt then Authenticate) è preferibile."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale caratteristica è desiderabile in un algoritmo di hash?",
+        "options": [
+            "Resistenza a collisioni (stesso digest per documento intercettato)",
+            "Resistenza a collisioni (due documenti con stesso digest)",
+            "Facilità di inversione",
+            "Dipendenza dalla lunghezza input"
+        ],
+        "correct": [
+            0,
+            1
+        ],
+        "justification": "Un hash sicuro deve resistere sia a preimage attack che a collision attack."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Perché si dice che le chiavi 'invecchiano'?",
+        "options": [
+            "Più dati cifrati = più dati statistici per attaccanti",
+            "Qualcun altro potrebbe generare la stessa chiave",
+            "Più tempo = più tentativi di indovinare",
+            "L'algoritmo potrebbe essere attaccato"
+        ],
+        "correct": [
+            0,
+            2
+        ],
+        "justification": "Le chiavi invecchiano perché: 1) più dati cifrati forniscono più materiale per crittoanalisi, 2) più tempo per attacchi brute-force."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Qual è l'effetto della modifica di un bit su un algoritmo di hash?",
+        "options": [
+            "Nessun effetto",
+            "Cambio in media del 50% dei bit del digest",
+            "Generazione collisione",
+            "Incremento lunghezza blocco",
+            "Generazione chiave"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "L'effetto valanga (avalanche effect) causa la modifica di circa metà dei bit del digest per ogni bit modificato."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale tipologia di attacco può essere prevenuta dalla crittografia?",
+        "options": [
+            "MITM",
+            "IP Spoofing",
+            "Phishing",
+            "Ransomware"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "La crittografia (TLS, cifratura end-to-end) previene gli attacchi MITM rendendo il traffico illeggibile."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale risultato hanno portato le sfide RSA?",
+        "options": [
+            "Fattorizzazione di n, chiave aumentata a 2048 bit",
+            "Fattorizzazione di n, chiave aumentata a 512 bit"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Le sfide RSA hanno dimostrato che chiavi corte sono fattorizzabili; oggi si usano almeno 2048 bit."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Lezione dall'hacking Sony PS3 (ECDSA)?",
+        "options": [
+            "Nonce random obbligatorio altrimenti si ottiene la chiave privata",
+            "Nonce deve essere nascosto",
+            "Curva troppo semplice",
+            "Dischi cifrati rischiano blocco"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Sony usò un nonce fisso anziché random, permettendo di ricavare la chiave privata."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale modo possibile di usare gli algoritmi a blocchi?",
+        "options": [
+            "Cifra blocco poi XOR con blocco precedente",
+            "XOR con valore casuale",
+            "XOR con IV fisso",
+            "XOR con IV e blocco precedente"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "In modalità CBC, ogni blocco cifrato viene XORato con il blocco precedente (o IV per il primo)."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale affermazione sull'opzione Encrypt then Authenticate NON è vera?",
+        "options": [
+            "Migliora performance",
+            "Resistenza DoS inferiore ad A&E e AtE",
+            "Usato da IPsec",
+            "Si evita decifratura se MAC errato"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "EtA ha resistenza DoS SUPERIORE perché il MAC può essere verificato prima di decifrare."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale algoritmo di cifratura è considerato insicuro?",
+        "options": [
+            "3DES",
+            "ChaCha20",
+            "AES",
+            "DES"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "DES con chiave da 56 bit è vulnerabile a brute-force; è stato sostituito da AES."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Numero minimo di bit per chiave a prova di brute force (2023)?",
+        "options": [
+            "256",
+            "128",
+            "512",
+            "64"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "128 bit forniscono 2^128 combinazioni, computazionalmente impossibili da provare tutte."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale affermazione sul digest è vera?",
+        "options": [
+            "Efficace contro MITM",
+            "Garantisce sempre integrità e autenticazione",
+            "Garantisce integrità solo su canale sicuro",
+            "Garantisce sempre integrità",
+            "Efficace contro replay"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Il digest semplice garantisce integrità solo se trasmesso su canale sicuro; HMAC aggiunge autenticazione."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "La firma digitale:",
+        "options": [
+            "Generata da chiave privata, unica per ogni documento e utente",
+            "Garantisce solo autenticazione",
+            "Garantisce solo integrità",
+            "Stessa firma per ogni documento"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "La firma digitale è calcolata sul digest del documento con la chiave privata, quindi è unica per documento e proprietario."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "In quali applicazioni si usano funzioni di hash?",
+        "options": [
+            "Verificare integrità dati",
+            "Cifrare traffico rete",
+            "Creare firme digitali",
+            "Compressione file",
+            "Protezione info sensibili in database",
+            "Inizializzazione algoritmi asimmetrici"
+        ],
+        "correct": [
+            0,
+            2,
+            4
+        ],
+        "justification": "Gli hash servono per integrità, firme digitali e protezione password/dati sensibili nei database."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Cos'è Diffie Hellman?",
+        "options": [
+            "Primo algoritmo a chiave pubblica per concordare chiave segreta, resiste a sniffing ma vulnerabile a MITM",
+            "Primo algoritmo che resiste a MITM ma non a sniffing"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "DH permette lo scambio sicuro di chiavi su canale insicuro, ma richiede autenticazione per prevenire MITM."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Come agisce l'attacco MITM in Diffie-Hellman?",
+        "options": [
+            "Intercetta g^x e g^y, risponde con g^z, concorda chiavi separate con A e B",
+            "Intercetta g^xy ottenendo la chiave"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Il MITM si inserisce tra A e B, concordando chiavi separate con ciascuno e decifrando/ricifrando il traffico."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Per confermare validità certificato revocato molto tempo fa, quale meccanismo usare?",
+        "options": [
+            "OCSP",
+            "Nessuno",
+            "OCRL",
+            "CRL"
+        ],
+        "correct": [
+            0,
+            3
+        ],
+        "justification": "CRL e OCSP verificano lo stato di revoca; CRL è più adatto per verifiche storiche."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Affermazione vera sulla cifratura a blocchi con padding?",
+        "options": [
+            "Se multiplo esatto, non serve padding",
+            "Se non multiplo, usare parte della chiave",
+            "Se multiplo esatto, serve comunque blocco intero di padding",
+            "Se non multiplo, aggiungere caratteri casuali"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Anche se i dati sono multiplo del blocco, si aggiunge un blocco di padding per distinguere padding da dati."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Cosa rappresentano i parametri PBKDF2(PRF, PWD, Salt, C, dkLen)?",
+        "options": [
+            "Pseudorandom func, password, sale, nonce, lunghezza",
+            "Pseudo-secure func, password, sale, iterazioni, lunghezza",
+            "Chiave partenza, password, sale, lunghezza",
+            "Pseudorandom func, password, sale, numero iterazioni, lunghezza output"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "PBKDF2: PRF=funzione pseudorandom, PWD=password, Salt=sale, C=iterazioni, dkLen=lunghezza chiave output."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "In quale contesto si usa un MAC?",
+        "options": [
+            "Cifratura messaggio",
+            "Verifica integrità e autenticazione dati",
+            "Trasmissione chiavi simmetriche",
+            "Autenticazione utenti CRA asimmetrico"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Il MAC garantisce integrità (dati non modificati) e autenticazione (provenienza verificata)."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Cosa sono Twinkle e Twirl?",
+        "options": [
+            "Dispositivi in commercio per fattorizzare interi",
+            "Ipotetici dispositivi mai realizzati per fattorizzare interi, minacciando RSA"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Twinkle e Twirl sono dispositivi teorici per accelerare la fattorizzazione, probabilmente mai costruiti."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Le prestazioni crittografiche dipendono da:",
+        "options": [
+            "RAM",
+            "Hard disk veloci",
+            "CPU (architettura e instruction set)",
+            "Acceleratori crittografici (HSM)"
+        ],
+        "correct": [
+            2,
+            3
+        ],
+        "justification": "Le prestazioni dipendono dalla CPU (istruzioni AES-NI) e dagli acceleratori hardware dedicati (HSM)."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "La crittografia ECC...",
+        "options": [
+            "Lavora con logaritmo discreto",
+            "Lavora con aritmetica modulare",
+            "Si basa su problemi equivalenti al logaritmo discreto",
+            "Si basa su problemi equivalenti all'aritmetica modulare"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "ECC si basa sul problema del logaritmo discreto su curve ellittiche (ECDLP)."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Gli algoritmi a blocchi possono cifrare grandi moli di dati?",
+        "options": [
+            "Sì, usando particolari modi operativi",
+            "Sì, usando vettori di inizializzazione",
+            "Sì, usando padding",
+            "Sì, effettuando XOR"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "I modi operativi (CBC, CTR, GCM) permettono di cifrare dati di qualsiasi dimensione con algoritmi a blocchi."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Per confermare che una firma fosse valida quando il certificato era ancora valido?",
+        "options": [
+            "OCSP",
+            "OCRL",
+            "Nessuno",
+            "CRL"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "CRL contiene la data di revoca, permettendo di verificare se la firma era valida prima della revoca."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Il PKI (Public-key Infrastructure) è:",
+        "options": [
+            "Infrastruttura per decriptazione con chiave pubblica",
+            "Infrastruttura per creazione, distribuzione e revoca delle chiavi pubbliche",
+            "Infrastruttura che emette chiavi OOB",
+            "Infrastruttura per creazione, distribuzione e revoca dei certificati a chiave pubblica"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "PKI gestisce l'intero ciclo di vita dei certificati: emissione, distribuzione, rinnovo e revoca."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "È possibile ottimizzare RSA agendo sull'esponente pubblico e?",
+        "options": [
+            "Sì, scegliendo esponente con pochi bit a 1",
+            "No, il carico è nell'esponente privato"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "L'esponente pubblico 65537 (=2^16+1) ha solo 2 bit a 1, ottimizzando la cifratura."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Per evitare length extension attack, come si calcola il keyed-digest?",
+        "options": [
+            "H(K||M)",
+            "H(M||K||M)",
+            "H(K||M||K)",
+            "H(M||K)"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "H(K||M||K) previene length extension perché la chiave appare sia all'inizio che alla fine."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Lunghezza ottimale per chiave pubblica RSA oggi?",
+        "options": [
+            "1024 bit",
+            "2048 bit",
+            "512 bit"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "2048 bit è lo standard minimo; 4096 bit per alta sicurezza."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Requisiti sul vettore di inizializzazione in CBC?",
+        "options": [
+            "Solo in cifratura",
+            "Solo in decrittografia",
+            "Casuale e unico per ogni messaggio",
+            "Scelto tra insieme consigliato",
+            "Lungo come la chiave",
+            "Derivato dalla chiave",
+            "Opzionale"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "L'IV in CBC deve essere casuale e unico per garantire che messaggi uguali producano ciphertext diversi."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Come verificare la firma di un documento firmato da X?",
+        "options": [
+            "Hash del documento confrontato con decrypt della firma con chiave pubblica di X",
+            "Hash della firma confrontato con firma",
+            "Decrypt del documento confrontato con encrypt",
+            "Hash confrontato con chiave pubblica"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Si calcola l'hash del documento, si decifra la firma con la chiave pubblica e si confrontano."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Le KDF meno moderne...",
+        "options": [
+            "Password, salt, iterazioni per generare chiave con hash",
+            "Rallentano attaccante con molte iterazioni (>2000)",
+            "Usano password più lunga",
+            "Usano passphrase e salt con hash"
+        ],
+        "correct": [
+            0,
+            1
+        ],
+        "justification": "Le KDF usano iterazioni elevate per rendere costosi gli attacchi brute-force."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Caratteristica dei digest crittografici?",
+        "options": [
+            "Invertibili",
+            "Impossibile stesso digest per messaggi diversi",
+            "Dipendono da lunghezza input",
+            "Lunghezza fissa",
+            "Per autenticazione",
+            "Per confidenzialità",
+            "n bit modificati = n bit cambiati"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "I digest hanno sempre lunghezza fissa indipendentemente dalla dimensione dell'input."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Debolezze nell'uso di RSA?",
+        "options": [
+            "Esponente e=3 apre ad attacchi sniffing per ottenere plaintext",
+            "Operazioni veloci, brute-force facile",
+            "Chiave pubblica apre a molti attacchi",
+            "Elevamento a potenza vulnerabile",
+            "Social engineering per ottenere plaintext (firma messaggio cifrato)",
+            "Oracoli di decifratura"
+        ],
+        "correct": [
+            0,
+            4,
+            5
+        ],
+        "justification": "RSA è vulnerabile a: e piccolo, oracoli di decifratura e attacchi che sfruttano la malleabilità."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale affermazione è VERA su autenticazione e integrità?",
+        "options": [
+            "Crittografia asimmetrica = digital signature",
+            "Segreto condiviso utile per non ripudio",
+            "Crittografia asimmetrica lenta quindi si applica al digest",
+            "Segreto condiviso utile solo per mittente"
+        ],
+        "correct": [
+            0,
+            2
+        ],
+        "justification": "La firma digitale (asimmetrica) si applica al digest per motivi di performance."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Affermazioni sulla lunghezza del digest?",
+        "options": [
+            "2^(N/2) tentativi per collisione",
+            "2^N tentativi per trovare m' con stesso digest di m",
+            "Dipende dalla lunghezza chiave",
+            "Fissa indipendentemente dall'algoritmo",
+            "Corta (<160 bit) per efficienza",
+            "Aumenta con lunghezza messaggio"
+        ],
+        "correct": [
+            0,
+            1
+        ],
+        "justification": "Birthday attack: 2^(N/2) per collisione generica; 2^N per trovare preimage specifico."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Mitigazioni debolezze RSA?",
+        "options": [
+            "Esponente pubblico con molti bit a 1",
+            "Esponente appropriato come 65537",
+            "Concatenare chiave pubblica all'input",
+            "Due coppie di chiavi per operazione",
+            "Formattare input con sale, gestione errori generica",
+            "Una coppia per cifratura, una per firma"
+        ],
+        "correct": [
+            1,
+            4,
+            5
+        ],
+        "justification": "Best practice RSA: e=65537, padding OAEP, coppie di chiavi separate per cifratura e firma."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quando può essere revocato un certificato prima della scadenza?",
+        "options": [
+            "Autonomamente dall'issuer",
+            "Scambio CRL tra subject e RP",
+            "Su richiesta del RP",
+            "Su richiesta del titolare (subject)"
+        ],
+        "correct": [
+            0,
+            3
+        ],
+        "justification": "Il certificato può essere revocato dall'emittente (CA) o su richiesta del titolare."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Formati per certificati a chiave pubblica?",
+        "options": [
+            "PKI, X-509, SPKI, PHC",
+            "X-509, PKCS",
+            "X-509, PKCS 6, ECDSA, SPKI",
+            "X-509, SPKI, KDF, PKCS"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "X.509 e PKCS sono gli standard principali per i certificati a chiave pubblica."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Vantaggi dell'Authenticated Encryption?",
+        "options": [
+            "Un solo algoritmo per più proprietà",
+            "Riservatezza senza considerare autenticità",
+            "Solo chiavi simmetriche",
+            "Minor complessità implementazione",
+            "Minor rischio errori implementazione",
+            "Semplificazione gestione chiavi",
+            "Solo autenticità",
+            "Maggior velocità"
+        ],
+        "correct": [
+            0,
+            4,
+            7
+        ],
+        "justification": "AE (es. GCM) usa un solo algoritmo, riduce errori di implementazione ed è più veloce."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale affermazione è vera sul paradosso del compleanno?",
+        "options": [
+            "23 persone = 50% stessa data nascita per due",
+            "Tentativi per collisione digest N = 2^N",
+            "Tentativi per collisione digest N = N^2",
+            "23 persone = 50% date diverse"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Con 23 persone c'è >50% di probabilità che due condividano il compleanno; questo impatta la sicurezza hash."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Contromisure MITM in Diffie-Hellman?",
+        "options": [
+            "Garantire tracciabilità",
+            "Nessuna",
+            "Autenticare le parti con certificati/firma",
+            "Scambiare parametri su canale sicuro",
+            "Versioni DH create ad-hoc anti-MITM"
+        ],
+        "correct": [
+            2,
+            3,
+            4
+        ],
+        "justification": "DH richiede autenticazione: certificati, firma digitale o canale pre-autenticato."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Affermazioni vere sulla modalità CBC?",
+        "options": [
+            "Resistente a known-plaintext e swapping",
+            "IV riutilizzabile se segreto",
+            "Errore non propaga ai blocchi successivi",
+            "Operazioni parallelizzabili"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "CBC resiste a known-plaintext e swapping grazie al chaining; ma gli errori si propagano."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Algoritmi di crittografia asimmetrica?",
+        "options": [
+            "SHA256",
+            "Nessuna",
+            "AES",
+            "DES",
+            "Diffie-Hellman",
+            "DSA",
+            "RSA"
+        ],
+        "correct": [
+            4,
+            5,
+            6
+        ],
+        "justification": "RSA, DSA e DH sono asimmetrici; AES e DES sono simmetrici; SHA256 è hash."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale opzione descrive SHA-3?",
+        "options": [
+            "Lunghezza blocco costante",
+            "Digest fisso 128 bit",
+            "Algoritmi hash famiglia Keccak",
+            "Obsoleto"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "SHA-3 è basato sulla famiglia Keccak, completamente diversa da SHA-1 e SHA-2."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Affermazione vera sulla modalità CBC?",
+        "options": [
+            "Semplifica decifratura",
+            "Riduce dimensione cifrato",
+            "Non richiede IV",
+            "Resiste a known-plaintext attack"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "CBC trasforma ogni blocco in modo dipendente dal precedente, rendendo inefficaci gli attacchi known-plaintext."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Proprietà garantite da keyed-digest?",
+        "options": [
+            "Riservatezza e integrità",
+            "Autenticazione e non ripudio",
+            "Non ripudio e riservatezza",
+            "Integrità e autenticazione"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Il keyed-digest (MAC/HMAC) garantisce integrità e autenticazione, ma non riservatezza né non-ripudio."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale opzione descrive SHA1?",
+        "options": [
+            "Obsoleto e non più raccomandato",
+            "Lunghezza blocco variabile",
+            "Progettato per resistere a collisioni",
+            "Digest fisso 256 bit"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "SHA-1 è deprecato dal 2017 dopo la dimostrazione pratica di collisioni (SHAttered)."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Cosa si intende per Security Through Obscurity?",
+        "options": [
+            "Si ritiene qualcosa sicuro perché nascosto",
+            "Solo info sensibili devono essere offuscate",
+            "Dati difficili da leggere per scoraggiare attacchi"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "STO è un anti-pattern: la sicurezza non deve dipendere dalla segretezza del sistema ma solo della chiave."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Cosa si intende per attacco a forza bruta?",
+        "options": [
+            "Minacciare con forza per ottenere chiave",
+            "Tentare di forzare il sistema di cifratura",
+            "Tentare tutte le possibili chiavi su n bit",
+            "Usare database di chiavi comuni"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Brute force prova tutte le 2^n combinazioni possibili fino a trovare la chiave corretta."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Cosa sono gli algoritmi a blocchi?",
+        "options": [
+            "Cifrano solo blocchi diversi",
+            "Usano chiavi a blocchi",
+            "Cifrano poi suddividono in blocchi",
+            "Cifrano un blocco di dati alla volta"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Gli algoritmi a blocchi (AES, DES) processano i dati in blocchi di dimensione fissa (es. 128 bit)."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Come la crittografia asimmetrica risolve lo scambio chiavi?",
+        "options": [
+            "Cifra chiave messaggio con pubblica, decifra con privata; simmetrica veloce per dati, asimmetrica veloce per scambio",
+            "Cifra con pubblica, decifra con privata; asimmetrica veloce per dati, simmetrica veloce per scambio",
+            "Cifra per autenticazione, simmetrica per dati"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "L'asimmetrica è usata per scambiare la chiave simmetrica che poi cifra i dati (più veloce)."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Cosa sono gli algoritmi asimmetrici?",
+        "options": [
+            "2 chiavi, privata e pubblica, per distribuzione chiavi o firme, carico elevato",
+            "2 chiavi per cifratura pacchetti, carico basso",
+            "2 chiavi, carico comparabile al simmetrico"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "La crittografia asimmetrica è computazionalmente costosa, usata per scambio chiavi e firme."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Cosa sono gli algoritmi ARX?",
+        "options": [
+            "Innovativi in sperimentazione",
+            "Solo addizione, rotazione e XOR",
+            "Solo addizione, rotazione e moltiplicazione",
+            "Dividono dati in blocchi",
+            "Solo XOR, rotazione e moltiplicazione"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "ARX = Addition, Rotation, XOR. Usati in algoritmi come ChaCha20 per efficienza su CPU."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Come verificare un certificato firmato da CA1?",
+        "options": [
+            "Verificare attributi PKI, formato X.509, Qualified",
+            "Validità crittografica fino a TLCA esplicitamente fidata",
+            "Validità senza proseguire catena",
+            "Certificato non scaduto e emesso da TLCA fidata"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "La validazione richiede di attraversare tutta la catena di certificati fino a una root CA fidata."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Cosa enuncia il principio di Kerckhoffs?",
+        "options": [
+            "Nascondere quante più informazioni possibili",
+            "Proprietà indipendenti dall'algoritmo",
+            "Sicurezza basata solo sulla chiave, algoritmo pubblico",
+            "Sicurezza assoluta se dati cifrati nascosti"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Kerckhoffs: la sicurezza deve dipendere solo dalla segretezza della chiave, non dell'algoritmo."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Come verificare integrità con keyed-digest ricevuto?",
+        "options": [
+            "Digest come IV",
+            "Ricalcolare digest di messaggio+segreto e confrontare",
+            "Digest come chiave per decifrare",
+            "Confrontare con IV",
+            "Confrontare con messaggio decifrato"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Si ricalcola il MAC sullo stesso messaggio con lo stesso segreto e si confronta con quello ricevuto."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Come ottenere riservatezza senza segreti condivisi (asimmetrica)?",
+        "options": [
+            "Cifra con pubblica, invia con privata cifrata",
+            "Cifra con pubblica del destinatario, solo lui può decifrare con privata"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Cifrando con la chiave pubblica del destinatario, solo lui può decifrare con la sua privata."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Come viene usato il Teorema Cinese del Resto (CRT) con RSA?",
+        "options": [
+            "Aumenta sicurezza con più livelli",
+            "Velocizza di fattore 10 su insiemi più piccoli",
+            "Velocizza di fattore 4 su insiemi più piccoli"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "CRT accelera RSA di circa 4x permettendo di operare separatamente su mod p e mod q."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Come dovrebbe avvenire la distribuzione delle chiavi simmetriche?",
+        "options": [
+            "OOB dato che scadono raramente e sono poche",
+            "Tramite algoritmi di scambio, dato numero elevato di chiavi e scadenze"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Con N utenti servono N(N-1)/2 chiavi; lo scambio deve essere automatizzato."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Come vengono generate le chiavi asimmetriche?",
+        "options": [
+            "Random e indipendenti ma si annullano",
+            "Indipendenti ma legate da funzionalità reciproca",
+            "Generate a coppia, legate matematicamente"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Le chiavi asimmetriche sono generate insieme con relazione matematica (es. RSA: n, e, d)."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Cosa si intende per crittografia simmetrica?",
+        "options": [
+            "Chiave destinatario = operazione simmetrica su chiave mittente",
+            "Cifratura e decifratura con stessa chiave",
+            "Chiavi differenti per cifratura e decifratura",
+            "Mittente genera chiave del destinatario"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Simmetrica = stessa chiave per cifrare e decifrare (AES, ChaCha20)."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Che cosa è un certificato a chiave pubblica?",
+        "options": [
+            "Lega chiave privata e attributi, firma CA, scadenza, revocabile da utente e emettitore",
+            "Lega chiave pubblica, firma CA, scadenza, revocabile solo da emettitore",
+            "Lega chiave pubblica, firma CA, scadenza, revocabile solo da utente",
+            "Lega chiave pubblica e attributi, firma CA, scadenza, revocabile da utente e emettitore"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Un certificato lega identità a chiave pubblica, firmato da CA, con scadenza e possibilità di revoca."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Cosa sono gli algoritmi di tipo stream?",
+        "options": [
+            "Richiedono blocchi 128/256 bit",
+            "Superati e obsoleti",
+            "Operano su flusso di dati, un bit/byte alla volta",
+            "Generano digest"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Gli stream cipher (RC4, ChaCha20) cifrano un elemento alla volta, ideali per streaming."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Come ottenere autenticazione e integrità con crittografia asimmetrica?",
+        "options": [
+            "Mittente cifra con pubblica, destinatario decifra privata; autore riconosciuto",
+            "Mittente cifra digest con privata, destinatario verifica con pubblica e confronta digest",
+            "Mittente cifra con privata, destinatario decifra con pubblica"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "La firma digitale: hash del messaggio cifrato con chiave privata, verificato con pubblica."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Cosa significa cifrare?",
+        "options": [
+            "Chiave → testo comprensibile, aumenta entropia",
+            "Chiave → testo incomprensibile, diminuisce entropia",
+            "Chiave → testo comprensibile, diminuisce entropia",
+            "Chiave → testo incomprensibile, aumenta entropia"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Cifrare trasforma dati in forma incomprensibile con alta entropia (apparentemente casuali)."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Come funziona l'autenticazione con cifratura asimmetrica?",
+        "options": [
+            "Destinatario calcola hash, decifra firma con privata del mittente",
+            "Mittente calcola digest con privata, cifra con hash",
+            "Destinatario calcola hash, decifra firma con pubblica del mittente",
+            "Mittente calcola digest, cifra con propria privata, trasmette con firma"
+        ],
+        "correct": [
+            2,
+            3
+        ],
+        "justification": "Mittente firma il digest con la sua privata; destinatario verifica con la pubblica del mittente."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quando una stringa è detta pseudocasuale?",
+        "options": [
+            "Sembra casuale ma più facile da indovinare",
+            "Indistinguibile da stringa realmente casuale",
+            "Casuale ma sotto certa entropia"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Pseudocasuale = computazionalmente indistinguibile da truly random per un osservatore."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "ChaCha20 è una versione migliorata di Salsa20?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "ChaCha20 è una variante di Salsa20 con migliore diffusione e resistenza alla crittoanalisi."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Risolvendo quale problema matematico si viola RSA?",
+        "options": [
+            "Logaritmo discreto di q in base n per trovare p",
+            "Fattorizzazione di n in p e q"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "RSA si basa sulla difficoltà di fattorizzare n=p*q in numeri primi grandi."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "RC4 è ancora sicuro e usato oggi?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "RC4 è deprecato per multiple vulnerabilità; TLS ne proibisce l'uso dal 2015."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "L'IV è un valore segreto?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "L'IV non deve essere segreto, solo unico/imprevedibile. Può essere trasmesso in chiaro."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Il CBC può garantire cifratura sicura in un video?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "CBC può cifrare video in modo sicuro, a differenza di ECB che lascerebbe pattern visibili."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Gli algoritmi asimmetrici risparmiano memoria per le chiavi?",
+        "options": [
+            "No, richiedono chiavi più lunghe per stessa sicurezza",
+            "Sì, richiedono chiavi più corte"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "RSA 2048 bit ≈ AES 112 bit in sicurezza; l'asimmetrica richiede chiavi molto più lunghe."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Su cosa è basata la crittografia simmetrica?",
+        "options": [
+            "Coppia chiavi, privata e pubblica, per ogni coppia utenti",
+            "Coppia chiavi segrete per ogni coppia utenti",
+            "Singola chiave segreta per ogni coppia utenti",
+            "Più chiavi, alcune private alcune pubbliche"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Ogni coppia di utenti condivide una singola chiave segreta."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "L'ECB può garantire cifratura sicura in un video?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "ECB cifra blocchi identici in modo identico, lasciando pattern visibili nei video."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Sistemi ECC sono più sicuri se:",
+        "options": [
+            "Numeri random stabiliti prima dello scambio",
+            "Curve validate dal NIST",
+            "Due curve con punto ciascuna",
+            "Chiavi come medie 2D"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Le curve NIST sono validate e standardizzate; curve arbitrary potrebbero nascondere debolezze."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Formato 'enveloped signature' (PDF)?",
+        "options": [
+            "Firma incapsulata nel contenuto del documento",
+            "Documento incapsulato in signed data (CMS)",
+            "Documento incapsulato (formato CMS)",
+            "Formati obsoleti"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Nel formato enveloped (es. PDF) la firma è incorporata direttamente nel documento."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Cos'è un HSM?",
+        "options": [
+            "Dispositivo per calcolo firma",
+            "Dispositivo che memorizza chiavi private",
+            "Dispositivo che memorizza chiavi private e permette operazioni con esse",
+            "Software per verificare sicurezza hardware"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "HSM memorizza chiavi private in hardware sicuro e esegue operazioni crittografiche senza esporle."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Affermazioni sui documenti digitali?",
+        "options": [
+            "Documenti elettronici sottoinsieme di digitali",
+            "Archiviazione lungo termine = algoritmi resistenti",
+            "Usabilità/leggibilità = lettura documento e verifica firma",
+            "Non necessaria archiviazione lungo termine",
+            "Integrità e autenticazione autore"
+        ],
+        "correct": [
+            1,
+            2,
+            4
+        ],
+        "justification": "Documenti digitali sicuri richiedono: integrità, autenticazione, leggibilità nel tempo, algoritmi resistenti."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale NON è un formato standard di firma elettronica?",
+        "options": [
+            "XAdES",
+            "CAdES",
+            "HAdES",
+            "PAdES"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "HAdES non esiste. I formati standard sono: XAdES (XML), CAdES (CMS), PAdES (PDF)."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale affermazione sulle firme digitali è FALSA?",
+        "options": [
+            "Firma parallela certifica solo documento",
+            "Firma richiede time-stamping (TSA)",
+            "Firma gerarchica certifica anche processo",
+            "Firme usate per integrità at rest, transit e autenticazione",
+            "Firme solo sequenziali per certificare processo",
+            "Firme applicabili in modo gerarchico e parallelo"
+        ],
+        "correct": [
+            4
+        ],
+        "justification": "Le firme possono essere sia parallele (indipendenti) che gerarchiche (sequenziali)."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Caratteristiche di un Qualified Certificate?",
+        "options": [
+            "Indica esplicitamente di essere QC, può includere limitazioni",
+            "Emesso da organizzazione governativa, solo nome senza limitazioni",
+            "Attributi opzionali, deve includere limitazioni",
+            "Emesso da CA, solo nome senza limitazioni"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Un QC deve dichiarare esplicitamente di essere qualified e può avere restrizioni d'uso."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quale affermazione su AES e QES è FALSA?",
+        "options": [
+            "AES richiede mezzi crittografici sicuri per chiavi",
+            "AES richiede identificazione univoca firmatario",
+            "AES usa algoritmi robusti",
+            "QES basata su QC e dispositivo firma sicuro",
+            "QES non utilizzabile come prova in tribunale"
+        ],
+        "correct": [
+            4
+        ],
+        "justification": "QES ha pieno valore legale (eIDAS); anzi, è l'unica con equivalenza alla firma autografa."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "È possibile firmare documenti con macro senza problemi?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Le macro possono modificare il documento dopo la firma, invalidandola o causando problemi."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Quali NON sono caratteristiche di un algoritmo di cifratura?",
+        "options": [
+            "Tipologia",
+            "Lunghezza chiave",
+            "Data generazione chiave",
+            "IP dispositivo generatore",
+            "Computazione seriale/parallela",
+            "MAC dispositivo generatore"
+        ],
+        "correct": [
+            2,
+            3,
+            5
+        ],
+        "justification": "Data, IP e MAC del dispositivo non sono caratteristiche dell'algoritmo ma metadati di implementazione."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Algoritmi a chiave pubblica rilevanti?",
+        "options": [
+            "RSA (fattorizzazione) per segretezza e firma",
+            "DSA (logaritmo discreto) per firma",
+            "AES (curve ellittiche) per segretezza",
+            "DES (logaritmo quadratico) per segretezza e firma"
+        ],
+        "correct": [
+            0,
+            1
+        ],
+        "justification": "RSA e DSA sono asimmetrici; AES e DES sono simmetrici."
+    },
+    {
+        "module": "Crittografia e Documenti Digitali",
+        "question": "Affermazioni su CRL e OCSP?",
+        "options": [
+            "CRL = elenco certificati revocati firmato da CA",
+            "OCSP = risposta firmata sullo stato di validità al momento della richiesta",
+            "OCSP = risposta stato all'emissione",
+            "CRL = elenco certificati validi"
+        ],
+        "correct": [
+            0,
+            1
+        ],
+        "justification": "CRL contiene i revocati; OCSP fornisce stato real-time di un singolo certificato."
+    }
+]

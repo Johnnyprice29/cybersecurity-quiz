@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Cybersecurity Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --primary: #38bdf8;
+            --secondary: #818cf8;
+            --accent: #f472b6;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --correct: #22c55e;
+            --incorrect: #ef4444;
+            --warning: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Glassmorphism Header */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .module-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(56, 189, 248, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .module-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .module-card:hover::before {
+            opacity: 1;
+        }
+
+        .module-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            z-index: 1;
+        }
+
+        .module-card .stats {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            z-index: 1;
+        }
+
+        /* Quiz UI */
+        #quiz-view {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .q-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .q-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .q-badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .q-text {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option-item {
+            padding: 18px 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+        }
+
+        .option-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .option-item.selected {
+            border-color: var(--primary);
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        .checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--text-dim);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .option-item.selected .checkbox {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .option-item.selected .checkbox::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        /* Verification colors */
+        .option-item.correct {
+            border-color: var(--correct);
+            background: rgba(34, 197, 94, 0.1);
+        }
+
+        .option-item.incorrect {
+            border-color: var(--incorrect);
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .justif-box {
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(34, 197, 94, 0.05);
+            border-left: 4px solid var(--correct);
+            border-radius: 12px;
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .justif-box h4 {
+            color: var(--correct);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 14px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: #334155;
+            color: white;
+        }
+
+        /* Score Overlay */
+        #results-view {
+            display: none;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 8px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--primary);
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        #loading-view {
+            text-align: center;
+            padding: 100px;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .badge-multi {
+            background: var(--warning);
+            color: #000;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px 10px;
+            }
+
+            header {
+                padding: 25px 15px;
+                margin-bottom: 25px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .module-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .q-card {
+                padding: 20px;
+                border-radius: 16px;
+            }
+
+            .q-text {
+                font-size: 1.1rem;
+            }
+
+            .option-item {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+
+            .score-circle {
+                width: 150px;
+                height: 150px;
+                font-size: 2.5rem;
+            }
+
+            #history-overlay {
+                padding: 10px;
+            }
+
+            .btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Security Insights Panel */
+        .security-probe {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px dashed var(--incorrect);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-align: left;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .security-probe:hover {
+            opacity: 1;
+        }
+
+        .security-probe h5 {
+            color: var(--incorrect);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-shield-halved"></i> Cybersecurity Master</h1>
+            <p style="color: var(--text-dim);">Integrated Exam Preparation System</p>
+        </header>
+
+        <div id="loading-view">
+            <i class="fas fa-spinner fa-spin"></i> Analisi domande...
+        </div>
+
+        <div id="search-container" style="margin-bottom: 30px;">
+            <div style="position: relative; max-width: 600px; margin: 0 auto;">
+                <i class="fas fa-search"
+                    style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--text-dim);"></i>
+                <input type="text" id="module-search" placeholder="Cerca modulo..." oninput="filterModules()"
+                    style="width: 100%; padding: 15px 15px 15px 50px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: var(--card-bg); color: #fff; font-size: 1rem;">
+            </div>
+        </div>
+
+        <div id="home-view" class="module-grid"></div>
+
+        <div id="quiz-view">
+            <!-- Progress Bar -->
+            <div
+                style="width: 100%; height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; margin-bottom: 25px; overflow: hidden;">
+                <div id="progress-fill"
+                    style="width: 0%; height: 100%; background: linear-gradient(to right, var(--primary), var(--secondary)); transition: width 0.3s ease;">
+                </div>
+            </div>
+
+            <!-- Live Stats -->
+            <div class="live-stats"
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 0 5px;">
+                <div style="display: flex; gap: 15px;">
+                    <span style="color: var(--correct); font-weight: 600;"><i class="fas fa-check-circle"></i> <span
+                            id="live-correct">0</span></span>
+                    <span style="color: var(--incorrect); font-weight: 600;"><i class="fas fa-times-circle"></i> <span
+                            id="live-incorrect">0</span></span>
+                </div>
+                <button class="btn btn-secondary" onclick="toggleHistory()"
+                    style="padding: 5px 12px; font-size: 0.8rem; background: rgba(255,255,255,0.1);">
+                    Cronologia <i class="fas fa-history"></i>
+                </button>
+            </div>
+
+            <div class="q-card">
+                <div class="q-meta">
+                    <span class="q-badge" id="m-name">Modulo</span>
+                    <span id="multi-badge" class="q-badge badge-multi" style="display:none;">Multipla</span>
+                    <span class="q-badge" id="q-progress">1 / 10</span>
+                </div>
+                <div class="q-text" id="question-text"></div>
+                <div class="options-list" id="options-container"></div>
+
+                <div class="justif-box" id="justification-box">
+                    <h4><i class="fas fa-circle-info"></i> Giustificazione</h4>
+                    <p id="justification-text"></p>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-secondary" onclick="exitQuiz()"><i class="fas fa-house"></i> Esci</button>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn btn-secondary" id="clear-btn" onclick="clearSelection()"
+                        style="display:none;">Cancella</button>
+                    <button class="btn btn-primary" id="action-btn" onclick="handleAction()" disabled>Verifica <i
+                            class="fas fa-check"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="history-overlay"
+            style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; padding: 20px; overflow-y: auto;">
+            <div
+                style="max-width: 800px; margin: 0 auto; background: var(--bg); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); padding: 30px; position: relative;">
+                <button onclick="toggleHistory()"
+                    style="position: absolute; right: 20px; top: 20px; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2 style="margin-bottom: 25px;"><i class="fas fa-history"></i> Cronologia Risposte</h2>
+                <div id="history-content"></div>
+            </div>
+        </div>
+
+        <div id="results-view">
+            <div class="score-circle" id="final-score-val">0%</div>
+            <h2 style="font-size: 2rem; margin-bottom: 10px;">Quiz Completato!</h2>
+            <p id="final-score-text" style="color: var(--text-dim); margin-bottom: 30px;"></p>
+
+            <div id="results-breakdown"
+                style="max-width: 600px; margin: 0 auto 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                <!-- Filled via JS -->
+            </div>
+
+            <button class="btn btn-primary" onclick="exitQuiz()" style="margin: 0 auto;">Torna alla Home</button>
+        </div>
+
+        <!-- Educational Security Probe -->
+        <footer id="security-footer" class="security-probe">
+            <h5><i class="fas fa-user-secret"></i> Security Insight (Educational)</h5>
+            <p>In un contesto di Cybersecurity, è importante sapere quali dati un sito può raccogliere passivamente:</p>
+            <div id="probe-data" style="font-family: monospace; line-height: 1.4; margin-top: 10px;">
+                <!-- Filled via JS -->
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // DATA CORRECTION LOGIC - Comprehensive fixes for quiz_data2.json
+        // Many questions have incorrect indices (likely due to 1-based to 0-based conversion issues)
+        function patchData(data) {
+            data.forEach(q => {
+                const j = (q.justification || "").toLowerCase();
+                const text = q.question.toLowerCase();
+                const opt0 = (q.options[0] || "").toLowerCase();
+                const opt1 = (q.options[1] || "").toLowerCase();
+                const opt2 = (q.options[2] || "").toLowerCase();
+                const opt3 = (q.options[3] || "").toLowerCase();
+
+                // Normalize Module Titles
+                const mLower = q.module.toLowerCase();
+                if (mLower.includes("01_") || mLower.includes("introduzione")) q.module = "01. Introduzione";
+                else if (mLower.includes("02_") || mLower.includes("sicurezza in azienda")) q.module = "02. Sicurezza in Azienda";
+                else if (mLower.includes("03_") || mLower.includes("crittografia")) q.module = "03. Crittografia e Documenti Digitali";
+                else if (mLower.includes("04_") || mLower.includes("autenticazione")) q.module = "04. Autenticazione";
+                else if (mLower.includes("05_") || mLower.includes("accessi remoti")) q.module = "05. Accessi Remoti";
+                else if (mLower.includes("06_") || mLower.includes("sicurezza reti")) q.module = "06. Sicurezza Reti (IPsec, VPN, DNS, TCP)";
+                else if (mLower.includes("07") || mLower.includes("canale") || mLower.includes("messaggio")) {
+                    if (mLower.includes("messaggio")) q.module = "07b. Sicurezza di Messaggio (S/MIME, PGP, XML Sig)";
+                    else q.module = "07a. Sicurezza di Canale (SSL, TLS, IPsec, SSH)";
+                }
+                else if (mLower.includes("08_") || mLower.includes("firewall")) q.module = "08. Firewall";
+                else if (mLower.includes("09_") || mLower.includes("standard e gdpr")) q.module = "09. Standard e GDPR";
+                else if (mLower.includes("10_") || mLower.includes("domande avanzate")) q.module = "10. Domande Avanzate";
+                else if (mLower.includes("11_") || mLower.includes("domande finali")) q.module = "11. Domande Finali";
+
+                // ===== INTRODUZIONE ALLA SICUREZZA INFORMATICA =====
+
+                // Worm definition - correct answer is autonomous replication
+                if (text.includes("che cosa è un worm") && opt0.includes("propagato dagli umani")) {
+                    q.correct = [1]; // "satura le risorse replicandosi autonomamente"
+                }
+
+                // Shadow Server - correct is "elaboratore che si pone come fornitore"
+                if (text.includes("shadow server") && text.includes("intende") && opt0.includes("lettura dei dati")) {
+                    q.correct = [2];
+                }
+
+                // IP Spoofing contromisure - non usare indirizzi per autenticazione
+                if (text.includes("contromisure") && text.includes("ip spoofing") && opt0.includes("cifrare l'header")) {
+                    q.correct = [2]; // "Non usare mai gli indirizzi per autenticazione"
+                }
+
+                // Security by Default definition - configurazioni sicure di default
+                if (text.includes("security by default") && text.includes("implica") && opt0.includes("design iniziale")) {
+                    q.correct = [3]; // "Configurare i sistemi in modo che siano sicuri in partenza"
+                }
+
+                // MITM altera valore - Integrità modifica
+                if (text.includes("mitm") && text.includes("altera il valore") && opt0.includes("cancellazione")) {
+                    q.correct = [2]; // "Integrità – modifica"
+                }
+
+                // Phishing definition - cattura credenziali
+                if (text.includes("in cosa consiste il phishing") && opt0.includes("mirato a persone importanti")) {
+                    q.correct = [2]; // "Un attacco per catturare credenziali..."
+                }
+
+                // DoS vs DDoS
+                if (text.includes("dos") && text.includes("ddos") && text.includes("differenza") && opt0.includes("casualmente")) {
+                    q.correct = [1]; // "Il DDoS sfrutta la potenza di calcolo di risorse sparse"
+                }
+
+                // Autorizzazione definition
+                if (text.includes("definizione di autorizzazione") && opt0.includes("leggere o meno un file")) {
+                    q.correct = [3]; // "L'insieme di procedure per garantire l'accesso"
+                }
+
+                // Replay attack
+                if (text.includes("replay") && opt0.includes("alterazione") && opt3.includes("registrazione")) {
+                    q.correct = [3]; // "registrazione e riproduzione"
+                }
+
+                // Need-to-know vs Least privilege
+                if (text.includes("need-to-know") && text.includes("least privilege") && q.options.length >= 6) {
+                    q.correct = [1, 5]; // NIST definitions
+                }
+
+                // Attori (Verizon) - tutte le risposte
+                if (text.includes("attori") && text.includes("verizon") && opt1.includes("tutte le risposte")) {
+                    q.correct = [1];
+                }
+
+                // ===== Preserved original fixes =====
+                if (text.includes("phishing") && text.includes("whaling") && text.includes("differenza")) q.correct = [1];
+                if (text.includes("primo assioma")) q.correct = [1];
+                if (text.includes("motivazioni") && text.includes("sicurezza informatica") && q.options.length > 5) q.correct = [2, 3, 4];
+                if (text.includes("definizione") && text.includes("security by design") && opt1.includes("fin dal principio")) q.correct = [1];
+                if (text.includes("che cosa si intende per packet sniffing") && q.options.length === 4) q.correct = [3];
+                if (text.includes("principali tipi di attacco") && text.includes("cause") && q.options.length === 10) q.correct = [1, 3, 6, 7, 8];
+                if (text.includes("mirai") && text.includes("debolezza") && q.options.length === 3) q.correct = [2];
+                if (text.includes("non ripudio") && text.includes("intende") && q.options.length === 3) q.correct = [1];
+                if (text.includes("rootkit") && q.options.length === 3) q.correct = [2];
+                if (text.includes("in cosa consiste il social engineering") && q.options.length === 3) q.correct = [0];
+                if (text.includes("least privilege") && text.includes("intende") && q.options.length === 3) q.correct = [1];
+                if (text.includes("wannacry") && text.includes("ransomware")) q.correct = [0];
+
+                // ===== SICUREZZA IN AZIENDA =====
+                // ... add more modules as needed
+
+                // ===== CRITTOGRAFIA =====
+                // ... 
+
+                // ===== Ensure 'correct' is always array =====
+                if (!Array.isArray(q.correct)) q.correct = [q.correct];
+
+                // Filter out any invalid indices
+                q.correct = q.correct.filter(idx => idx >= 0 && idx < q.options.length);
+            });
+            return data;
+        }
+
+        let allData = [];
+        let currentQuiz = [];
+        let qIdx = 0;
+        let userScore = 0;
+        let state = 'answering'; // answering, verified
+        let selectedIndices = new Set();
+        let quizHistory = [];
+
+        async function init() {
+            try {
+                const moduleFiles = [
+                    '01_introduzione.json',
+                    '02_sicurezza_azienda.json',
+                    '03_crittografia.json',
+                    '04_autenticazione.json',
+                    '05_accessi_remoti.json',
+                    '06_sicurezza_reti.json',
+                    '07_sicurezza_canale_messaggio.json',
+                    '08_firewall.json',
+                    '09_standard_gdpr.json',
+                    '10_domande_avanzate.json', '11_domande_finali.json'
+                ];
+
+                const loadPromises = moduleFiles.map(file =>
+                    fetch(`json_modules/${file}`).then(res => {
+                        if (!res.ok) throw new Error(`File ${file} non trovato`);
+                        return res.json();
+                    })
+                );
+
+                const results = await Promise.all(loadPromises);
+                const raw = results.flat();
+
+                allData = patchData(raw);
+                renderHome();
+                renderSecurityProbe();
+                document.getElementById('loading-view').style.display = 'none';
+            } catch (e) {
+                console.error(e);
+                document.getElementById('loading-view').innerHTML = `
+                    <div style="color: var(--incorrect); padding: 20px;">
+                        <i class="fas fa-exclamation-triangle fa-2xl"></i><br><br>
+                        Errore caricamento dati.<br>
+                        <small>Errore: ${e.message}<br>
+                        Assicurati che la cartella <b>json_modules</b> contenga tutti i file .json e sia servita da un web server.</small>
+                    </div>`;
+            }
+        }
+
+        function filterModules() {
+            const term = document.getElementById('module-search').value.toLowerCase();
+            renderHome(term);
+        }
+
+        function renderHome(filter = "") {
+            const container = document.getElementById('home-view');
+            container.innerHTML = '';
+
+            // Random Card First
+            if (!filter) {
+                const rCard = document.createElement('div');
+                rCard.className = 'module-card';
+                rCard.style.border = '2px solid var(--accent)';
+                rCard.innerHTML = `
+                    <div style="display:flex; align-items:center; gap:15px;">
+                        <div style="font-size: 2.5rem;">🎲</div>
+                        <div>
+                            <h3>Random Mix</h3>
+                            <div class="stats">20 domande casuali da tutti i moduli</div>
+                        </div>
+                    </div>
+                `;
+                rCard.onclick = () => startQuiz('Random');
+                container.appendChild(rCard);
+            }
+
+            const modules = [...new Set(allData.map(d => d.module))].sort().filter(m => m.toLowerCase().includes(filter));
+
+            modules.forEach(m => {
+                const count = allData.filter(d => d.module === m).length;
+                const card = document.createElement('div');
+                card.className = 'module-card';
+                card.innerHTML = `
+                    <div>
+                        <h3>${m}</h3>
+                        <div class="stats">${count} domande disponibili</div>
+                    </div>
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                        <button class="btn btn-primary" onclick="event.stopPropagation(); startQuiz('${m}')" style="padding: 8px 12px; font-size: 0.8rem; flex: 1;">Completo</button>
+                        ${count > 20 ? `<button class="btn btn-secondary" onclick="event.stopPropagation(); startQuiz('${m}', 20)" style="padding: 8px 12px; font-size: 0.8rem; flex: 1; background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid var(--primary);">Random 20</button>` : ''}
+                    </div>
+                `;
+                card.onclick = () => startQuiz(m);
+                container.appendChild(card);
+            });
+
+            document.getElementById('home-view').style.display = 'grid';
+            document.getElementById('quiz-view').style.display = 'none';
+            document.getElementById('results-view').style.display = 'none';
+            document.getElementById('search-container').style.display = 'block';
+
+            // Set header title back to default
+            document.querySelector('header h1').innerHTML = '<i class="fas fa-shield-halved"></i> Cybersecurity Master';
+        }
+
+        function startQuiz(moduleName, limit = null) {
+            if (moduleName === 'Random') {
+                currentQuiz = [...allData].sort(() => 0.5 - Math.random()).slice(0, 20);
+                document.querySelector('header h1').innerHTML = '<i class="fas fa-shuffle"></i> Random Mix';
+            } else if (moduleName === 'RetryErrors') {
+                const errors = quizHistory.filter(h => !h.correct);
+                currentQuiz = allData.filter(d => errors.some(e => e.question === d.question)).sort(() => 0.5 - Math.random());
+                document.querySelector('header h1').innerHTML = '<i class="fas fa-arrows-rotate"></i> Raffinamento Errori';
+            } else {
+                let filtered = allData.filter(d => d.module === moduleName).sort(() => 0.5 - Math.random());
+                if (limit) filtered = filtered.slice(0, limit);
+                currentQuiz = filtered;
+                document.querySelector('header h1').innerHTML = `<i class="fas fa-folder-open"></i> ${moduleName}`;
+            }
+            qIdx = 0;
+            userScore = 0;
+            quizHistory = [];
+
+            // Reset Live Stats
+            document.getElementById('live-correct').innerText = '0';
+            document.getElementById('live-incorrect').innerText = '0';
+
+            document.getElementById('search-container').style.display = 'none';
+            document.getElementById('home-view').style.display = 'none';
+            document.getElementById('quiz-view').style.display = 'block';
+            document.getElementById('results-view').style.display = 'none';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            state = 'answering';
+            selectedIndices.clear();
+            const q = currentQuiz[qIdx];
+
+            // Randomize Options Order
+            if (!q.shuffledOptions) {
+                q.shuffledOptions = q.options.map((opt, i) => ({ text: opt, originalIndex: i }))
+                    .sort(() => 0.5 - Math.random());
+            }
+
+            // Progress Bar
+            const progPct = ((qIdx) / currentQuiz.length) * 100;
+            document.getElementById('progress-fill').style.width = progPct + '%';
+
+            document.getElementById('m-name').innerText = q.module;
+            document.getElementById('q-progress').innerText = `${qIdx + 1} / ${currentQuiz.length}`;
+            document.getElementById('question-text').innerText = q.question;
+            document.getElementById('justification-box').style.display = 'none';
+            document.getElementById('multi-badge').style.display = q.correct.length > 1 ? 'inline-block' : 'none';
+            document.getElementById('clear-btn').style.display = 'none';
+
+            const list = document.getElementById('options-container');
+            list.innerHTML = '';
+
+            q.shuffledOptions.forEach((optObj, i) => {
+                const item = document.createElement('div');
+                item.className = 'option-item';
+                item.innerHTML = `
+                    <div class="checkbox"></div>
+                    <div>${optObj.text}</div>
+                `;
+                item.onclick = () => toggleOption(i, item);
+                list.appendChild(item);
+            });
+
+            const btn = document.getElementById('action-btn');
+            btn.innerHTML = 'Verifica <i class="fas fa-check"></i>';
+            btn.className = 'btn btn-primary';
+            btn.disabled = true;
+        }
+
+        function toggleOption(idx, el) {
+            if (state !== 'answering') return;
+
+            const isMulti = currentQuiz[qIdx].correct.length > 1;
+
+            if (!isMulti) {
+                document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
+                selectedIndices.clear();
+            }
+
+            if (selectedIndices.has(idx)) {
+                selectedIndices.delete(idx);
+                el.classList.remove('selected');
+            } else {
+                selectedIndices.add(idx);
+                el.classList.add('selected');
+            }
+
+            document.getElementById('clear-btn').style.display = selectedIndices.size > 0 ? 'inline-block' : 'none';
+            document.getElementById('action-btn').disabled = selectedIndices.size === 0;
+        }
+
+        function clearSelection() {
+            if (state !== 'answering') return;
+            selectedIndices.clear();
+            document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
+            document.getElementById('clear-btn').style.display = 'none';
+            document.getElementById('action-btn').disabled = true;
+        }
+
+        function handleAction() {
+            if (state === 'answering') {
+                if (selectedIndices.size === 0) return;
+                verify();
+            } else {
+                qIdx++;
+                if (qIdx < currentQuiz.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            }
+        }
+
+        function verify() {
+            state = 'verified';
+            const q = currentQuiz[qIdx];
+            const correctSet = new Set(q.correct);
+
+            const userOriginalIndices = Array.from(selectedIndices).map(i => q.shuffledOptions[i].originalIndex).sort();
+            const correctArr = Array.from(correctSet).sort();
+
+            const isFullyCorrect = JSON.stringify(userOriginalIndices) === JSON.stringify(correctArr);
+
+            quizHistory.push({
+                question: q.question,
+                module: q.module,
+                correct: isFullyCorrect,
+                userAnswers: userOriginalIndices,
+                correctAnswers: correctArr,
+                options: q.options,
+                justification: q.justification
+            });
+
+            if (isFullyCorrect) {
+                userScore++;
+            }
+
+            // Update Live Stats
+            document.getElementById('live-correct').innerText = userScore;
+            document.getElementById('live-incorrect').innerText = quizHistory.length - userScore;
+
+            // Highlight
+            const items = document.querySelectorAll('.option-item');
+            items.forEach((item, i) => {
+                item.classList.remove('selected');
+                const origIdx = q.shuffledOptions[i].originalIndex;
+                if (correctSet.has(origIdx)) {
+                    item.classList.add('correct');
+                } else if (selectedIndices.has(i)) {
+                    item.classList.add('incorrect');
+                }
+            });
+
+            document.getElementById('justification-text').innerText = q.justification || "Nessuna giustificazione disponibile.";
+            document.getElementById('justification-box').style.display = 'block';
+            document.getElementById('clear-btn').style.display = 'none';
+
+            const btn = document.getElementById('action-btn');
+            btn.innerHTML = (qIdx < currentQuiz.length - 1) ? 'Prossima <i class="fas fa-arrow-right"></i>' : 'Fine <i class="fas fa-flag-checkered"></i>';
+            btn.disabled = false;
+        }
+
+        function toggleHistory() {
+            const overlay = document.getElementById('history-overlay');
+            if (overlay.style.display === 'none') {
+                renderHistory();
+                overlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            } else {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function renderHistory() {
+            const container = document.getElementById('history-content');
+            container.innerHTML = '';
+
+            if (quizHistory.length === 0) {
+                container.innerHTML = '<p style="color: var(--text-dim);">Ancora nessuna risposta data.</p>';
+                return;
+            }
+
+            [...quizHistory].reverse().forEach((res, i) => {
+                const card = document.createElement('div');
+                card.style.background = 'rgba(255,255,255,0.03)';
+                card.style.borderLeft = `4px solid ${res.correct ? 'var(--correct)' : 'var(--incorrect)'}`;
+                card.style.padding = '15px';
+                card.style.borderRadius = '8px';
+                card.style.marginBottom = '15px';
+                card.style.cursor = 'pointer';
+
+                const contentId = `history-item-${i}`;
+                card.onclick = () => {
+                    const el = document.getElementById(contentId);
+                    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+                };
+
+                card.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                        <div>
+                            <div style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 5px;">${res.module}</div>
+                            <div style="font-weight: 600; margin-bottom: 5px;">${res.question}</div>
+                            <div style="font-size: 0.9rem;">
+                                <span style="color: ${res.correct ? 'var(--correct)' : 'var(--incorrect)'};">
+                                    <i class="fas ${res.correct ? 'fa-check' : 'fa-times'}"></i> 
+                                    ${res.correct ? 'Corretta' : 'Errata'}
+                                </span>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-down" style="color: var(--text-dim); margin-top: 5px;"></i>
+                    </div>
+                    <div id="${contentId}" style="${res.correct ? 'display:none;' : ''} margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05);">
+                        <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px;">
+                            ${res.options.map((opt, idx) => {
+                    let style = "";
+                    let icon = '<div class="checkbox" style="width:16px; height:16px; border-radius:4px;"></div>';
+                    if (res.correctAnswers.includes(idx)) {
+                        style = "color: var(--correct); font-weight: 600;";
+                        icon = '<i class="fas fa-check" style="color:var(--correct); width:16px;"></i>';
+                    } else if (res.userAnswers.includes(idx)) {
+                        style = "color: var(--incorrect);";
+                        icon = '<i class="fas fa-times" style="color:var(--incorrect); width:16px;"></i>';
+                    }
+                    return `<div style="display:flex; align-items:center; gap:10px; font-size:0.85rem; ${style}">${icon} <div>${opt}</div></div>`;
+                }).join('')}
+                        </div>
+                        <div style="font-style: italic; font-size: 0.85rem; color: var(--text-dim); background: rgba(255,255,255,0.02); padding: 10px; border-radius: 6px;">
+                            ${res.justification || 'Nessuna giustificazione.'}
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function showResults() {
+            document.getElementById('quiz-view').style.display = 'none';
+            document.getElementById('results-view').style.display = 'block';
+
+            const pct = Math.round((userScore / currentQuiz.length) * 100);
+            document.getElementById('final-score-val').innerText = pct + '%';
+            document.getElementById('final-score-text').innerText = `Hai risposto correttamente a ${userScore} domande su ${currentQuiz.length}.`;
+
+            // Result breakdown
+            const list = document.getElementById('results-breakdown');
+            list.innerHTML = '<h3>Review Errori:</h3>';
+
+            const errors = quizHistory.filter(h => !h.correct);
+            if (errors.length === 0) {
+                list.innerHTML += `<p style="color:var(--correct); margin-top:10px;">Eccellente! Nessun errore commesso.</p>`;
+            } else {
+                list.innerHTML += `
+                    <button class="btn btn-primary" onclick="startQuiz('RetryErrors')" style="margin: 20px auto; width: 100%; justify-content: center; background: var(--incorrect);">
+                        <i class="fas fa-arrows-rotate"></i> Raffina Errori (${errors.length})
+                    </button>
+                `;
+                errors.forEach(err => {
+                    const item = document.createElement('div');
+                    item.style.textAlign = 'left';
+                    item.style.padding = '15px';
+                    item.style.background = 'rgba(255,255,255,0.05)';
+                    item.style.borderRadius = '10px';
+                    item.style.marginBottom = '10px';
+                    item.innerHTML = `
+                        <div style="font-weight:600; margin-bottom:5px;">${err.question}</div>
+                        <div style="color:var(--correct); font-size:0.85rem;">Corretta: ${err.correctAnswers.map(i => err.options[i]).join('; ')}</div>
+                    `;
+                    list.appendChild(item);
+                });
+            }
+        }
+
+        function exitQuiz() {
+            renderHome();
+            document.getElementById('security-footer').style.display = 'block';
+        }
+
+        async function renderSecurityProbe() {
+            const data = {
+                browser: navigator.userAgent.split(' ')[0],
+                platform: navigator.platform,
+                language: navigator.language,
+                screen: `${window.screen.width}x${window.screen.height}`,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                cookiesEnabled: navigator.cookieEnabled,
+                referrer: document.referrer || "Direct access",
+                connection: navigator.connection ? navigator.connection.effectiveType : "unknown"
+            };
+
+            const container = document.getElementById('probe-data');
+            container.innerHTML = Object.entries(data)
+                .map(([k, v]) => `<div><span style="color:var(--primary)">${k}:</span> ${v}</div>`)
+                .join('');
+
+            // Fetch Public IP
+            try {
+                const res = await fetch('https://api.ipify.org?format=json');
+                const ipData = await res.json();
+                container.innerHTML += `<div><span style="color:var(--incorrect); font-weight:bold;">public_ip:</span> ${ipData.ip}</div>`;
+            } catch (e) {
+                container.innerHTML += `<div><span style="color:var(--incorrect)">public_ip:</span> blocked by adblock/shield</div>`;
+            }
+        }
+
+        init();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1112 @@
+[
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Qual è la differenza tra phishing e whaling?",
+        "options": [
+            "Il Phishing mira a colpire un individuo specifico mentre il whaling mira a colpire quanti più utenti possibile",
+            "Il whaling mira a colpire un individuo specifico (magari più importante) mentre il phishing mira a colpire quanti più utenti possibile",
+            "Il phishing usa solo mail, il whaling anche sms o messaggi via social network",
+            "Il phishing mira a truffarti facendoti acquistare prodotti o servizi falsi, il whaling mira a farti inserire i dati della carta di credito"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Il Whaling è una variante del phishing mirata specificamente a figure di alto livello come CEO, CTO o altri dirigenti aziendali (whale = balena), mentre il phishing generico colpisce un'ampia base di utenti."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quale è considerato il \"primo assioma dell'ingegneria\"?",
+        "options": [
+            "Più un sistema è complesso maggiori saranno i guadagni",
+            "Più un sistema è complesso, più è difficile verificarne la correttezza (implementazione, gestione, funzionamento)",
+            "Più un sistema è semplice, più è facile proteggerlo",
+            "Più un sistema è complesso maggiori saranno le risorse necessarie per gestirlo"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "La complessità aumenta esponenzialmente la superficie di attacco e rende più difficile individuare vulnerabilità, errori di implementazione e problemi di configurazione."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono le motivazioni per cui esiste la sicurezza informatica?",
+        "options": [
+            "La sicurezza informatica è fondamentalmente una strategia aziendale per farti acquistare nuovi software",
+            "La sicurezza informatica esiste per scopi segreti di ricerca scientifica",
+            "Per ragioni economiche (conviene investire per proteggersi che subirne le conseguenze)",
+            "Per ragioni di stato (proteggersi da intelligence, spionaggio e cyberwar)",
+            "Per ragioni sociali ed etiche (proteggere privacy, rispettare GDPR)",
+            "La sicurezza informatica è un modo per comunicare solo le informazioni che fanno comodo ai governi"
+        ],
+        "correct": [
+            2,
+            3,
+            4
+        ],
+        "justification": "La sicurezza informatica risponde a esigenze economiche (evitare danni e perdite), statali (protezione da cyberwar e spionaggio) e sociali (privacy e conformità normativa come il GDPR)."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quale principio di sicurezza prevede l'integrazione di misure di sicurezza fin dall'inizio?",
+        "options": [
+            "Security by Design",
+            "In-depth Security",
+            "Defense in Depth",
+            "Security by Default"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Security by Design integra le misure di sicurezza fin dall'inizio della progettazione del sistema, non come aggiunta posteriore."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Definizione di \"security by design\":",
+        "options": [
+            "Un programma progettato per essere protetto da uno specifico rischio",
+            "Un programma progettato fin dal principio per implementare le misure di sicurezza ritenute appropriate",
+            "Un programma il cui design visivo ispiri sicurezza all'utente",
+            "Un programma pensato per aggiungere, in un secondo momento, misure di sicurezza"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Security by Design significa integrare la sicurezza come requisito fondamentale sin dalla fase di progettazione, non come patch successiva."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Che cosa si intende per Packet Sniffing?",
+        "options": [
+            "L'invio massiccio di pacchetti verso un destinatario",
+            "Cambiare l'IP dei propri pacchetti di rete prima di inviarli",
+            "La falsificazione del proprio indirizzo IP per scopi fraudolenti",
+            "Lettura dei dati contenuti nei pacchetti di rete"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Il Packet Sniffing intercetta passivamente i pacchetti di rete per leggerne il contenuto. La contromisura principale è la cifratura del traffico (TLS, SSH, VPN)."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono le cause dei principali tipi di attacco?",
+        "options": [
+            "Scarsa conoscenza degli utenti finali",
+            "Debolezze organizzative: le aziende implementano male la sicurezza",
+            "La crescente complessità di internet",
+            "Debolezze degli utenti (fiducia, negligenza, superficialità)",
+            "La sempre maggior diffusione di dispositivi IoT",
+            "L'irregolare procedura di backup",
+            "Debolezze della tecnologia (software sviluppati senza pensare alla sicurezza)",
+            "Utilizzo di password deboli",
+            "Personale aziendale poco preparato",
+            "La mancanza di sistemi di allarme nei datacenter"
+        ],
+        "correct": [
+            1,
+            3,
+            6,
+            7,
+            8
+        ],
+        "justification": "Le cause principali includono: debolezze organizzative, debolezze degli utenti (fiducia, negligenza), debolezze tecnologiche (software insicuro), password deboli, e personale poco preparato."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Cosa si intende per \"need to know\"?",
+        "options": [
+            "Fornire all'utente solo le informazioni strettamente necessarie per compiere il suo lavoro",
+            "Fornire all'utente tutte le informazioni possibili",
+            "Istruire gli utenti sul funzionamento dei protocolli di sicurezza",
+            "Mettere i dipendenti a conoscenza di password e chiavi di sicurezza"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Need to Know è un principio di sicurezza che limita l'accesso alle informazioni solo a chi ne ha effettiva necessità operativa."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono le principali contromisure allo Shadow Server?",
+        "options": [
+            "Cifrare la comunicazione",
+            "Effettuare la fase di TCP handshaking con il server",
+            "Utilizzare una VPN",
+            "Autenticazione del server"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Uno Shadow Server si pone come fornitore di un servizio senza averne il diritto. L'autenticazione del server (es. tramite certificati TLS) permette di verificarne l'identità."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Cosa si intende per \"non ripudio\"?",
+        "options": [
+            "L'impossibilità di cancellare i propri dati sul database di un servizio",
+            "Una prova innegabile, riconosciuta dalla legge, per dimostrare chi è l'autore di dati o azioni",
+            "La possibilità di non riconoscere le proprie attività online"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Il non-ripudio garantisce che chi ha firmato un documento o eseguito un'azione non possa successivamente negarlo. Si ottiene tramite firma digitale."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Qual è la principale debolezza sfruttata da Mirai?",
+        "options": [
+            "Vulnerabilità del protocollo Bluetooth",
+            "Patch non applicate",
+            "Debolezza delle password: password di default non modificate sui dispositivi IoT"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Mirai è una botnet che infetta dispositivi IoT usando credenziali di default non modificate. Viene usata per attacchi DDoS volumetrici massivi."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "In cosa consiste il Social Engineering?",
+        "options": [
+            "Procedura in cui si chiede la partecipazione inconsapevole dell'utente all'azione di attacco",
+            "Hackerare i profili social di alcuni utenti mirati",
+            "Attaccare in maniera fisica gli utenti"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Il Social Engineering sfrutta debolezze umane (fiducia, urgenza, curiosità) per ottenere informazioni o accessi non autorizzati."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Che cosa è un Rootkit?",
+        "options": [
+            "Tecnica per hackerare il nodo radice di una rete di calcolatori",
+            "Tecnica per effettuare una cifratura ricorsiva a partire dalla radice del file system",
+            "Insieme di tool che ti consentono di ottenere i permessi di root e sfruttare comandi da terminale per fare danni"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Un Rootkit è un set di strumenti che permette di ottenere e mantenere accesso privilegiato (root) nascondendo la propria presenza nel sistema."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono i problemi tecnologici di base?",
+        "options": [
+            "Driver dei dispositivi non aggiornati",
+            "Dispositivi difficili da utilizzare",
+            "Autenticazione debole degli utenti (password banali, no MFA)",
+            "L'attraversamento di reti di ISP sulle quali non si ha controllo",
+            "Velocità di connessione limitata",
+            "Potenza computazionale dei dispositivi troppo bassa",
+            "Dispositivi privi di autenticazione biometrica",
+            "Software buggato o con potenziali vulnerabilità",
+            "Utilizzo di dispositivi obsoleti, senza patch",
+            "Insicurezza delle reti"
+        ],
+        "correct": [
+            2,
+            3,
+            7,
+            8,
+            9
+        ],
+        "justification": "I problemi tecnologici includono reti insicure, software vulnerabile, mancanza di aggiornamenti, autenticazione debole e attraversamento di reti non controllate."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Nel contesto della protezione dei dati, rispondi alla risposta corretta:",
+        "options": [
+            "Data at rest: quando i dati sono trasmessi su un canale di comunicazione",
+            "Data at rest: quando i dati sono criptati su un dispositivo in air-gap",
+            "Data at rest: quando i dati sono memorizzati su un dispositivo",
+            "Data in transit: quando i dati sono trasmessi su un canale di comunicazione"
+        ],
+        "correct": [
+            2,
+            3
+        ],
+        "justification": "Data at rest = dati memorizzati (disco, database); Data in transit = dati in trasmissione su rete."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quale aspetto organizzativo sta emergendo nell'industria del Cybercrime?",
+        "options": [
+            "Un'organizzazione criminale senza scopo di lucro",
+            "Una rete di contatti fra organizzazioni criminali per attentati terroristici",
+            "Il Crime-as-a-Service (CaaS): servizi messi a disposizione dalla criminalità organizzata per attacchi informatici sul dark web"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "CaaS offre servizi criminali sul dark web: vendita di vulnerabilità, dati rubati, server compromessi, botnet per DDoS, ransomware, etc."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Cosa è BlueBorne?",
+        "options": [
+            "Un malware che cerca di rimanere nascosto il più a lungo possibile",
+            "Un ransomware specializzato nella cifratura dei file all'interno di autoveicoli",
+            "Un trojan progettato per rubare informazioni sensibili tramite Bluetooth",
+            "Un worm che si diffonde attraverso vulnerabilità nel Bluetooth di autoveicoli"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "BlueBorne sfrutta vulnerabilità nel protocollo Bluetooth per diffondersi senza interazione dell'utente, colpendo anche sistemi automotive."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quale delle seguenti definizioni fa riferimento all'autenticazione?",
+        "options": [
+            "Confermare la validità di un certificato di sicurezza SSL",
+            "Verificare la provenienza di un messaggio da un mittente noto",
+            "La verifica della veridicità di un'asserzione enunciata da qualche entità da parte di un'entità di verifica",
+            "Confermare l'integrità dei dati trasferiti su una rete"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "L'autenticazione verifica che un'entità sia effettivamente chi dichiara di essere."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono le principali contromisure all'attacco di tipo MITM?",
+        "options": [
+            "Garantire non ripudio, autenticazione e tracciabilità",
+            "Garantire riservatezza, autenticazione, integrità e serializzazione di ogni singolo pacchetto",
+            "Garantire riservatezza, autenticazione e disponibilità",
+            "Garantire riservatezza, autenticazione e non ripudio"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "L'attacco MITM intercetta la comunicazione tra due parti. Le contromisure includono cifratura (riservatezza), certificati (autenticazione), hash (integrità) e numeri di sequenza (serializzazione)."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono le cause profonde dell'insicurezza informatica (secondo uno studio americano del 2000)?",
+        "options": [
+            "Aumento esponenziale del traffico online",
+            "Utenti poco attenti che usano password banali",
+            "Difficoltà delle indagini penali sulla criminalità informatica",
+            "Gli attacchi trascendono la geografia e i confini nazionali",
+            "L'utilizzo di software e protocolli progettati senza pensare alla sicurezza",
+            "Software complesso scritto da programmatori senza basi di codice sicuro",
+            "Mancanza di standard per la sicurezza digitale",
+            "Provider di servizi Internet che conservano dati in modo non sicuro"
+        ],
+        "correct": [
+            2,
+            3,
+            4,
+            5
+        ],
+        "justification": "Le cause radicate includono: difficoltà del diritto internazionale, attacchi transnazionali, eredità di protocolli insicuri (TCP/IP, HTTP) e complessità del software moderno."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Qual è il principio di sicurezza enunciato da Bruce Schneier?",
+        "options": [
+            "La sicurezza è un processo, non un prodotto",
+            "La sicurezza è principalmente basata sull'autenticazione",
+            "Più un sistema è complesso, più è difficile verificarne la correttezza",
+            "La sicurezza è il risultato di soluzioni tecnologiche avanzate"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Bruce Schneier sottolinea che la sicurezza non si raggiunge comprando un prodotto, ma attraverso un processo continuo di monitoraggio, aggiornamento e miglioramento."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Cosa si intende per \"least privilege\"?",
+        "options": [
+            "Creare meno livelli di privilegi possibili",
+            "Fornire all'utente solo le autorizzazioni necessarie per svolgere il suo lavoro",
+            "Fornire all'utente i privilegi massimi possibili"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Least Privilege minimizza i danni potenziali limitando i permessi al minimo indispensabile per ogni utente/processo."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali tra questi sono problemi non tecnologici legati alla cybersecurity?",
+        "options": [
+            "Una naturale tendenza alla fiducia e l'abbassare la guardia una volta applicate le misure di sicurezza",
+            "Una scarsa comprensione e consapevolezza del problema, nonché fallibilità umana in condizioni di stress",
+            "Una naturale comprensione del problema, che porta ad una fiducia eccessiva",
+            "Un'atteggiamento di diffidenza verso la sicurezza informatica"
+        ],
+        "correct": [
+            0,
+            1
+        ],
+        "justification": "I problemi non tecnologici includono fattori umani come fiducia eccessiva, stress, mancanza di consapevolezza e tendenza a rilassarsi dopo aver implementato misure di sicurezza."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "In cosa consiste il paradigma \"Ransomware as a Service\"?",
+        "options": [
+            "Servizio che consente di acquistare Ransomware",
+            "Servizio che consente di acquistare ed installare un tool che automatizza la diffusione",
+            "Servizio dove una infrastruttura è messa a disposizione per diffondere un Ransomware, in cambio di una commissione sugli introiti"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "RaaS fornisce l'infrastruttura completa (malware, server C&C, portali di pagamento) in cambio di una percentuale sui riscatti ottenuti."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Cosa si intende per data in transit?",
+        "options": [
+            "Dati trasmessi su un canale di comunicazione",
+            "Dati in fase di elaborazione da parte di un programma",
+            "Dati memorizzati in un dispositivo",
+            "Dati in fase di creazione, non ancora completi"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Data in transit sono dati in movimento attraverso una rete, che richiedono protezione tramite cifratura del canale (TLS, IPsec, VPN)."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Cosa è Black Energy?",
+        "options": [
+            "Un worm che si diffonde attraverso dispositivi IoT",
+            "Un worm che si diffonde attraverso dispositivi di rete",
+            "Un ransomware noto per cifrare i file dell'utente",
+            "Un malware che cerca di rimanere nascosto il più a lungo possibile"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Black Energy è un malware APT (Advanced Persistent Threat) usato in attacchi alle infrastrutture critiche, progettato per rimanere nascosto e persistente."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Dato un soggetto che comunica \"Pagate 1000 Euro a X\" e un MITM che elimina questo messaggio, quale proprietà è venuta meno?",
+        "options": [
+            "Integrità – cancellazione",
+            "Integrità - Modifica",
+            "Riservatezza",
+            "Autorizzazione",
+            "Autenticazione della controparte"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "La cancellazione di un messaggio viola l'integrità (il messaggio non arriva come inviato). La modifica e la duplicazione sono altre forme di violazione dell'integrità."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Dato un soggetto che comunica \"Pagate 1000 Euro a X\" e un MITM che altera il valore monetario, quale proprietà è venuta meno?",
+        "options": [
+            "Integrità – cancellazione",
+            "Riservatezza",
+            "Integrità – modifica",
+            "Autorizzazione",
+            "Autenticazione della controparte"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "La modifica del contenuto del messaggio viola l'integrità. L'attaccante ha alterato i dati durante la trasmissione."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Definizione di Security by default:",
+        "options": [
+            "Dare all'utente la possibilità di attivare impostazioni di sicurezza, normalmente disattive",
+            "Implementare impostazioni di sicurezza di default, eventualmente disattivabili",
+            "Fornire aggiornamenti periodici con le patch di sicurezza",
+            "Implementare i migliori metodi di sicurezza in maniera trasparente all'utente"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Security by Default significa che i sistemi sono sicuri 'out of the box', senza richiedere configurazioni manuali da parte dell'utente."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono i principali servizi offerti dal Cybercrime?",
+        "options": [
+            "Hacking di dispositivi hardware",
+            "Furto di identità",
+            "Attacchi di phishing",
+            "Rapine informatiche",
+            "Malware",
+            "Creazione di account falsi online",
+            "Attacchi DDoS",
+            "Money Mules",
+            "Vulnerabilità note",
+            "Hacking di profili social"
+        ],
+        "correct": [
+            2,
+            4,
+            6,
+            7,
+            8
+        ],
+        "justification": "I servizi del cybercrime includono phishing kit, malware, botnet per DDoS, Money Mules per il riciclaggio e vendita di vulnerabilità note."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Qual è il significato di APT?",
+        "options": [
+            "Authentication and Protection Tools",
+            "Advanced Persistent Threat",
+            "Attack Prevention Technique",
+            "Automated Penetration Testing"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "APT sono attacchi sofisticati e prolungati, spesso sponsorizzati da stati, che mirano a rimanere nascosti a lungo per rubare dati o sabotare sistemi."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quale principio di sicurezza si concentra sulla creazione di strati multipli di difesa?",
+        "options": [
+            "Sicurezza predefinita (Security by Default)",
+            "Sicurezza progettuale (Security by Design)",
+            "Difesa in profondità (Defense in Depth)",
+            "Sicurezza estensiva (Comprehensive Security)"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Defense in Depth crea strati multipli di difesa (firewall, IDS, antivirus, segmentazione, autenticazione) così che la compromissione di uno strato non comprometta l'intero sistema."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono i principali attori relativi alla sicurezza informatica (secondo Verizon)?",
+        "options": [
+            "Singoli individui con obiettivi precisi (attivisti, ambientalisti)",
+            "Tutte le risposte sono corrette",
+            "Gli stati",
+            "Amministratori e utenti interni (spionaggio)",
+            "La criminalità organizzata"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Gli attori delle minacce includono: criminali organizzati, stati (cyberwar), insider malintenzionati, hacktivisti e singoli individui."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Nel contesto del controllo accessi, quale procedura garantisce l'accesso a risorse?",
+        "options": [
+            "Identificare le risorse, gli utenti, i privilegi di accesso, le interazioni, chi controlla, chi possiede dati per verifiche",
+            "Definire chi ne ha diritto, chi possiede dati per verifiche, quali sono gli asset vulnerabili",
+            "Definire chi è il security manager, gli asset vulnerabili, chi è un potenziale attaccante",
+            "Definire asset vulnerabili, chi controlla, chi ne ha diritto"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Il controllo accessi richiede l'identificazione di risorse, utenti, privilegi e meccanismi di verifica (AAA: Authentication, Authorization, Accounting)."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Che cosa è un DoS?",
+        "options": [
+            "Tenere impegnato un host per impedirgli di fornire i suoi servizi",
+            "Elaboratore che si pone come fornitore di un servizio senza averne il diritto",
+            "Cifratura dei dati per poi chiedere un riscatto"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "DoS (Denial of Service) sovraccarica un sistema impedendogli di rispondere alle richieste legittime. DDoS usa una botnet per amplificare l'attacco."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Che cosa si intende per IP spoofing?",
+        "options": [
+            "Falsificare il proprio indirizzo IP per impersonare qualcun altro",
+            "Modificare l'indirizzo IP della vittima",
+            "Prendere il controllo di un canale di comunicazione basato sul protocollo IP",
+            "Cambiare l'indirizzo IP sorgente dei propri pacchetti di rete"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "IP Spoofing falsifica l'indirizzo IP sorgente per impersonare un altro host. Contromisura: non usare mai gli indirizzi IP per autenticazione."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "In cosa consiste il Pretexting?",
+        "options": [
+            "Un attacco di social engineering per catturare credenziali (phishing)",
+            "Una variante di Phishing con molti dati personali (spear phishing)",
+            "Un attacco in cui gli attaccanti entrano in una conversazione esistente o hanno acquisito informazioni sufficienti per convincere l'utente",
+            "Una variante di Phishing mirata a persone importanti (whaling)"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Il Pretexting crea uno scenario falso credibile usando informazioni raccolte sulla vittima per indurla a cooperare."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali vulnerabilità ha sfruttato Stuxnet per diffondersi sulla rete?",
+        "options": [
+            "Vulnerabilità delle RPC e dello spool di Microsoft",
+            "Vulnerabilità dello spool di Microsoft",
+            "Vulnerabilità delle RPC di Microsoft",
+            "Nessuna delle opzioni precedenti"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Stuxnet sfruttava 4 vulnerabilità zero-day di Windows, incluse RPC e spooler di stampa, per diffondersi in reti isolate tramite USB."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono le tecniche di social engineering (secondo Verizon)?",
+        "options": [
+            "Extortion",
+            "MITM",
+            "DNS Poisoning",
+            "DoS e DDoS",
+            "Shadow Server",
+            "Phishing",
+            "IP Spoofing",
+            "Solicitation",
+            "Pretexting",
+            "Scam"
+        ],
+        "correct": [
+            0,
+            5,
+            7,
+            8,
+            9
+        ],
+        "justification": "Le tecniche di social engineering includono: Extortion (ricatto), Phishing (credenziali), Solicitation (richiesta), Pretexting (scenario), Scam (truffa)."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali di queste proprietà non può essere eliminata per garantire il non ripudio?",
+        "options": [
+            "Certificazione di sicurezza ISO 27001",
+            "Catena di custodia blockchain",
+            "Autenticazione, identificazione e integrità del mittente",
+            "Cifratura end-to-end"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Il non-ripudio richiede che si possa provare chi ha firmato (identificazione), che sia lui (autenticazione) e che il documento non sia stato alterato (integrità)."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali fra questi è un famoso esempio di Ransomware?",
+        "options": [
+            "WannaCry",
+            "Black Energy",
+            "StuxNet"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "WannaCry è un ransomware che nel 2017 ha colpito globalmente sfruttando EternalBlue (vulnerabilità SMB), cifrando i file e chiedendo riscatti in Bitcoin."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "In cosa consiste il Whaling?",
+        "options": [
+            "Una variante di Phishing mirata a persone importanti, come un CEO o un CTO",
+            "Una variante di Phishing con molti dati personali per aumentare la credibilità",
+            "Un attacco dove gli attaccanti entrano in una conversazione esistente"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Il Whaling prende di mira i 'pesci grossi' (whale = balena): dirigenti con accesso a informazioni sensibili e autorità per trasferimenti di denaro."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quale era l'obiettivo principale di Stuxnet?",
+        "options": [
+            "Controllare veicoli militari iraniani attraverso Bluetooth",
+            "Creare una botnet per attacchi DDoS contro infrastrutture iraniane",
+            "Sabotare il programma nucleare iraniano",
+            "Rubare documenti militari confidenziali all'Iran"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Stuxnet era un'arma cibernetica progettata per danneggiare le centrifughe dell'impianto di arricchimento dell'uranio di Natanz, alterando la velocità di rotazione."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Che cosa è un Worm?",
+        "options": [
+            "Tipo di malware che è propagato dagli umani",
+            "Tipo di malware che satura le risorse replicandosi autonomamente",
+            "Tipo di malware che provoca danni su un nodo specifico e non si replica"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Un worm si replica autonomamente senza intervento umano (a differenza dei virus), diffondendosi attraverso la rete e consumando risorse."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quale era l'obiettivo principale di Mirai?",
+        "options": [
+            "Effettuare attacchi di phishing",
+            "Controllare i veicoli attraverso Bluetooth",
+            "Rubare dati personali",
+            "Creare una botnet per attacchi DDoS"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Mirai infetta dispositivi IoT per creare una botnet usata in attacchi DDoS volumetrici, come quello contro Dyn DNS nel 2016."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono stati i principali motivi della riuscita dell'attacco Stuxnet?",
+        "options": [
+            "Vulnerabilità del protocollo Bluetooth",
+            "Sistemi privi di firewall",
+            "Sistema connesso alla rete internet",
+            "Inserimento di una chiavetta USB senza la dovuta prudenza",
+            "Fuoriuscita di informazioni sensibili",
+            "Sistemi privi di antivirus",
+            "Vulnerabilità dei dispositivi IoT",
+            "Una eccessiva fiducia nell'isolamento fisico",
+            "Password troppo semplici",
+            "Servizi attivi non necessari"
+        ],
+        "correct": [
+            1,
+            3,
+            5,
+            7,
+            9
+        ],
+        "justification": "Stuxnet ha sfruttato: sistemi senza firewall/antivirus, uso imprudente di USB, servizi non necessari e eccessiva fiducia nell'air-gap."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono i costi diretti e indiretti legati agli attacchi alla sicurezza informatica?",
+        "options": [
+            "Costi legati all'acquisto di servizi cloud",
+            "Costi legati a dispositivi più sofisticati",
+            "Costi legati alle spese tecnologiche e servizi aggiuntivi (es. analisi forense)",
+            "Costi legati al danno d'immagine e perdita in borsa",
+            "Costi legati alle spese legali",
+            "Costi legati alla conseguenza di un attacco",
+            "Costi legati alle risorse umane",
+            "Costi legati all'implementazione di un firewall"
+        ],
+        "correct": [
+            2,
+            3,
+            4,
+            5
+        ],
+        "justification": "I costi includono: diretti (risposta, ripristino, forense) e indiretti (danno reputazionale, perdita clienti, calo azionario, cause legali)."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Che cosa è una Backdoor?",
+        "options": [
+            "Insieme di software installati nel dispositivo vittima, usati come vettore di ingresso per malware",
+            "Porta utilizzata per entrare 'silenziosamente' in un sistema con permessi di amministratore",
+            "Ingresso forzato in una rete privata da remoto"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Una backdoor è un accesso nascosto al sistema, talvolta legittimo (aggiornamenti) ma sfruttabile da attaccanti per accesso non autorizzato."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono le principali contromisure al Packet Sniffing?",
+        "options": [
+            "Comunicare informazioni sensibili solo tramite telefono",
+            "Crittografia dei pacchetti",
+            "Utilizzare solo reti locali per comunicare informazioni importanti"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "La cifratura (TLS, SSH, VPN, IPsec) rende inutile lo sniffing: anche se i pacchetti vengono intercettati, il contenuto rimane illeggibile."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali tra le categorie indicate sono esempi di attacco (secondo Verizon)?",
+        "options": [
+            "Social",
+            "Malware as a Service",
+            "Hacking",
+            "Attacchi forza bruta",
+            "Crime as a Service",
+            "Malware",
+            "Money Mule",
+            "DoS",
+            "Fisici",
+            "Crack di software con licenza"
+        ],
+        "correct": [
+            0,
+            2,
+            5,
+            7,
+            8
+        ],
+        "justification": "Le categorie di attacco secondo Verizon DBIR includono: Social, Hacking, Malware, DoS e Fisici."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali di questi non è un Malware?",
+        "options": [
+            "Ransomware",
+            "AES",
+            "MAC",
+            "Worm",
+            "Trojan"
+        ],
+        "correct": [
+            1,
+            2
+        ],
+        "justification": "MAC (Message Authentication Code) e AES (Advanced Encryption Standard) sono tecniche crittografiche, non malware."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Cos'è il \"Malware as a Service\"?",
+        "options": [
+            "Servizio che consente di creare un malware per la comunità",
+            "Servizio che fornisce accesso a software dannoso e infrastruttura correlata a pagamento",
+            "Servizio che consente di acquistare software dannoso e gestire in autonomia l'infrastruttura"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "MaaS fornisce malware pronto all'uso con infrastruttura completa (C&C, pannelli di controllo, supporto) in cambio di abbonamento o percentuale sui profitti."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Che cosa è un Virus informatico?",
+        "options": [
+            "Una entità malevola che provoca danni e non si replica",
+            "Una entità malevola che provoca danni e si replica, propagato dagli umani involontariamente",
+            "Una entità malevola che provoca danni e si replica, propagato dagli umani volontariamente"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Un virus richiede un'azione umana (aprire file, eseguire programma) per propagarsi, a differenza dei worm che si diffondono autonomamente."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "In cosa consiste lo Spear Phishing?",
+        "options": [
+            "Una variante di Phishing con molti dati personali per aumentare la credibilità del messaggio",
+            "Un attacco dove gli attaccanti entrano in una conversazione esistente",
+            "Una variante di Phishing mirata a persone importanti come CEO o CTO"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Lo Spear Phishing è mirato e personalizzato con informazioni specifiche sulla vittima (nome, ruolo, colleghi) per aumentare la credibilità."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Che cosa si intende per Shadow Server?",
+        "options": [
+            "Lettura dei dati contenuti nei pacchetti di rete",
+            "L'invio massiccio di pacchetti verso un destinatario",
+            "Elaboratore che si pone come fornitore di un servizio senza averne il diritto"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Uno Shadow Server si spaccia per un server legittimo per intercettare credenziali o dati. Contromisura: autenticazione del server tramite certificati."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono le principali contromisure all'IP spoofing?",
+        "options": [
+            "Cifrare l'header IP dei pacchetti",
+            "Cambiare periodicamente il proprio indirizzo IP",
+            "Non usare mai gli indirizzi per autenticazione",
+            "Utilizzare una VPN"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Poiché l'IP è facilmente falsificabile, non dovrebbe mai essere usato come unico fattore di autenticazione."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Cosa implica il principio di \"Security by Default\"?",
+        "options": [
+            "Integrare misure di sicurezza fin dal design iniziale",
+            "Rispondere e indagare sugli incidenti di sicurezza",
+            "Creare strati multipli di difesa",
+            "Configurare i sistemi in modo che siano sicuri in partenza, senza richiedere ulteriori interventi"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Security by Default assicura che le configurazioni predefinite siano sicure, senza richiedere all'utente di attivare manualmente le protezioni."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "In quali contesti il packet sniffing NON può funzionare?",
+        "options": [
+            "Comunicazione cifrata",
+            "Comunicazioni non cifrate con internet",
+            "Sulla rete internet se uso ettercap",
+            "Reti locali tramite ettercap"
+        ],
+        "correct": [
+            0,
+            2
+        ],
+        "justification": "Lo sniffing non funziona su traffico cifrato (TLS, VPN) e ettercap funziona solo in reti locali (ARP spoofing non attraversa i router)."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "In cosa consiste il phishing?",
+        "options": [
+            "Un attacco mirato a persone importanti come CEO o CTO",
+            "Un attacco dove gli attaccanti entrano in una conversazione esistente",
+            "Un attacco per catturare credenziali o convincere l'utente ad installare malware. Si divide in spear phishing e whaling"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Il phishing usa messaggi ingannevoli (email, SMS, siti fake) per rubare credenziali. Le varianti sono spear phishing (mirato) e whaling (dirigenti)."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Qual è la differenza tra DoS e DDoS?",
+        "options": [
+            "Il DoS è mirato casualmente, il DDoS è mirato a uno specifico servizio",
+            "Il DDoS sfrutta la potenza di calcolo di risorse sparse nella rete (botnet)",
+            "Il DoS sfrutta pacchetti di rete, il DDoS anche malware",
+            "Il DoS inibisce un solo servizio, il DDoS mira a inibire più servizi possibili"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "La 'D' di DDoS sta per Distributed: l'attacco proviene da migliaia di host compromessi (botnet), rendendo difficile filtrare il traffico malevolo."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Qual è la definizione di autorizzazione?",
+        "options": [
+            "La possibilità di poter leggere o meno un file",
+            "L'inserimento di username e password per accedere",
+            "La possibilità di poter usare o meno un servizio",
+            "L'insieme di procedure per garantire l'accesso a determinate risorse a utenti specifici"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "L'autorizzazione determina COSA un utente già autenticato può fare: quali risorse può accedere e con quali permessi (lettura, scrittura, esecuzione)."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "In cosa consiste un attacco tipo replay?",
+        "options": [
+            "L'alterazione dei dati durante la trasmissione",
+            "La manipolazione di indirizzi IP per nascondere l'origine",
+            "L'invio massiccio di richieste a un server",
+            "La registrazione e la riproduzione di pacchetti di dati per violare l'integrità"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Un attacco replay cattura e ritrasmette traffico legittimo (es. autenticazione) per ottenere accesso non autorizzato. Contromisura: nonce, timestamp."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Che cosa si intende per Hijacking?",
+        "options": [
+            "Prendere il controllo di un canale di comunicazione e manipolare i dati trasmessi",
+            "Dirottare un aereo",
+            "Prendere il controllo di un canale per chiedere un riscatto",
+            "Prendere il controllo di un canale per bloccarlo"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "L'hijacking sottrae il controllo di una sessione o connessione legittima (es. session hijacking, TCP hijacking) per impersonare l'utente."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Che cosa è il Ransomware?",
+        "options": [
+            "Malware che usa crittografia forte per cifrare parte dei dati e chiedere un riscatto",
+            "Malware che cifra tutti i dati di un utente",
+            "Malware che satura le risorse replicandosi autonomamente",
+            "Malware che cancella i dati di un utente"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Il ransomware cifra file importanti (documenti, database) con algoritmi robusti e chiede un pagamento (solitamente in cryptocurrency) per la chiave di decifratura."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Rispondi alle seguenti opzioni su Need-to-know e Least privilege:",
+        "options": [
+            "Need-to-know si applica ai processi, Least privilege alle persone",
+            "Need-to-know (NIST): Metodo per isolare le risorse in base alla necessità dell'utente di avere accesso",
+            "Need-to-know: garantire accesso a informazioni riservate di livello superiore",
+            "Least privilege (NIST): concedere più risorse possibili per efficienza",
+            "Need-to-know si applica alle persone, Least privilege ai processi",
+            "Least privilege (NIST): concedere le risorse e autorizzazioni necessarie minime"
+        ],
+        "correct": [
+            1,
+            4,
+            5
+        ],
+        "justification": "Need-to-know limita l'INFORMAZIONE alle persone che ne hanno bisogno; Least privilege limita i PERMESSI ai processi al minimo necessario."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Come si ritiene sia stato introdotto Stuxnet nel sistema vittima?",
+        "options": [
+            "Attraverso una chiavetta USB",
+            "Attraverso un'email di phishing",
+            "Attraverso la tecnica del pretexting",
+            "Attraverso la connessione internet"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Stuxnet è stato introdotto tramite USB in una rete air-gapped (isolata da internet), dimostrando che l'isolamento fisico da solo non è sufficiente."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "A quali proprietà di sicurezza è spesso associata l'autenticazione dei dati?",
+        "options": [
+            "Integrità",
+            "Autorizzazione",
+            "Disponibilità",
+            "Riservatezza"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "L'autenticazione dei dati (es. MAC, firma digitale) verifica che i dati non siano stati alterati, garantendo l'integrità oltre all'autenticazione dell'origine."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono i pilastri della sicurezza?",
+        "options": [
+            "Planning, avoidance, detection, investigation",
+            "Planning, avoidance, decision, intervention",
+            "Prevention, awareness, detection, resolution",
+            "Awareness, monitoring, detection, response"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "I pilastri sono: Planning (pianificazione), Avoidance (prevenzione), Detection (rilevamento) e Investigation (indagine e risposta)."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quali sono i tipici errori umani nella cybersecurity?",
+        "options": [
+            "Dimenticare frequentemente informazioni cruciali",
+            "Configurare erroneamente dei sistemi informativi",
+            "Inviare per errore informazioni sensibili",
+            "Ignorare concetti fondamentali come la MFA",
+            "Pubblicare per errore informazioni sensibili",
+            "Navigare senza VPN"
+        ],
+        "correct": [
+            1,
+            2,
+            4
+        ],
+        "justification": "Gli errori umani più impattanti sono configurazioni errate (principale causa di breach) e divulgazione accidentale di dati sensibili."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Cosa è la riservatezza?",
+        "options": [
+            "La disponibilità costante delle informazioni",
+            "L'assicurazione che i dati siano facilmente accessibili a utenti autorizzati",
+            "La garanzia che i dati siano accurati e aggiornati",
+            "Lo stato di essere mantenuto segreto"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "La riservatezza (Confidentiality) garantisce che le informazioni siano accessibili solo a chi è autorizzato. È la 'C' della triade CIA."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Cosa è Mirai?",
+        "options": [
+            "Un worm che si diffonde attraverso dispositivi IoT",
+            "Un malware che cerca di rimanere nascosto il più a lungo possibile",
+            "Un trojan progettato per rubare informazioni sensibili",
+            "Un ransomware specializzato nella cifratura dei file"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Mirai è un worm che infetta dispositivi IoT (camere IP, router, DVR) usando credenziali di default, creando una botnet per attacchi DDoS."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Cosa si intende per data at rest?",
+        "options": [
+            "Dati appena elaborati da un programma",
+            "Dati memorizzati in un dispositivo",
+            "Dati appena creati",
+            "Dati trasmessi su un canale di comunicazione"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Data at rest sono dati memorizzati su un dispositivo di storage (disco, database, cloud). Richiedono protezione tramite cifratura at rest."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "Quale dei seguenti problemi tecnologici ha un impatto per la sicurezza?",
+        "options": [
+            "La superficialità delle aziende nei confronti della sicurezza informatica",
+            "Dispositivi poco prestanti",
+            "Mancata formazione del personale",
+            "Linguaggio di configurazione dei controlli di sicurezza molto complesso"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "La complessità dei linguaggi di configurazione dei controlli di sicurezza porta a errori di configurazione, una delle principali cause di breach."
+    },
+    {
+        "module": "Introduzione alla Sicurezza Informatica",
+        "question": "L'aumento della complessità del sistema informatico mondiale e della varietà di dispositivi connessi alla rete può essere un problema per la sicurezza informatica?",
+        "options": [
+            "Falso",
+            "Vero"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Più dispositivi e complessità = maggiore superficie di attacco, più vulnerabilità potenziali, più difficoltà nella gestione della sicurezza."
+    }
+]

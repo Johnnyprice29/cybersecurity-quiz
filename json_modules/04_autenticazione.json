@@ -1,0 +1,688 @@
+[
+    {
+        "module": "Autenticazione",
+        "question": "Indicate alcuni problemi legati all'uso delle password?",
+        "options": [
+            "Password catturate mediante attacchi MITM",
+            "Password che non supportano la MFA",
+            "Password catturate senza l'uso del sale",
+            "Password riutilizzate su più servizi",
+            "Password catturate mediante server spoofing o phishing",
+            "Password duplicate tramite la pre-computazione"
+        ],
+        "correct": [
+            0,
+            3,
+            4
+        ],
+        "justification": "I problemi principali sono: riutilizzo su più servizi, cattura via MITM, e server spoofing/phishing."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Come può un attaccante ottenere una firma privata dal Claimant usando RSA con metodi CRA Asimmetrici?",
+        "options": [
+            "Inviando al posto della sfida cifrata con la chiave pubblica l'hash di un messaggio, il claimant decifra pensando sia la sfida, eseguendo una firma",
+            "Inviando al posto della sfida cifrata il messaggio cifrato con chiave pubblica"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "L'attacco sfrutta il fatto che decifrare con la chiave privata equivale a firmare."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali sono i due principali attacchi che possono essere fatti per indovinare una password?",
+        "options": [
+            "MITM Attack",
+            "Brute Force Attack: tutte le password equiprobabili, si provano tutte",
+            "Dictionary Attack: password più probabili provate prima da un dizionario",
+            "SQL Injection"
+        ],
+        "correct": [
+            1,
+            2
+        ],
+        "justification": "Brute force prova tutte le combinazioni; dictionary attack usa parole comuni/probabili."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Cosa richiede Event-based OTP?",
+        "options": [
+            "Seed trasmesso OOB",
+            "Un clock sincronizzato",
+            "Contatore intero monotonico",
+            "Un PIN elaborato al tempo TC0"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "EOTP usa un contatore che incrementa ad ogni autenticazione, non richiede sincronizzazione temporale."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "I rischi relativi all'autenticazione possono essere mitigati usando tecniche che riducono la probabilità che qualcuno riesca ad autenticarsi al nostro posto?",
+        "options": [
+            "Vero",
+            "Falso"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Le tecniche di autenticazione forte riducono la probabilità di impersonazione."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali sono le accortezze da adottare per l'autenticazione degli utenti basata su password?",
+        "options": [
+            "Trasmissione mantenendo confidenzialità in transito",
+            "Password non prevedibile e non memorizzabile",
+            "Memorizzazione con confidenzialità at rest",
+            "Memorizzazione con confidenzialità in transito",
+            "Trasmissione mantenendo staticamente la confidenzialità",
+            "Password non prevedibile e non presente in dizionario"
+        ],
+        "correct": [
+            0,
+            2,
+            5
+        ],
+        "justification": "Password non predittibile, confidenzialità at rest e in transito sono essenziali."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Come funziona il sistema S/KEY?",
+        "options": [
+            "Utente genera segreto, calcola N OTP, verifier memorizza Pn, chiede Pn-1 riceve X, calcola h(X), memorizza se Pn != h(X)",
+            "Utente genera segreto, calcola N OTP, verifier memorizza Pn, chiede Pn-1 riceve G, calcola h(G), memorizza se Pn == h(G)",
+            "Utente genera segreto, calcola N-1 OTP, verifier memorizza Pn, chiede Pn-1 riceve X, calcola h(X), memorizza se Pn-2 == h(X)"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "S/KEY usa catena di hash inversa: h(Pn-1) deve uguagliare Pn."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Come avviene il login se si usa FIDO?",
+        "options": [
+            "Login, servizio sfida con chiave pubblica registrata, dispositivo usa UID per chiave corretta, utente sblocca con biometria, servizio verifica firma",
+            "Login, servizio richiede dispositivo registrato, utente sblocca con metodo diverso, dispositivo seleziona chiave casuale",
+            "Login, servizio richiede dispositivo non registrato, utente sblocca con metodo diverso",
+            "Login, servizio richiede dispositivo registrato, utente sblocca con stesso metodo, dispositivo seleziona chiave casuale"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "FIDO: il servizio sfida, il dispositivo usa la chiave corretta, l'utente sblocca con biometria."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali tra questi attacchi si evita avendo un canale sicuro con autenticazione del server per nella Out of band OTP?",
+        "options": [
+            "Ransomware",
+            "MITM",
+            "Man-in-the-end",
+            "DOS"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "L'autenticazione del server previene attacchi MITM nel canale OOB."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali sono i problemi generali legati a CRA?",
+        "options": [
+            "La funzione f deve essere non invertibile",
+            "La sfida deve essere non-ripetibile per evitare replay",
+            "La sfida deve essere ripetibile",
+            "La funzione f deve essere invertibile"
+        ],
+        "correct": [
+            0,
+            1
+        ],
+        "justification": "CRA richiede: sfida non ripetibile (anti-replay) e funzione non invertibile."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Cosa si intende per ZKP?",
+        "options": [
+            "Zero-Knowledge Protocol, Provider dimostra proprietà senza info",
+            "Zero-Knowledge Proof, Provider dimostra proprietà senza info",
+            "Zero-Knowledge Protocol, Provider dimostra dati autentici senza info",
+            "Zero-Knowledge Proof, Provider dimostra dati autentici senza info"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "ZKP = Zero-Knowledge Proof, dimostrazione senza rivelare informazioni."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Data una banca che vuole utilizzare la propria App per permettere l'accesso, quale procedura è considerata migliore?",
+        "options": [
+            "Segreto in registrazione memorizzato, prova conoscenza segreto crittografico, accesso via biometria",
+            "Segreto in registrazione, OTP da quel segreto, prova conoscenza numero password",
+            "Segreto via S/KEY, password in chiaro, prova conoscenza segreto S da hash",
+            "Segreto ogni volta via OOB, password 8-16 hex, prova conoscenza segreto crittografico"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "La migliore: segreto in registrazione + prova crittografica + biometria."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "In che modo un Claimant inviando al Verifier un PIN può far scattare un allarme?",
+        "options": [
+            "Usando un duress code",
+            "Inserendo PIN valido tra TC-1,TC0 e TC+1",
+            "Usando un endurance code",
+            "Inserendo PIN con pinpad"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Il duress code è un PIN speciale che segnala coercizione."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali sono alcuni pro e contro dell'Asymmetric CRA?",
+        "options": [
+            "Non richiede memorizzazione segreti sul Verifier",
+            "Non espone a nessun rischio da parte del Claimant",
+            "Richiede memorizzazione segreti sul Verifier",
+            "Meccanismo molto forte",
+            "Procedura computazionalmente veloce",
+            "Espone a rischi come firma involontaria",
+            "Procedura computazionalmente lenta",
+            "Implementato in protocolli standard",
+            "Difficile da integrare",
+            "Meccanismo più debole"
+        ],
+        "correct": [
+            0,
+            3,
+            5,
+            6,
+            7
+        ],
+        "justification": "Asymmetric CRA: forte, no segreti sul verifier, lento, rischio firma involontaria, standardizzato."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quando una tecnica di autenticazione è considerata forte (strong authN)?",
+        "options": [
+            "Password con caratteri speciali e 8+ caratteri",
+            "Mitigazioni che risolvono tutti i problemi",
+            "Mitigazioni che rendono improbabile claim falsi accettati",
+            "Bassa probabilità asserzione falsa accettata, sistema impenetrabile",
+            "MFA",
+            "Bassa probabilità asserzione falsa, attacchi tech e non-tech"
+        ],
+        "correct": [
+            2,
+            4,
+            5
+        ],
+        "justification": "Strong authN: bassa probabilità di accettare claim falsi, MFA."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "OAuth 2.0:",
+        "options": [
+            "Permette accesso risorse condividendo credenziali",
+            "È basato su password",
+            "È un protocollo di autorizzazione",
+            "Supporta autenticazione ECB"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "OAuth 2.0 è un protocollo di AUTORIZZAZIONE, non autenticazione."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "A cosa si applica l'universal strong authentication?",
+        "options": [
+            "All users",
+            "All devices",
+            "Tutte le precedenti",
+            "All networks"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Universal strong authentication si applica a tutti: utenti, dispositivi, reti."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali sono le best practice per creare e custodire password?",
+        "options": [
+            "Password wallet con architettura distribuita",
+            "Password sicure con maiuscole+cifre+speciali, lunghe, non in dizionario, cambiarle",
+            "Password sicure rifacendosi a esempi noti",
+            "Password wallet cross-platform, una diversa per sito, generate casualmente"
+        ],
+        "correct": [
+            1,
+            3
+        ],
+        "justification": "Best practice: password complesse + wallet cross-platform."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali benefici dà la pre-computazione negli attacchi?",
+        "options": [
+            "Hash pre-calcolati per insieme password, Rainbow Tables",
+            "Hash pre-calcolato per singola password, senza Rainbow Tables"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "La pre-computazione usa Rainbow Tables per lookup veloce hash→password."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Che cos'è il metodo CRA (Challenge-Response Authentication)?",
+        "options": [
+            "Sfida al Claimant, risposta con segreto e valore sfida, verifica contro soluzione Verifier",
+            "Token da server autorizzazione a client e Resource Server"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "CRA: sfida inviata, risposta calcolata con segreto, verificata dal Verifier."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali sono gli step per la Out of band OTP?",
+        "options": [
+            "Richiesta server, UID e Puid, OTP via OOB, invio OTP via canale OOB al server",
+            "Richiesta server, UID, OTP via OOB, invio OTP al server",
+            "Richiesta server, UID e Puid, OTP via canale separato, invio OTP al server",
+            "Richiesta server, Puid, OTP via OOB, invio OTP al server"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "OOB OTP: richiesta, UID+Puid, OTP via canale separato, invio OTP."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Qual è uno dei problemi generali legato al Symmetric CRA?",
+        "options": [
+            "Chiave client K_c in chiaro su AS, possibili attacchi, SCRAM risolve con hash",
+            "Chiave comune K_c_s in chiaro su AS, SCRAM risolve con hash e mutua auth"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Symmetric CRA: chiave client in chiaro sull'AS è vulnerabile; SCRAM usa hash."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Volendo verificare che il Claimant sia un essere umano, quale soluzione è valida?",
+        "options": [
+            "Tecniche biometriche",
+            "CHACHA20",
+            "CAPTCHA",
+            "Verifica possesso cellulare",
+            "Password Duplication"
+        ],
+        "correct": [
+            0,
+            2
+        ],
+        "justification": "Biometria e CAPTCHA verificano che il claimant sia umano."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Cos'è Kerberos?",
+        "options": [
+            "Protocollo autenticazione rete con ticket e crittografia per proteggere info sensibili",
+            "Protocollo per autenticazione/autorizzazione/accounting in reti remote"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Kerberos usa ticket per autenticazione sicura in rete con crittografia."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "La OTP è:",
+        "options": [
+            "Sistema autenticazione challenge-response",
+            "Protocollo sicurezza chiavi asimmetriche",
+            "Sistema autenticazione terza parte fidata",
+            "Password valida per un solo utilizzo"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "OTP = One-Time Password, valida per una sola autenticazione."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Cosa si intende per SSO?",
+        "options": [
+            "Dimostrazione interattiva a conoscenza zero",
+            "Unica credenziale per tutte le operazioni",
+            "Infrastruttura per autenticarsi su diversi sistemi con proprio metodo preferito",
+            "Set di credenziali per tutte le operazioni"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "SSO = Single Sign-On, autenticazione su più sistemi con un metodo."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "In che modo possono essere fornite le OTP all'utente?",
+        "options": [
+            "Autenticatori hardware",
+            "Richiesta prima a AS poi TGS",
+            "Password pre-calcolate su foglio",
+            "Usando IMEI del dispositivo"
+        ],
+        "correct": [
+            0,
+            2
+        ],
+        "justification": "OTP fornite via: autenticatori hardware o password pre-calcolate su foglio."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Qual è la definizione di Autenticazione?",
+        "options": [
+            "Processo per verificare che un'entità abbia fatto un claim valido",
+            "Processo di creazione identità virtuali",
+            "Processo di uso credenziali per sicurezza"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Autenticazione = verificare che un claim di identità sia valido."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali sono i principali vantaggi nell'uso del FIDO?",
+        "options": [
+            "Utente non memorizza chiavi private, rigenerate ogni volta",
+            "Segreto conservato lato server",
+            "Tracciabilità tra servizi",
+            "Dati biometrici lato server",
+            "MFA forte"
+        ],
+        "correct": [
+            0,
+            4
+        ],
+        "justification": "FIDO: MFA forte, chiavi private non memorizzate dall'utente."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Come vengono usate le OTP?",
+        "options": [
+            "Richiesta, risposta UID, server chiede UNA password, risposta con password",
+            "Richiesta, risposta MAC, server chiede UNA password, risposta",
+            "Richiesta, risposta MAC, server chiede TUTTE le password, risposta",
+            "Richiesta, risposta UID, server chiede TUTTE le password, risposta"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "OTP: server chiede una delle password, non tutte."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali tra i due tassi se ALTO può essere vantaggioso per un attaccante?",
+        "options": [
+            "FRR",
+            "RFR",
+            "FAR",
+            "FRA"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "FAR (False Acceptance Rate) alto = attaccanti accettati erroneamente."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "A cosa serve il sale?",
+        "options": [
+            "Randomizza hash, sale diverso per utente, server memorizza Username+Sale+HR, previene rainbow table",
+            "Randomizza hash, stesso sale per tutti, operazioni random, previene brute force"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Il sale randomizza l'hash, diverso per ogni utente, previene rainbow table."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali entità logiche entrano in gioco nell'autenticazione digitale?",
+        "options": [
+            "CSP esegue protocollo e ottiene attributi dopo autenticazione",
+            "RP emette credenziali verificando attributi",
+            "Verifier riceve asserzione da RP",
+            "Verifier esegue protocollo per verificare possesso autenticatore",
+            "RP riceve asserzione dal Verifier per certificare identità",
+            "CSP emette o registra credenziali utente"
+        ],
+        "correct": [
+            3,
+            4,
+            5
+        ],
+        "justification": "Verifier verifica autenticatore, RP riceve asserzione, CSP emette credenziali."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Come dovrebbe essere gestita la memorizzazione delle password lato server?",
+        "options": [
+            "Hash delle password concatenati a sale pubblico unico per utente",
+            "Password in chiaro perché canale cifrato TLS",
+            "Hash delle password senza sale"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Server deve memorizzare hash+sale unico per utente."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali sono i parametri del TOTP?",
+        "options": [
+            "Segreto utente",
+            "Salt",
+            "Lunghezza chiave",
+            "Tempo"
+        ],
+        "correct": [
+            0,
+            3
+        ],
+        "justification": "TOTP dipende da: segreto utente e tempo corrente."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali sono i vantaggi dell'uso S/KEY?",
+        "options": [
+            "Client non conosce tutte le sue password",
+            "Client conosce tutte le sue password",
+            "Server deve conoscere segreto client",
+            "Server non deve conoscere segreto client"
+        ],
+        "correct": [
+            1,
+            3
+        ],
+        "justification": "S/KEY: client conosce tutte le OTP, server non conosce il segreto."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Come avviene la registrazione usando FIDO?",
+        "options": [
+            "Generata nuova chiave inviata a server, rimane nel dispositivo, biometria",
+            "Approvazione, nuova coppia chiavi, pubblica inviata a servizio, privata nel dispositivo con biometria",
+            "Approvazione, nuova coppia chiavi, entrambe inviate, privata protetta biometria",
+            "Approvazione, chiave scelta tra disponibili inviata, biometria"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "FIDO: nuova coppia chiavi, pubblica al servizio, privata nel dispositivo."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Su quali prove si basano i fattori di autenticazione?",
+        "options": [
+            "Possesso info in organizzazione",
+            "Essenza caratteristica morfologica",
+            "Conoscenza info generalmente conosciute",
+            "Possesso qualcosa che l'utente possiede",
+            "Conoscenza info solo utente conosce",
+            "Essenza caratteristica biometrica"
+        ],
+        "correct": [
+            3,
+            4,
+            5
+        ],
+        "justification": "Fattori: conoscenza (solo utente), possesso (oggetto), essenza (biometria)."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Qual è il modo migliore per memorizzazione e validazione password lato server?",
+        "options": [
+            "Hash password, riceve password in chiaro cifrata, calcola hash, confronta",
+            "Password in chiaro, confronta con password ricevuta",
+            "Hash password salata, riceve password, calcola hash con sale, confronta"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "Migliore: hash della password salata, confronto dopo ricalcolo."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "A quale attacco è immune OTP?",
+        "options": [
+            "Sniffing",
+            "DoS",
+            "MITM",
+            "Ransomware"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "OTP è immune allo sniffing: la password usata non è più valida."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali sono le possibili minacce ai fattori di autenticazione?",
+        "options": [
+            "Essenza: contraffazione, privacy, non rimpiazzabile",
+            "Essenza: contraffazione, privacy, rimpiazzabile",
+            "Possesso: rubare dati, sniffare",
+            "Conoscenza: rubare dati, sniffare",
+            "Conoscenza: furto autenticatore, clonazione",
+            "Possesso: furto autenticatore, clonazione, uso non autorizzato"
+        ],
+        "correct": [
+            0,
+            3,
+            5
+        ],
+        "justification": "Conoscenza: sniffing; Possesso: furto/clonazione; Essenza: contraffazione, non rimpiazzabile."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali difficoltà si affrontano usando delle OTP?",
+        "options": [
+            "Fornire e gestire password per i Claimant",
+            "Generare le password",
+            "Comunicare al TGS le password",
+            "Trovare challenge OTP di complessità adeguata"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "La difficoltà principale è fornire e gestire le OTP per i Claimant."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Quali sono gli attori coinvolti nel funzionamento di Kerberos oltre al client?",
+        "options": [
+            "TGS emette ticket per servizi, conosce tutti i server",
+            "TGS gestisce autenticazione iniziale, fornisce TGT",
+            "AS server applicativo autenticazione",
+            "Application Server emette ticket TGT",
+            "AS autentica utenti, fornisce TGT",
+            "Application Server fornisce servizio ai client"
+        ],
+        "correct": [
+            0,
+            4,
+            5
+        ],
+        "justification": "Kerberos: AS autentica e fornisce TGT, TGS emette ticket servizio, Application Server fornisce servizio."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "FIDO è l'acronimo di?",
+        "options": [
+            "Fingerprinting IDentity Online",
+            "Frequent IDentity Online",
+            "Firewall IDentity Online",
+            "Fast IDentity Online"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "FIDO = Fast IDentity Online."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Cosa richiede TOTP?",
+        "options": [
+            "Sincronizzazione clock tra Claimant e Verifier",
+            "Database critico sul Claimant",
+            "Pre-calcolare OTP",
+            "Autenticazioni a raffica"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "TOTP richiede sincronizzazione temporale tra le parti."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Qual è la definizione di autenticazione forte secondo ECB?",
+        "options": [
+            "Più prove, indipendenti, almeno uno riutilizzabile e replicabile",
+            "Due o più prove conoscenza/proprietà/eredità, indipendenti, almeno uno non riutilizzabile e non replicabile, non rubabile via internet"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Strong auth ECB: 2+ fattori indipendenti, non riutilizzabili, non replicabili."
+    },
+    {
+        "module": "Autenticazione",
+        "question": "Cosa si intende per ZKPP?",
+        "options": [
+            "Zero-Knowledge Password Proof, dimostrazione interattiva conoscenza password senza condivisione",
+            "Zero-Knowledge Password Procedure, procedura con dati derivati condivisi",
+            "Zero-Knowledge Password Protocol, dimostrazione dati nascosti",
+            "Zero-Knowledge Password Proof, dimostrazione dati registrazione condivisi"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "ZKPP = dimostrazione di conoscere la password senza condividerla."
+    }
+]

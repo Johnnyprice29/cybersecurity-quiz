@@ -1,0 +1,345 @@
+[
+    {
+        "module": "Accessi Remoti",
+        "question": "Quali sono i principali protocolli di autenticazione via rete?",
+        "options": [
+            "MFA",
+            "DIAMETER",
+            "Eduroam",
+            "EAP",
+            "TACACS+",
+            "RADIUS"
+        ],
+        "correct": [
+            1,
+            4,
+            5
+        ],
+        "justification": "I principali sono: RADIUS, DIAMETER, TACACS+."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Qual è il formato di un pacchetto EAP?",
+        "options": [
+            "Code numera messaggio anti-replay, identifier tipo messaggio, length, type, type-data",
+            "Code tipo messaggio, identifier numera anti-replay, length, type autenticazione, type-data"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "EAP: code=tipo messaggio, identifier=anti-replay, length, type, type-data."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Per autenticare utenti che si connettono via LAN o wireless, quale standard è richiesto nei dispositivi di rete?",
+        "options": [
+            "TLS",
+            "IEEE 802.1x",
+            "SRP"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "IEEE 802.1x è lo standard per autenticazione a livello 2 in LAN/wireless."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Che cos'è l'EAP?",
+        "options": [
+            "Framework non estensibile a livello data-link",
+            "Framework flessibile estensibile a livello data-link per diversi metodi di autenticazione"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "EAP = Extensible Authentication Protocol, framework flessibile per autenticazione."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Quali sono le possibili strategie per gestire l'autenticazione degli accessi in rete?",
+        "options": [
+            "PAP password in chiaro",
+            "CHAP middleware con sfide, OTP, TLS",
+            "CHAP sfida simmetrica con random nonce",
+            "EAP diversi tipi sfida simmetrica",
+            "EAP middleware con sfide, OTP, TLS",
+            "PAP hash MD5 password"
+        ],
+        "correct": [
+            0,
+            2,
+            4
+        ],
+        "justification": "PAP: password in chiaro; CHAP: sfida con nonce; EAP: middleware estensibile."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "A quali attacchi riesce a resistere un RADIUS server?",
+        "options": [
+            "Protezione da sniffing",
+            "Nessuna delle precedenti",
+            "Replay di response",
+            "DoS",
+            "Spoofing"
+        ],
+        "correct": [
+            0,
+            2,
+            3,
+            4
+        ],
+        "justification": "RADIUS resiste a: sniffing, spoofing, replay, DoS."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Quale descrive meglio un esempio di autenticazione client mediante CHAP e RADIUS?",
+        "options": [
+            "Client connette ad AP, AP invia challenge RADIUS, client risponde, AP invia username/challenge/password, RADIUS conferma",
+            "Client connette ad AP, AP invia challenge CHAP, client risponde, AP invia RADIUS con username/challenge/password, RADIUS conferma",
+            "Client connette a RADIUS che invia challenge CHAP, client risponde, RADIUS conferma"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Client→AP (CHAP challenge)→risposta→AP→RADIUS→conferma→navigazione."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Come avviene la comunicazione con gli ISP?",
+        "options": [
+            "Protocollo IP livello 3 per instradamento",
+            "Protocollo PPP livello 2 che incapsula pacchetti su collegamenti punto-punto",
+            "Protocolli ARP e DHCP poi IP"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "PPP è il protocollo livello 2 per comunicazioni punto-punto con ISP."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Come funziona Eduroam?",
+        "options": [
+            "Wi-Fi condivisa in Europa, credenziali verificate da AS locale Europeo",
+            "Wi-Fi condivisa in Europa, credenziali verificate da AS propria istituzione, canale E2E sicuro"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Eduroam: credenziali verificate dalla propria istituzione, canale sicuro E2E."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Vantaggi nell'uso del protocollo 802.1x:",
+        "options": [
+            "Supporta integrità",
+            "NAS può agire come pass-through device",
+            "Sfrutta livello dati per sicurezza"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "802.1x: il NAS agisce come pass-through device."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Quale formato è usato per gli attributi nel RADIUS?",
+        "options": [
+            "TLV",
+            "CMS",
+            "X.509"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "RADIUS usa formato TLV (Type-Length-Value) per gli attributi."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Dov'è posizionato EAP layer?",
+        "options": [
+            "Prima media layer, poi method layer, infine EAP layer",
+            "Prima EAP layer, poi media layer, poi method layer",
+            "Tra media layer e method layer"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "EAP si posiziona tra media layer (data-link) e method layer (autenticazione)."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Quali sono le funzioni di sicurezza indicate nella sigla AAA?",
+        "options": [
+            "Autorizzazione autentica in base a credenziali",
+            "Accounting traccia risorse per marketing",
+            "Accounting traccia risorse per audit/costo/prestazioni",
+            "Autenticazione decide se azione permessa",
+            "Autenticazione autentica in base a credenziali",
+            "Autorizzazione decide se azione permessa"
+        ],
+        "correct": [
+            2,
+            4,
+            5
+        ],
+        "justification": "AAA: Autenticazione (verifica identità), Autorizzazione (permessi), Accounting (tracciamento)."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Cosa indica la sigla AAA?",
+        "options": [
+            "3 funzioni sicurezza secondo produttori NAS",
+            "3 funzioni sicurezza secondo NIST"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "AAA = 3 funzioni di sicurezza definite dai produttori NAS."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Quali campi sono presenti nel protocollo RADIUS?",
+        "options": [
+            "identif",
+            "Tutti i precedenti",
+            "autenticatore",
+            "Code",
+            "length"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "RADIUS contiene: code, identifier, length, authenticator, attributes."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Come può essere usato il RADIUS server?",
+        "options": [
+            "NAS",
+            "Firewall contro virus",
+            "Proxy verso altri server di autenticazione"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "RADIUS può funzionare come proxy verso altri authentication server."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Come viene gestita l'autenticazione dell'utente nel core network?",
+        "options": [
+            "AS contatta NAS per lista utenti legittimi",
+            "NAS contatta AS per verifica, AS ha lista utenti e gestisce autenticazione",
+            "Architettura distribuita con ogni dispositivo che ha lista utenti"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "NAS chiede all'AS che ha la lista utenti e gestisce l'autenticazione."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Qual è lo scopo di gestire l'accesso alla rete?",
+        "options": [
+            "Riconoscere utenti, verificare al contatto infrastruttura, evitare attacchi interni",
+            "Concedere accesso poi autenticare, evitare accessi a monte"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Gestire accesso: riconoscere utenti e prevenire attacchi interni."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Come funziona il protocollo IEEE 802.1x?",
+        "options": [
+            "Client invia EAP con richiesta 802.1x, AP inoltra in RADIUS ad AS, risposta torna via AP",
+            "Nessuna delle precedenti",
+            "Client invia RADIUS con 802.1x incapsulata in EAP ad AS"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "802.1x: client→EAP→AP→RADIUS→AS→risposta→AP→client."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Quale value può contenere type=60 (CHAP-CHALLENGE) dell'attributo RADIUS?",
+        "options": [
+            "Sfida fatta dal NAS all'utente",
+            "CHAP response dell'utente",
+            "Username, password e challenge"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "CHAP-CHALLENGE contiene la sfida del NAS all'utente."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Usare keyed-MD5 nel RADIUS permette di soddisfare efficacemente:",
+        "options": [
+            "Nessuna delle precedenti",
+            "Affidabilità",
+            "Non ripudio",
+            "Integrità ed autenticazione"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Keyed-MD5 non è più sicuro abbastanza, quindi nessuna protezione efficace."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Quali sono le 3 fasi per l'autenticazione di canali PPP?",
+        "options": [
+            "Autenticazione, LCP, incapsulamento livello 3",
+            "LCP negoziazione parametri, autenticazione opzionale PAP/CHAP/EAP, incapsulamento livello 3",
+            "Autenticazione KERBEROS/RADIUS, LCP, incapsulamento"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "PPP: 1)LCP negoziazione, 2)autenticazione opzionale, 3)incapsulamento dati."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Cosa contiene un pacchetto RADIUS con CODE = ACCESS-REQUEST?",
+        "options": [
+            "PIN",
+            "Password secondaria",
+            "Credenziali di accesso (user + pwd)",
+            "Token code"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "ACCESS-REQUEST contiene credenziali: username e password."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Quali sono gli scopi dell'autenticatore nel keyed-MD5 RADIUS?",
+        "options": [
+            "Tutte corrette",
+            "Autenticare risposta server ed evitare replay",
+            "Mascherare password"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "L'autenticatore: autentica risposta, evita replay, maschera password."
+    },
+    {
+        "module": "Accessi Remoti",
+        "question": "Che cos'è RADIUS?",
+        "options": [
+            "Protocollo che implementa autenticazione, autorizzazione e accounting per accesso alla rete",
+            "Protocollo di autenticazione che supporta autorizzazione e accounting"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "RADIUS implementa le 3 funzioni AAA per accesso alla rete."
+    }
+]

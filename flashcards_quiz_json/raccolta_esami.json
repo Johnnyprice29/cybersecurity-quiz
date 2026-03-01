@@ -1,0 +1,807 @@
+[
+  {
+    "question": "Parlare degli attacchi sniffing, spoofing e hijacking e descrivere le opportune misure di sicurezza.",
+    "answer": "Per sniffing s'intende il rilevamento dei pacchetti in transito in una rete e la loro analisi per carpirne informazioni sensibili; al fine di contrastarlo è necessaria cifratura dei pacchetti. Lo spoofing è la falsificazione di un indirizzo IP al fine di accedere a risorse e sistemi; la contromisura è il non usare gli indirizzi per autenticazione. L'hijacking (o Man In The Middle) è il dirottamento di una connessione da un parte di un individuo tramite la manipolazione o cancellazione di pacchetti; al fine di contrastarlo sono necessari riservatezza, autenticazione e integrità dei pacchetti.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivere un attacco phishing e quali sono le misure per limitarlo.",
+    "answer": "Il mail phishing consiste nell'inviare email false che spingono l'utente a cliccare su link malevoli; alcune varianti sono il whaling (che attacca pezzi grossi) e lo spear phishing (che utilizza informazioni personali per aumentare le possibilità di successo). La miglior contromisura che un'azienda può impiegare a riguardo è istruire i propri impiegati su questi rischi.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare che cosa è un attacco connection hijacking, come può essere condotto e quali contromisure si possono adottare.",
+    "answer": "L'hijacking (o Man In The Middle) è il dirottamento di una connessione tramite la manipolazione o cancellazione di pacchetti da un parte di un individuo che vi si immette, e può avvenire al livello fisico (tramite taglio del cavo) o logico (tramite ricezione dei pacchetti da un lato, manipolazione, e re-indirizzamento verso l'altro); al fine di contrastarlo sono necessari riservatezza, autenticazione e soprattutto integrità dei pacchetti.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare cosa si intende con malware food chain, chiarire perché ha questo nome ed illustrare con un esempio.",
+    "answer": "Il malware food chain descrive un attacco a più stadi in cui un malware iniziale (il \"piccolo pesce\") infetta un sistema, per poi scaricare e installare malware aggiuntivi (i \"pesci più grandi\") che eseguono azioni più dannose. Il nome deriva dall'analogia con la catena alimentare in natura, dove ogni livello trofico si nutre del precedente. Un esempio è un downloader trojan (primo livello) che, una volta eseguito, scarica un ransomware (livello successivo) che crittografa i file dell'utente, e infine un keylogger (ulteriore livello) per rubare credenziali. La complessità aumenta con ogni passaggio, rendendo la rimozione e l'analisi più difficili.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare che cosa sono gli attacchi di phishing e whaling.",
+    "answer": "Il mail phishing consiste nell'inviare email false che spingono l'utente a cliccare su link malevoli; il whaling è una variante che punta ad attaccare pezzi grossi di aziende o istituzioni. La miglior contromisura che un'azienda può impiegare a riguardo è istruire i propri impiegati su questi rischi.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Che cosa significano le seguenti parole? Vulnerabilità, minaccia e security control? Come sono correlate?",
+    "answer": "Vulnerabilità: debolezza di un asset informatico. Minaccia: evento intenzionale o accidentale che può causare la perdita di una proprietà di sicurezza sfruttando una vulnerabilità. Security control: si usano per limitare/prevenire qualunque tipo di minaccia verso gli asset. Le vulnerabilità, se sfruttate da una minaccia, possono causare danni agli asset, e i security control servono a proteggere gli asset dalle minacce.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Che cosa significano le seguenti parole? Vulnerabilità, minaccia, asset ed attacco? Come sono correlate?",
+    "answer": "Vulnerabilità: debolezza di un asset informatico. Minaccia: evento intenzionale o accidentale che può causare la perdita di una proprietà di sicurezza sfruttando una vulnerabilità. Asset: l'insieme di beni, dati e persone necessarie all'erogazione di un servizio informatico. Attacco: verificarsi di una minaccia di tipo “evento intenzionale”. Un attacco è l'azione di una minaccia che sfrutta una vulnerabilità per danneggiare un asset.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare cosa vuol dire DoS e fare esempi; perché è difficile da scoprire un attacco DoS; come difendersi da questi attacchi.",
+    "answer": "In un attacco DoS il funzionamento di un server viene impedito o limitato tramite vari metodi, come la distruzione fisica dei collegamenti o un flooding di richieste ai server al fine di sovraccaricarli. Scoprire questo tipo di attacco è difficile perché spesso non è semplice identificare se si tratta effettivamente di un attacco o di un semplice malfunzionamento. Essendo un attacco prevalentemente di tipo brute force, non esiste un metodo semplice per proteggersi da esso se non aumentando la generale agilità e flessibilità del sistema in questione, magari aumentando il numero di server e collegamenti o migliorando l'efficienza dei software di sicurezza.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Cos'è Stuxnet? Come funziona e che lezioni possiamo concluderne?",
+    "answer": "Stuxnet è un malware che è una combinazione di worm + virus per sistemi Windows. Costituisce il prototipo di un nuovo tipo di attacco, perché è stato il primo caso noto di attacco verso i sistemi SCADA, che sono sistemi usati per controllare gli impianti industriali. Siccome i computer non erano collegati a Internet, il primo veicolo di infezione è stata probabilmente una chiavetta USB dei tecnici di manutenzione, e poi il malware si è propagato tramite i dischi di rete condivisi senza alcuna protezione.  La lezione è di non fidarsi delle chiavette USB di manutentori.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Dire cos'è la window of exposure e dove si può agire per ridurla",
+    "answer": "La finestra di esposizione è il periodo di tempo in cui il sistema è esposto a una minaccia di sicurezza. Si suddivide in: fase di scoperta (un attaccante sfrutta una vulnerabilità non nota), fase di pubblicazione (le persone cercano di limitare i danni) e fase di protezione (i clienti applicano la contromisura).  Per ridurla si possono fare controlli di sicurezza periodici per rilevare le vulnerabilità preventivamente, e notificare il pubblico il prima possibile in caso di attacco così da minimizzare i danni.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Definire i termini minaccia, vulnerabilità e security control, quindi spiegare quali relazioni intercorrono tra di loro e fornire un esempio per ciascun termine nel caso di una terna correlata",
+    "answer": "Vulnerabilità: debolezza di un asset informatico. Minaccia: evento intenzionale o accidentale che può causare la perdita di una proprietà di sicurezza sfruttando una vulnerabilità. Security control: si usano per limitare/prevenire qualunque tipo di minaccia verso gli asset. Una vulnerabilità è la porta di ingresso per una minaccia, mentre i security control sono le difese.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare brevemente la proprietà di sicurezza denominata integrità dicendo da quali attacchi protegge sia quando i dati a cui si riferisce sono memorizzati sia quando sono trasmessi.",
+    "answer": "L'integrità garantisce che l'informazione rimanga accurata, completa e non alterata da soggetti non autorizzati o eventi accidentali. Quando i dati sono trasmessi, protegge da attacchi attivi come il Man-in-the-Middle (MitM), in cui un attaccante intercetta e modifica il contenuto dei pacchetti (tampering), e dagli errori di comunicazione dovuti a rumore di rete. Quando i dati sono memorizzati (a riposo), protegge da accessi non autorizzati volti alla manipolazione di database, log o file di sistema, nonché dal degrado fisico dei supporti (bit rot) e dall'azione di malware che tentano di compromettere la coerenza del sistema. Viene garantita attraverso l'uso di funzioni di hash crittografiche (SHA-256), codici di autenticazione dei messaggi (MAC/HMAC) e firme digitali.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivere HMAC indicando i pregi e i difetti.",
+    "answer": "HMAC è il più famoso e diffuso algoritmo per keyed-digest, ed applica una funzione di hash H, con blocco di byte B e output di L byte. HMAC=H(K' XOR opad || H(K' XOR ipad||data)). Pregi e difetti: pochi dati trasmessi date le piccole dimensioni del digest, prestazioni veloci, riservatezza e autenticazione con un singolo algoritmo di hash. Integrità parziale dato che possono avvenire collisioni.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivere le proprietà di autenticazione e integrità di HMAC rispetto la firma elettronica.",
+    "answer": "HMAC garantisce integrità tramite digest e autenticazione dei dati (ma non del mittente dato che chiunque può aver mandato quell' hash). La firma digitale in più fornisce autenticazione del mittente perché l'hash viene cifrato usando la sua chiave privata, ed esiste un certificato X.509 che ne certifica l'identità.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "What is integrity? Mention some possible attacks related to it?",
+    "answer": "Si definisce integrità la proprietà che indica se un dato ha subito manipolazioni; alcuni possibili attacchi all'integrità di un messaggio o pacchetto sono quelli di tipo MITM, i quali possono modificare i pacchetti nella connessione. Un'altra minaccia sono i Virus/trojan che infettano una macchina modificando file a sua insaputa.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Cosa significano i seguenti acronimi: DSA, RC-4, RIPEMD?",
+    "answer": "DSA: è un algoritmo di crittografia asimmetrica che fa esponenziale da un lato e logaritmo dall'altro; si usa solo per firma digitale (quindi niente cifratura), dato che la funzione che utilizza se applicata su plaintext causerebbe perdita dei dati. RC-4: algoritmo di cifratura simmetrica di tipo stream, ovvero che si applica ad un stream di bit continuo: il funzionamento di base è che sorgente e destinazione concordino un seme usato per cifrare e decifrare. RIPEMD: algoritmo di hash crittografico; considerato ottimo ma scarsamente utilizzato.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Dare una breve descrizione di: RC4, RSA, RIPEMD.",
+    "answer": "RSA: è un algoritmo di crittografia asimmetrica a blocchi che genera le sue chiavi usando due esponenti; la scelta di tali esponenti è fondamentale per la qualità del risultato finale (in particolare, il prodotto dei due esponenti deve essere inferiore alle dimensioni del blocco da cifrare). RC-4: algoritmo di cifratura simmetrica di tipo stream, ovvero che si applica ad un stream di bit continuo: il funzionamento di base è che sorgente e destinazione concordino un seme usato per cifrare e decifrare. RIPEMD: algoritmo di hash crittografico; considerato ottimo ma scarsamente utilizzato.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Differenza algoritmi stream e a blocchi",
+    "answer": "Gli algoritmi cifrano il file principale dividendolo in blocchi e cifrando ciascuno in maniera più o meno separata con la chiave in base all'algoritmo scelto. Gli algoritmi stream si applicano ad un stream di bit continuo: il funzionamento di base è che sorgente e destinazione concordino un seme usato per cifrare e decifrare. Gli algoritmi stream sono tendenzialmente più veloci di quelli a blocchi dato che effettuano un semplice XOR, ma richiedono costante sincronia tra mittente e destinatario. Di confronto, gli algoritmi a blocchi sono nettamente più lenti date le varie operazioni che è necessario effettuare per combaciare i dati alle dimensioni dei blocchi (come il padding), ma si ma si prestano molto bene alla trasmissione dei pacchetti internet",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Perché gli algoritmi di stream sono più veloci?",
+    "answer": "Gli algoritmi stream sono tendenzialmente più veloci di quelli a blocchi dato che effettuano un semplice XOR, ma richiedono costante sincronia tra mittente e destinatario (ciò non li rende buoni per le trasmissioni internet), nonché il fatto che gli algoritmi a blocchi sono nettamente più lenti date le varie operazioni che è necessario effettuare per far combaciare i dati alle dimensioni dei blocchi (come il padding)",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Un'azienda deve scambiare con un'altra dei file ma possono utilizzare soltanto una chiave di 12 caratteri max; indicare come deve essere implementato il sistema (NOTA: volevano nella soluzione che si parlasse anche di kdf)",
+    "answer": "Creo una chiave con K=pbkdf(pwd, sale, itc), e utilizzo IPsec in tunnel mode sui gateway aziendali per avere integrità dei dati e autenticazione del mittente; ipotizzando che i file da scambiare siano particolarmente sensibili, si consiglia l'uso della cyphersuite VPN-B per avere anche riservatezza sui dati.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "CBC vs CTR: come funzionano, vantaggi e svantaggi",
+    "answer": "La modalità CBC (Cipher Block Chaining) concatena i blocchi di testo in chiaro: ogni blocco viene combinato tramite XOR con il testo cifrato del blocco precedente prima della cifratura; il primo blocco utilizza un Vettore di Inizializzazione (IV). Vantaggi: impedisce attacchi di swapping dei blocchi e maschera pattern ripetuti nel plaintext. Svantaggi: la cifratura è sequenziale (non parallelizzabile) e un errore in un bit del testo cifrato corrompe l'intero blocco corrente e parte del successivo. La modalità CTR (Counter) trasforma il cifrario a blocchi in un cifrario a flusso: cifra un valore composto da un Nonce e un contatore incrementale per generare un keystream, che viene poi applicato al testo in chiaro tramite XOR. Vantaggi: permette la parallelizzazione completa sia in cifratura che decifratura, supporta l'accesso casuale ai dati e non richiede padding. Svantaggi: è estremamente sensibile al riutilizzo della coppia Chiave/Nonce (che compromette totalmente la sicurezza) e, come CBC, non garantisce l'integrità del messaggio senza l'aggiunta di un codice di autenticazione (MAC).",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Due utenti desiderano scambiarsi via rete una serie di documenti informato ASCII (.TXT). Suggerire quali operazioni è opportuno svolgere su questi documenti prima di trasmetterli per resistere ad attacchi sulla rete (insicura). Si tenga presente che i documenti non contengono info riservate. Nota: non si usino protocolli o formati dati complessi. Si esprima la soluzione tramite formula (usando termini appropriati, come aes(k,d) piuttosto che enc(k,d))",
+    "answer": "n=nonce+counter\\nk=DH\\ndigest=hmac_sha256(k, P||n)\\nc=P||digest||n\\nSi genera una chiave di sessione con l'algoritmo di Diffie-Hellman, si calcola il digest del messaggio concatenato con un nonce, infine si concatena il messaggio con il digest ed il nonce.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Utente A vuole mandare un messaggio segreto e autenticato agli utenti B e C, tutti e tre hanno un paio di chiavi RSA a testa. Descrivere il formato del data block per inviare il messaggio con le richieste proprietà di sicurezza.",
+    "answer": "Bisogna cifrare con le chiavi pubbliche di B e C e firmare con la propria privata e distribuire la chiave pubblica di A, quindi:\\n-C riceve: AES_128(Kpub;c, M)||HMAC-SHA256(AES_128(Kpub;c, M),\\nKpri;a)||Kpub;a\\n-B riceve: AES_128(Kpub;b, M)||HMAC-SHA256(AES_128(Kpub;b, M),\\nKpri;a)||Kpub;a\\nCiascun utente dovrà avere il certificato dell'altro per poter decifrare e verificare l'autenticità.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Parlare del meccanismo del keyed digest (cos'è, quando e come si usa, vantaggi e svantaggi).",
+    "answer": "In un soluzione di questo tipo, si invia un digest calcolato non solo sui dati, ma anche su un segreto (chiave) e solo chi conosce K puo calcolare il digest sui dati ricevuti e confrontarli con il digest trasmesso. Tale soluzione e molto utilizzata in ambito di rete. Proprietà di sicurezza: + integrità: se i dati in chiaro vengono modificati, il keyed-digest kdR calcolato sui dati ricevuti sarà diverso dal keyed-digest kdF ricevuto; + autenticazione: solo chi conosce la chiave segreta può aver generato un keyed-digest corrispondente ai dati; - riservatezza: i dati sono inviati in chiaro",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Parlare del keyed-digest e la firma digitale, quali sono le proprietà che offrono, vantaggi e svantaggi?",
+    "answer": "Keyed-digest: si invia un digest calcolato non solo sui dati, ma anche su un segreto (chiave) e solo chi conosce K puo calcolare il digest sui dati ricevuti e confrontarli con il digest trasmesso. Tale soluzione e molto utilizzata in ambito di rete. Firma digitale: viene calcolato un digest con un algoritmo crittografico e associato con un oggetto di dati in modo tale che qualsiasi destinatario dei dati può usare la firma per verificare l'origine e l'integrità dei dati. Proprietà, vantaggi e svantaggi sono elencati nel documento.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Un'azienda vuole fare firma digitale su tutti i suoi documenti e conservare sia i documenti sia le firme in modo da poterli verificare anche in futuro. Che cosa usare? Che cosa deve memorizzare insieme alla firma?",
+    "answer": "Una enveloping CMS, contenente le varie firme associate a un dato documento e i corrispettivi certificati, più aggiornamento costante delle CRL associate alle varie firme possedute per verificarne la validità. È necessario anche il timestamp della firma, per certificare la data in cui è stata apposta.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Quali proprietà di sicurezza offre la firma digitale, come si realizza, quali parti della firma offrono quelle proprietà di sicurezza.",
+    "answer": "Nella firma digitale viene calcolato un digest con un algoritmo crittografico e associato con un oggetto di dati in modo tale che qualsiasi destinatario dei dati può usare la firma per verificare l'origine e l'integrità dei dati. Proprietà di sicurezza sono elencate nel documento, e le caratteristiche risiedono nel fatto che sia un algoritmo di digest crittograficamente sicuro (SHA256) e nella sua capacità di generare una firma che dipende dalla chiave privata del firmatario.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Perché l'algoritmo SHA-1 è deprecato? Suggerire una possibile e valida alternativa e motivare perché questa sia migliore di SHA-1.",
+    "answer": "SHA-1 era un algoritmo complessivamente buono, ma anche estremamente attaccato. Difatti, un gruppo di ricercatori cinesi e riuscito a trovare collisioni con soli 2^69 calcoli. È stato successivamente diffuso SHA-2. Come rimedio veloce dopo l'attacco a SHA-1, la famiglia SHA-2 e stata creata allungando il digest, in maniera simile a quanto avvenuto fra DES e 3DES. Una alternativa valida è SHA256.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivi la crittografia a curve ellittiche.",
+    "answer": "La crittografia a curve ellittiche (ECC) utilizza l'aritmetica delle curve ellittiche bidimensionali, invece dell'aritmetica modulare monodimensionale. Dal punto di vista concettuale, invece di usare numeri (che sono punti su una retta) si prende lo spazio cartesiano, e i valori che sono validi sono solo i punti che soddisfano l'equazione di una curva ellittica. Il problema del logaritmo discreto su una curva è più complesso da risolvere per i cattivi rispetto al problema del logaritmo discreto nell'aritmetica modulare, quindi le chiavi per l'ECC possono essere più corte (circa 1/10) per un livello di sicurezza comparabile, riducendo i requisiti di memorizzazione sui dispositivi embedded.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Dire i due principali vantaggi degli algoritmi basati su ECC",
+    "answer": "Il problema del logaritmo discreto su una curva è più complesso da risolvere per i cattivi rispetto al problema del logaritmo discreto nell'aritmetica modulare, quindi: 1) Le chiavi per l'ECC possono essere più corte (circa 1/10) per un livello di sicurezza comparabile 2) Per i buoni tutti gli algoritmi richiedono solo due operazioni elementari che danno come risultato dei punti",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivi l'algoritmo di keyed-digest CBC-MAC.",
+    "answer": "Il MAC è costituito dall'ultimo blocco di testo cifrato risultante dall'applicazione di un algoritmo di crittografia simmetrica a blocchi in modalità CBC, con vettore di inizializzazione IV nullo (la riservatezza non è necessaria): tutti i blocchi di testo cifrato vengono buttati via eccetto l'ultimo, che viene preso come MAC ) il destinatario potrà criptare i dati ricevuti con lo stesso algoritmo di crittografia e confrontare l'ultimo blocco di testo cifrato risultante con il blocco di testo cifrato ricevuto. È un algoritmo robusto ma computazionalmente oneroso.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Indicare quale attacco all'integrità è possibile se dei dati D vengono protetti con un MAC calcolato nel seguente modo (k è la chiave e h è la funzione di hash): MAC =h (k || D).",
+    "answer": "Se si concatena un altro blocco in coda il digest sarà diverso e il buono non se ne accorgerà, quindi verrà cambiato il digest in qualche modo pur senza conoscere la chiave condivisa. La contromisura è usare un HMAC per evitare la creazione di falsi messaggi con MAC valido.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Vantaggi e svantaggi di cifratura fatta con enc(enc(p, k1), k2) con k1 e k2 chiavi diverse ma di lunghezza uguale",
+    "answer": "In genere non si utilizza mai un'applicazione doppia di algoritmi di cifratura, motivo per il quale viene evitata, dato che non aumenterebbe il livello di sicurezza in maniera significativa. Inoltre, l'applicazione doppia di algoritmi di cifratura e soggetta ad un attacco di tipo known-plaintext, chiamato meet-in-the-middle, che permette di decifrare i dati con al piu 2N+1 tentativi (per chiavi da N bit). In breve, raddoppia il tempo di calcolo ma la lunghezza della chiave aumenta di un solo bit. Un esempio valido potrebbe essere l'utilizzo di AES con due chiavi diverse.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivere la tecnica crittografica ECB identificandone vantaggi e svantaggi.",
+    "answer": "L'Electronic Code Book (ECB), che consiste in: suddividere il testo in chiaro da criptare in blocchi base di dimensione fissa; applicare l'algoritmo di criptazione su ciascun blocco i-esimo, indipendentemente dagli altri blocchi: Ci = enc (K, Pi); concatenare i blocchi risultanti per produrre il testo cifrato. Vantaggi e Svantaggi sono indicati nel testo.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Quale delle seguenti tecniche – firma digitale, cifratura simmetrica, keyed-digest - sarebbe da preferire per proteggere l'integrità di un flusso di pacchetti a 1 Gbps? Giustificare la scelta.",
+    "answer": "Keyed-digest perchè è la tecnica più veloce, hash veloce e usa una sola operazione. La firma non si può fare su un flusso di dati. La cifratura è lenta. La velocità è quindi un fattore determinante, così come la robustezza per evitare collisioni.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Quale tecnica è meglio usare per proteggere dati trasmessi in rete da attacchi di tipo replay? Cifratura simmetrica, cifratura asimmetrica, keyed-digest, altro? Giustificare.",
+    "answer": "Si parla di soli attacchi replay, quindi basta garantire Integrità con un keyed digest basato su chiave simmetrica (concordata a inizio sessione o meglio generata pseudo-randomicamente da un segreto condiviso): d = kd(K||n||M||K) invio M||n||d Nel KD pongo K agli estremi in modo da evitare prefix e postfix attack. È quindi necessario che mittente e destinatario condividano la chiave.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Due utenti devono scambiarsi dei file di testo formato ASCII (txt) non riservati. Come fanno a garantire che non vengano modificati durante il transito? Spiegare quali funzioni di sicurezza usare e enunciare la formula che produce il documento X trasmesso rispetto al documento originale. Si usino nomi significativi (es. aes(K,D) rispetto a enc(K,D).",
+    "answer": "k=DH, genero chiave\\nd=HMAC_SHA256(k, M), creo digest messaggio per integritàe autenticazione\\nX=M||d, invio messaggio + digest\\nSi utilizza quindi l'algoritmo di Diffie-Hellman per generare una chiave di sessione condivisa e l'algoritmo di HMAC per calcolare il digest del messaggio e garantire l'integrità.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Sistemi di autenticazione a sfida simmetrici, vantaggi e svantaggi.",
+    "answer": "Un sistema a sfida è un processo di autenticazione che verifica un'identità richiedendo che siano fornite le informazioni di autenticazione corrette in risposta a una sfida; la versione simmetrica richiede che la risposta alla sfida sia calcolata con la chiave comune condivisa col server Pro e contro: + no sniffing + no replay (la sfida contiene un nonce) - lato client, l'utente deve avere un funzione di hash per calcolare la risposta (non sempre possibile) il server non può memorizzare l'hash delle password, ma deve conoscerle in chiaro al fine di calcolare l'hash della soluzione la sfida passa in chiaro",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Autenticazione simmetrica, cos'è, come funziona, vantaggi, punti deboli.",
+    "answer": "Un sistema a sfida è un processo di autenticazione che verifica un'identità richiedendo che siano fornite le informazioni di autenticazione corrette in risposta a una sfida; la versione simmetrica richiede che la risposta alla sfida sia calcolata con la chiave comune condivisa col server. Procedura di autenticazione: identificazione, richiesta di una prova, prova, controllo. Pro e contro: elencati nel documento.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Kerberos è detto essere un sistema di autenticazione TTP. Spiegare perché è classificato in questo modo e quale rischi corrono i client ed i server applicativi se il terzo non si comporta correttamente.",
+    "answer": "TTP sta per Third Thrusted Party, e kerberos ha questa definizione perché il suo sistema di autorizzazione utilizza anche un server di rilascio di ticket intermedio tra pretender e verifier. Se il terzo non si comporta correttamente, i client e i server potrebbero essere compromessi. Ad esempio, se il server di Kerberos viene compromesso, l'attaccante potrebbe rilasciare ticket falsi.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Kerberos: spiegare cosa significa trusted third party.",
+    "answer": "TTP sta per Third Thrusted Party, e kerberos ha questa definizione perché il suo sistema di autorizzazione utilizza anche un server di rilascio di ticket intermedio tra pretender e verifier. Il third party è quindi un'entità di cui ci si fida per l'autenticazione e l'autorizzazione.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare cos'è l'attacco dizionario: sotto quali ipotesi può essere condotto e quali contromisure adottare.",
+    "answer": "Un attacco a dizionario è un tipo di attacco a forza bruta con lo scopo di scoprire una password conoscendone l'hash (= digest): viene usata una lista, detta dizionario, che contiene solo le password più probabili, ovvero quelle che gli esseri umani scelgono più di frequente perché facili da ricordare. Può essere condotto se l'attaccante ha accesso alle informazioni nel server: ha il database del server contenente gli hash corrispondenti alle password degli utenti e conosce l'algoritmo di hash usato per calcolare gli hash. Utilizzando del “sale” (ovvero una stringa randomica aggiunta alle è password prima dell'hashing) si annulla completamente il rischio di questo attacco.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Confrontare le tematiche di autenticazione a sfida simmetrica ed asimmetrica identificando chiaramente vantaggi e svantaggi di ciascuna di esse.",
+    "answer": "Un sistema a sfida è un processo di autenticazione che verifica un'identità richiedendo che siano fornite le informazioni di autenticazione corrette in risposta a una sfida. Si dividono in due tipologie: simmetrici: l'utente conosce un segreto condiviso: dimostra di conoscere il segreto senza trasmetterlo, ma usandolo per effettuare un calcolo. Asimmetrici: l'utente conosce la sua chiave privata: dimostra di conoscere la chiave senza trasmetterla, ma usandola per effettuare un calcolo; la chiave privata non è condivisa: il server può compiere la verifica usando la chiave pubblica dell'utente. Vantaggi e svantaggi sono elencati nel documento.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Cos'è una rainbow table?",
+    "answer": "Le rainbow table sono degli speciali database precalcolati che permettono di raggiungere un compromesso tra: memoria: solo un sottoinsieme degli hash è salvato nel database precalcolato e tempo di calcolo: quando la catena viene trovata, occorre ripercorrere la catena per trovare la password. Sono utili per velocizzare un attacco a dizionario, ma richiedono molta memoria.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare il metodo della sfida asimmetrica elencando punti di forza e deboli del metodo e dei singoli componenti che partecipano.",
+    "answer": "Un sistema a sfida asimmetrica è un processo di autenticazione che verifica un'identità richiedendo che siano fornite le informazioni di autenticazione corrette in risposta a una sfida. L'utente conosce la sua chiave privata: dimostra di conoscere la chiave senza trasmetterla, ma usandola per effettuare un calcolo; la chiave privata non è condivisa: il server può compiere la verifica usando la chiave pubblica dell'utente. Procedura di autenticazione: identificazione, richiesta di una prova, prova, controllo. Punti di forza e deboli elencati nel documento.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare cos'è un sistema di autenticazione a sfida asimmetrica, indicando quali messaggi vengono scambiati tra il client e il server che autentica e quali vantaggi e svantaggi presenta.",
+    "answer": "Un sistema a sfida asimmetrica è un processo di autenticazione che verifica un'identità richiedendo che siano fornite le informazioni di autenticazione corrette in risposta a una sfida. L'utente conosce la sua chiave privata: dimostra di conoscere la chiave senza trasmetterla, ma usandola per effettuare un calcolo; la chiave privata non è condivisa: il server può compiere la verifica usando la chiave pubblica dell'utente. Procedura di autenticazione: identificazione, richiesta di una prova, prova, controllo. Vantaggi e svantaggi: elencati nel documento.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare che cosa è un sistema OTP time-based, indicando quali informazioni vengono trasmesse dal client al server di autenticazione e quale funzionalità è associata a ciascuna informazione trasmessa.",
+    "answer": "Nelle time-based OTP la password dipende dal tempo e dal segreto dell'utente: p(ID; t) = h(t; SID). E' richiesto inoltre un calcolo locale al claimant e la sincronizzazione dei clock. La password e ottenuta mediante un hash di tempo e segreto dell'utente. Il client trasmette al server lo username e la password OTP. Il server verifica se la password corrisponde al tempo corrente o ai tempi immediatamente precedenti e successivi (per compensare eventuali disallineamenti di clock). Se la password è valida, il server autentica l'utente.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare brevemente il concetto di OTP e quale problema di sicurezza risolve. Spiegare, quindi, con l'ausilio di appropriate formule, le fasi di inizializzazione e verifica nel protocollo S/KEY.",
+    "answer": "OTP è un codice monouso. Risolvono sniffing, MITM, replay. S/KEY: inizializzazione sul server con l'ultima password PN = hN(s), verifica h(PN-1) = PN. S/KEY è una password che cambia ad ogni accesso, basata su una sequenza di hash.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare come funziona il timestamp (sicuro).",
+    "answer": "Un timestamp sicuro associa un'impronta temporale a un dato digitale tramite una funzione di hash crittografica e la firma digitale di un'autorità di timestamp (TSA) fidata. Il documento da marcare temporalmente viene trasformato in un hash, il quale viene inviato alla TSA. La TSA genera un token di timestamp contenente l'hash, l'orario di emissione e la sua firma digitale. Questo token, allegato al documento originale, prova l'esistenza del dato in un momento specifico, proteggendolo da retrodatazioni o modifiche non autorizzate, poiché alterare il documento invaliderebbe il timestamp. La validità del timestamp dipende dalla robustezza della TSA e dei suoi certificati.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Autenticazione e integrità tramite la firma della CA e la lista degli algoritmi usati per firmare.",
+    "answer": "L'autenticazione e l'integrità di un certificato sono garantite dalla firma digitale della CA. La CA utilizza la sua chiave privata per firmare l'hash del certificato (contenente informazioni sull'entità, la chiave pubblica e il periodo di validità). La firma così creata viene allegata al certificato. La lista degli algoritmi usati (es. SHA256withRSA, ECDSA) definisce le funzioni di hash e crittografia utilizzate per la firma. Il client verifica l'integrità ricalcolando l'hash e confrontandolo con la firma decrittografata con la chiave pubblica della CA (ottenibile da un certificato root attendibile). Se combaciano, il certificato è autentico e integro. La scelta di algoritmi robusti (e la loro periodica revisione) è fondamentale per la sicurezza.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Con riferimento all'anti-spam per le MTA in ingresso, descrivere nolisting, greylisting, basato su DNS, i loro vantaggi e svantaggi.",
+    "answer": "DNSBL (DNS blacklists and whitelists): il suo funzionamento è il seguente: si riceve una richiesta di collegamento da parte di un MTA esterno, avente indirizzo A.B.C.D, e si verifica se questo indirizzo è noto per spedire spam eseguendo un'operazione di lookup DNS. Greylisting un mail server che utilizza questa tecnica rifiuterà temporaneamente tutte le e-mail da un mittente che non conosce. Nolisting: è sempre basata sulla teoria che gli spammer non hanno tempo da perdere, e quindi non vanno a provare tutti gli MX (Mail eXchanger, ossia un'incoming MTA nella terminologia dei DNS) definiti per ciascun dominio. In particolare i domini che utilizzano questa tecnica vanno a definire tre diversi MX:.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "1. Parlare degli attacchi sniffing, spoofing e hijacking e descrivere le opportune misure di sicurezza.",
+    "answer": "Sniffing è l'intercettazione e l'analisi del traffico di rete per ottenere informazioni sensibili. Le contromisure includono la crittografia del traffico. Spoofing è la falsificazione dell'indirizzo IP per accedere a risorse; le contromisure implicano l'uso di autenticazione forte. Hijacking (Man In The Middle) è il dirottamento di una connessione manipolando i pacchetti. Le contromisure includono riservatezza, autenticazione e integrità dei pacchetti. \\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "2. Spiegare che cos'è il social engineering, fare un esempio di questo attacco, indicare le contromisure che un'azienda può adottare per difendersi.",
+    "answer": "Il social engineering sfrutta le debolezze psicologiche delle persone per ottenere informazioni o accesso a sistemi. Un esempio è il phishing via email. Le contromisure includono la formazione dei dipendenti sui rischi, l'implementazione di controlli di accesso e l'autenticazione a più fattori. L'istruzione degli impiegati e la simulazione di attacchi sono ottime contromisure.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "3. Descrivere un attacco phishing e quali sono le misure per limitarlo.",
+    "answer": "Il phishing è l'invio di email fraudolente per indurre gli utenti a rivelare informazioni sensibili o cliccare su link malevoli. Varianti includono lo spear phishing (mirato) e il whaling (contro figure di alto livello). Le misure per limitarlo includono l'istruzione dei dipendenti, filtri anti-spam, verifica a due fattori e monitoraggio del traffico email.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "4. Spiegare che cosa è un attacco connection hijacking, come può essere condotto e quali contromisure si possono adottare.",
+    "answer": "Il connection hijacking (Man-in-the-Middle) è il dirottamento di una connessione mediante la manipolazione di pacchetti. Può essere condotto a livello fisico (taglio di cavi) o logico (intercettazione e re-indirizzamento). Le contromisure includono riservatezza, autenticazione e integrità dei pacchetti, utilizzando protocolli sicuri come HTTPS e SSH.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "5. Spiegare cosa si intende con malware food chain, chiarire perché ha questo nome ed illustrare con un esempio.",
+    "answer": "Nonostante non sia presente una risposta nel testo, posso fornire una definizione generale. Malware food chain si riferisce al percorso che un malware segue per infettare diversi sistemi, simile a una catena alimentare. Un esempio è un malware che si diffonde tramite email, infetta un PC, quindi si propaga ad altri dispositivi sulla stessa rete. Ha questo nome perché si propaga da un sistema all'altro, come una catena alimentare. \\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "9. Spiegare cosa vuol dire DoS e fare esempi; perché è difficile da scoprire un attacco DoS; come difendersi da questi attacchi.",
+    "answer": "DoS (Denial of Service) impedisce il funzionamento di un server sovraccaricandolo di richieste. Esempi includono flooding di richieste o distruzione fisica. È difficile da scoprire perché può sembrare un malfunzionamento. La difesa implica aumentare l'agilità e la flessibilità del sistema, magari aumentando il numero di server e collegamenti o migliorando l'efficienza dei software di sicurezza.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "10. Cos'è Stuxnet? Come funziona e che lezioni possiamo concluderne?",
+    "answer": "Stuxnet è un malware che combina worm e virus per sistemi Windows, progettato per attaccare i sistemi SCADA. Si è diffuso tramite chiavetta USB infetta e dischi di rete condivisi. Le lezioni includono l'importanza della sicurezza fisica, della protezione dei sistemi isolati e della segmentazione della rete. E' stato il primo attacco noto ai sistemi SCADA.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "11. Dire cos'è la window of exposure e dove si può agire per ridurla",
+    "answer": "La window of exposure è il periodo in cui un sistema è vulnerabile a un attacco. Comprende la fase di scoperta della vulnerabilità, la fase di pubblicazione e la fase di protezione. Per ridurla, si possono effettuare controlli di sicurezza periodici e notificare il pubblico il prima possibile in caso di attacco, così da minimizzare i danni. La fase di patch è centrale per la riduzione del rischio.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "13. Definire i termini minaccia, vulnerabilità e security control, quindi spiegare quali relazioni intercorrono tra di loro e fornire un esempio per ciascun termine nel caso di una terna correlata",
+    "answer": "Vulnerabilità è una debolezza di un asset informatico. Minaccia è un evento che sfrutta una vulnerabilità. Security control limita/previene le minacce. Esempio: vulnerabilità (buffer overflow), minaccia (esecuzione di codice malevolo), security control (ASLR). La corretta implementazione dei security control riduce il rischio.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "15. Descrivere HMAC indicando i pregi e i difetti.",
+    "answer": "HMAC è un algoritmo per keyed-digest che applica una funzione di hash H con blocco di byte B e output di L byte. La forma è HMAC=H(K' XOR opad || H(K' XOR ipad||data)). Pregi: pochi dati trasmessi, prestazioni veloci, riservatezza e autenticazione con un singolo algoritmo di hash. Difetti: integrità parziale dato che possono avvenire collisioni. La generazione della chiave K' è fondamentale per la robustezza.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "16. Descrivere le proprietà di autenticazione e integrità di HMAC rispetto la firma elettronica.",
+    "answer": "HMAC garantisce integrità tramite digest e autenticazione dei dati (ma non del mittente). La firma digitale fornisce autenticazione del mittente perché l'hash viene cifrato con la sua chiave privata, ed esiste un certificato X.509 che ne certifica l'identità. La firma digitale è quindi più robusta per l'autenticazione.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "17. What is integrity? Mention some possible attacks related to it?",
+    "answer": "Integrità indica se un dato ha subito manipolazioni. Attacchi possibili sono MITM (Man-In-The-Middle), che possono modificare i pacchetti nella connessione. Altri attacchi includono la corruzione dei dati durante l'archiviazione o la trasmissione, alterando il contenuto originale. La verifica della integrità tramite checksum è una prassi importante.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "22. Differenza algoritmi stream e a blocchi",
+    "answer": "Gli algoritmi a blocchi dividono il file in blocchi e li cifrano separatamente. Gli algoritmi stream si applicano a un flusso continuo di bit. Gli algoritmi stream sono più veloci ma richiedono costante sincronia. Gli algoritmi a blocchi sono più lenti ma più adatti alla trasmissione dei pacchetti. Il padding è necessario per gli algoritmi a blocchi.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "23. Perché gli algoritmi di stream sono più veloci?",
+    "answer": "Gli algoritmi stream sono più veloci perché effettuano un semplice XOR, ma richiedono costante sincronia tra mittente e destinatario. Gli algoritmi a blocchi sono più lenti date le varie operazioni necessarie per far combaciare i dati alle dimensioni dei blocchi (come il padding). La sincronia è un requisito stringente degli stream.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "24. Un'azienda deve scambiare con un'altra dei file ma possono utilizzare soltanto una chiave di 12 caratteri max; indicare come deve essere implementato il sistema (NOTA: volevano nella soluzione che si parlasse anche di kdf)",
+    "answer": "Creo una chiave con K=pbkdf(pwd, sale, itc), e utilizzo IPsec in tunnel mode sui gateway aziendali per avere integrità dei dati e autenticazione del mittente. Ipotizzando che i file da scambiare siano particolarmente sensibili, si consiglia l'uso della cyphersuite VPN-B per avere anche riservatezza sui dati. Il KDF serve a derivare chiavi più lunghe.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "28. CBC vs CTR: come funzionano, vantaggi e svantaggi",
+    "answer": "CBC cifra ogni blocco facendo XOR con il risultato del blocco precedente (o IV per il primo). CTR divide i dati in gruppi e li mischia con un nonce+contatore. CBC: no attacchi di swapping, no known plain text; CTR: lo svantaggio principale è che la cancellazione di un blocco causa la desincronizzazione del contatore.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "29. Due utenti desiderano scambiarsi via rete una serie di documenti informato ASCII (.TXT). Suggerire quali operazioni è opportuno svolgere su questi documenti prima di trasmetterli per resistere ad attacchi sulla rete (insicura). Si tenga presente che i documenti non contengono info riservate. Nota: non si usino protocolli o formati dati complessi. Si esprima la soluzione tramite formula (usando termini appropriati, come aes(k,d) piuttosto che enc(k,d))",
+    "answer": "n=nonce+counter\\nk=DH\\ndigest=hmac_sha256(k, P||n)\\nc=P||digest||n\\nQuindi viene calcolato un nonce, una chiave DH e un digest per garantire l'integrità.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "30. Utente A vuole mandare un messaggio segreto e autenticato agli utenti B e C, tutti e tre hanno un paio di chiavi RSA a testa. Descrivere il formato del data block per inviare il messaggio con le richieste proprietà di sicurezza.",
+    "answer": "-C riceve: AES_128(Kpub;c, M)||HMAC-SHA256(AES_128(Kpub;c, M), Kpri;a)||Kpub;a\\n-B riceve: AES_128(Kpub;b, M)||HMAC-SHA256(AES_128(Kpub;b, M), Kpri;a)||Kpub;a\\nIl messaggio viene cifrato con le chiavi pubbliche di B e C e firmato con la privata di A.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "31. Parlare del meccanismo del keyed digest (cos'è, quando e come si usa, vantaggi e svantaggi).",
+    "answer": "Si invia un digest calcolato non solo sui dati, ma anche su un segreto (chiave) e solo chi conosce K puo calcolare il digest sui dati ricevuti e confrontarli con il digest trasmesso. Tale soluzione e molto utilizzata in ambito di rete. Proprietà: integrità, autenticazione (solo con la chiave). Svantaggi: non ripudio e riservatezza. Vantaggi: velocità.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "32. Parlare del keyed-digest e la firma digitale, quali sono le proprietà che offrono, vantaggi e svantaggi?",
+    "answer": "Keyed-digest: digest calcolato con un segreto condiviso. Firma digitale: digest cifrato con chiave privata. Keyed-digest offre integrità e autenticazione; firma digitale offre anche non ripudio. Keyed-digest è più veloce; firma digitale è più sicura e offre più garanzie legali. Collisioni possibili nel keyed digest.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "33. Un'azienda vuole fare firma digitale su tutti i suoi documenti e conservare sia i documenti sia le firme in modo da poterli verificare anche in futuro. Che cosa usare? Che cosa deve memorizzare insieme alla firma?",
+    "answer": "Una enveloping CMS, contenente le varie firme associate a un dato documento e i corrispettivi certificati, più aggiornamento costante delle CRL associate alle varie firme possedute per verificarne la validità. Le CRL sono fondamentali per la revoca dei certificati.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "34. Quali proprietà di sicurezza offre la firma digitale, come si realizza, quali parti della firma offrono quelle proprietà di sicurezza.",
+    "answer": "La firma digitale offre integrità, autenticazione e non ripudio. Si realizza calcolando un digest con un algoritmo crittografico e associandolo a un oggetto di dati. La chiave privata garantisce l'autenticazione; l'hash garantisce l'integrità; il certificato garantisce il non ripudio.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "35. Perché l'algoritmo SHA-1 è deprecato? Suggerire una possibile e valida alternativa e motivare perché questa sia migliore di SHA-1.",
+    "answer": "SHA-1 è deprecato perché un gruppo di ricercatori cinesi è riuscito a trovare collisioni con soli 2^69 calcoli. SHA-2 è una possibile alternativa, in quanto è stato successivamente diffuso SHA-2. La famiglia SHA-2 è stata creata allungando il digest, in maniera simile a quanto avvenuto fra DES e 3DES. SHA-3 è un'altra alternativa.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "38. Descrivi la crittografia a curve ellittiche.",
+    "answer": "La crittografia a curve ellittiche (ECC) utilizza l'aritmetica delle curve ellittiche bidimensionali, invece dell'aritmetica modulare monodimensionale. Dal punto di vista concettuale, invece di usare numeri (che sono punti su una retta) si prende lo spazio cartesiano, e i valori che sono validi sono solo i punti che soddisfano l'equazione di una curva ellittica. Le chiavi per ECC sono più corte.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "39. Dire i due principali vantaggi degli algoritmi basati su ECC",
+    "answer": "1) Le chiavi per l'ECC possono essere più corte (circa 1/10) per un livello di sicurezza comparabile. 2) Per i buoni tutti gli algoritmi richiedono solo due operazioni elementari che danno come risultato dei punti.\\nLe curve ellittiche sono più complesse e permettono di avere sicurezza equivalente con chiavi più corte.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "40. Descrivi l'algoritmo di keyed-digest CBC-MAC.",
+    "answer": "Il MAC è costituito dall'ultimo blocco di testo cifrato risultante dall'applicazione di un algoritmo di crittografia simmetrica a blocchi in modalità CBC, con vettore di inizializzazione IV nullo (la riservatezza non è necessaria): tutti i blocchi di testo cifrato vengono buttati via eccetto l'ultimo, che viene preso come MAC ) il destinatario potrà criptare i dati ricevuti con lo stesso algoritmo di crittografia e confrontare l'ultimo blocco di testo cifrato risultante con il blocco di testo cifrato ricevuto.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "44. Indicare quale attacco all'integrità è possibile se dei dati D vengono protetti con un MAC calcolato nel seguente modo (k è la chiave e h è la funzione di hash): MAC =h (k || D).",
+    "answer": "Se si concatena un altro blocco in coda il digest sarà diverso e il buono non se ne accorgerà, quindi verrà cambiato il digest in qualche modo pur senza conoscere la chiave condivisa. L'attacco di estensione della lunghezza.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "45. Vantaggi e svantaggi di cifratura fatta con enc(enc(p, k1), k2) con k1 e k2 chiavi diverse ma di lunghezza uguale",
+    "answer": "In genere non si utilizza mai un'applicazione doppia di algoritmi di cifratura, motivo per il quale viene evitata, dato che non aumenterebbe il livello di sicurezza in maniera significativa. Inoltre, l'applicazione doppia di algoritmi di cifratura e soggetta ad un attacco di tipo known-plaintext, chiamato meet-in-the-middle. Aumenta il tempo di calcolo, ma la lunghezza della chiave aumenta di un solo bit.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "46. Descrivere la tecnica crittografica ECB identificandone vantaggi e svantaggi.",
+    "answer": "ECB suddivide il testo in blocchi e applica l'algoritmo di criptazione su ciascun blocco indipendentemente. Vantaggi: no propagazione degli errori, parallelizzazione della CPU. Svantaggi: attacchi di swapping, attacchi known-plaintext. ECB è vulnerabile perché blocchi identici sono criptati allo stesso modo. Da evitare.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "47. Quale delle seguenti tecniche – firma digitale, cifratura simmetrica, keyed-digest - sarebbe da preferire per proteggere l'integrità di un flusso di pacchetti a 1 Gbps? Giustificare la scelta.",
+    "answer": "Keyed-digest perchè è la tecnica più veloce, hash veloce e usa una sola operazione. La firma non si può fare su un flusso di dati. La cifratura è lenta. La velocità è un fattore cruciale nella scelta della tecnica.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "48. Quale tecnica è meglio usare per proteggere dati trasmessi in rete da attacchi di tipo replay? Cifratura simmetrica, cifratura asimmetrica, keyed-digest, altro? Giustificare.",
+    "answer": "Si parla di soli attacchi replay, quindi basta garantire Integrità con un keyed digest basato su chiave simmetrica (concordata a inizio sessione o meglio generata pseudo-randomicamente da un segreto condiviso):\\nd = kd(K||n||M||K)\\ninvio M||n||d\\nNel KD pongo K agli estremi in modo da evitare prefix e postfix attack\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "49. Due utenti devono scambiarsi dei file di testo formato ASCII (txt) non riservati. Come fanno a garantire che non vengano modificati durante il transito? Spiegare quali funzioni di sicurezza usare e enunciare la formula che produce il documento X trasmesso rispetto al documento originale. Si usino nomi significativi (es. aes(K,D) rispetto a enc(K,D).",
+    "answer": "k=DH, genero chiave\\nd=HMAC_SHA256(k, M), creo digest messaggio per integritàe autenticazione\\nX=M||d, invio messaggio + digest\\nSi utilizza DH per generare la chiave e HMAC per garantire l'integrità del messaggio.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "65. CBC e CTR mode: spiegare, vantaggi e svantaggi.",
+    "answer": "CBC è un algoritmo di cifratura a blocchi che cifra ciascuno blocco n dopo il primo facendone XOR con il risultato del passo n-1 (per il primo passo si usa invece un vettore di inizializzazione IV, che in trasmissione può essere mandato nascosto o anche in chiaro)\\nVantaggi e svantaggi:\\n+ No attacchi di swapping\\n+ No attacchi known plain text\\n- Propagazione degli errori in caso di perdita e errore in trasmissione di un blocco\\nNo parallelizzazione CPU\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "66. Qualcuno ti ha inviato un file firmato digitalmente con RSA e SHA-. . ., insieme al certificato del firmatario e al certificato della sua CA. Descrivere come validare la firma, identificare le informazioni richieste ed ottenere l'accesso ad esse.",
+    "answer": "Per validare la firma, si verifica che il certificato sia valido (data di scadenza e non revocato), che la catena di certificati porti a una CA fidata, e che la firma decrittata con la chiave pubblica corrisponda al digest del file. Le informazioni necessarie sono il certificato del firmatario, il certificato della CA e il file firmato.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "67. Descrivere DH, i suoi problemi e le soluzioni ad essi.",
+    "answer": "Diffie-Hellman (DH) è un algoritmo per concordare una chiave segreta tra due parti. Problemi: vulnerabile ad attacchi Man-in-the-Middle. Soluzioni: usare certificati per autenticare le parti o protocolli autenticati come TLS. L'autenticazione previene la manipolazione dei dati in transito.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "70. Spiegare brevemente la tipologia di cifratura simmetrica e quella asimmetrica, indicando i vantaggi e svantaggi di ciascuna tipologia.",
+    "answer": "Simmetrica: C = enc (K,P), P = dec (K,C); Vantaggi: veloce, key generation semplice. Svantaggi: key distribution. Asimmetrica: svantaggi: lenta, key generation, key distribution.\\nLa simmetrica è più veloce ma richiede un canale sicuro per la distribuzione della chiave, la asimmetrica è più lenta ma non ha questo problema.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "71. Sistemi di autenticazione a sfida simmetrici, vantaggi e svantaggi.",
+    "answer": "Un sistema a sfida verifica un'identità richiedendo informazioni corrette in risposta a una sfida. Nella versione simmetrica, la risposta alla sfida è calcolata con la chiave comune. Vantaggi: no sniffing, no replay. Svantaggi: lato client, l'utente deve avere una funzione di hash; il server non può memorizzare l'hash delle password.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "72. Autenticazione simmetrica, cos'è, come funziona, vantaggi, punti deboli.",
+    "answer": "Un sistema a sfida verifica un'identità richiedendo informazioni corrette in risposta a una sfida. Nella versione simmetrica, la risposta alla sfida è calcolata con la chiave comune. Procedura: identificazione, richiesta di una prova, prova, controllo. Vantaggi: no sniffing, no replay. Punti deboli: lato client, l'utente deve avere una funzione di hash.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "73. Kerberos è detto essere un sistema di autenticazione TTP. Spiegare perché è classificato in questo modo e quale rischi corrono i client ed i server applicativi se il terzo non si comporta correttamente.",
+    "answer": "TTP sta per Third Thrusted Party, e kerberos ha questa definizione perché il suo sistema di autorizzazione utilizza anche un server di rilascio di ticket intermedio tra pretender e verifier. Se il terzo non si comporta correttamente, i client e i server applicativi corrono il rischio di essere compromessi.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "74. Kerberos: spiegare cosa significa trusted third party.",
+    "answer": "TTP sta per Third Thrusted Party, e kerberos ha questa definizione perché il suo sistema di autorizzazione utilizza anche un server di rilascio di ticket intermedio tra pretender e verifier. Questo server è considerato affidabile da entrambi i partecipanti all'autenticazione.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "76. Confrontare le tematiche di autenticazione a sfida simmetrica ed asimmetrica identificando chiaramente vantaggi e svantaggi di ciascuna di esse.",
+    "answer": "Autenticazione a sfida simmetrica: l'utente conosce un segreto condiviso. Vantaggi: no sniffing, no replay. Svantaggi: lato client, l'utente deve avere una funzione di hash; il server non può memorizzare l'hash delle password. Asimmetrica: l'utente conosce la sua chiave privata. Vantaggi: la sfida è trasmessa cifrata, no attacchi di sniffing, no attacchi replay.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "77. Cos'è una rainbow table?",
+    "answer": "Le rainbow table sono degli speciali database precalcolati che permettono di raggiungere un compromesso tra: memoria: solo un sottoinsieme degli hash è salvato nel database precalcolato tempo di calcolo: quando la catena viene trovata, occorre ripercorrere la catena per trovare la password\\nSono usate per accelerare il cracking delle password.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "78. Spiegare il metodo della sfida asimmetrica elencando punti di forza e deboli del metodo e dei singoli componenti che partecipano.",
+    "answer": "Un sistema a sfida asimmetrica è un processo di autenticazione che verifica un'identità richiedendo che siano fornite le informazioni di autenticazione corrette in risposta a una sfida. Procedura: identificazione, richiesta di una prova, prova, controllo. Punti di forza: la sfida è trasmessa cifrata, no attacchi di sniffing, no attacchi replay. Punti deboli: complessità computazionale.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "79. Autenticazione a sfida asimmetrica",
+    "answer": "Un sistema a sfida asimmetrica è un processo di autenticazione che verifica un'identità richiedendo che siano fornite le informazioni di autenticazione corrette in risposta a una sfida. L'utente conosce la sua chiave privata: dimostra di conoscere la chiave senza trasmetterla, ma usandola per effettuare un calcolo; la chiave privata non è condivisa: il server può compiere la verifica usando la chiave pubblica dell'utente.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "80. Spiegare cos'è un sistema di autenticazione a sfida asimmetrica, indicando quali messaggi vengono scambiati tra il client e il server che autentica e quali vantaggi e svantaggi presenta.",
+    "answer": "Un sistema a sfida asimmetrica è un processo di autenticazione che verifica un'identità richiedendo che siano fornite le informazioni di autenticazione corrette in risposta a una sfida. Scambio messaggi: identificazione, richiesta di una prova, prova, controllo. Vantaggi: la sfida è trasmessa cifrata, no attacchi di sniffing. Svantaggi: complessità computazionale.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "81. Spiegare che cosa è un sistema OTP time-based, indicando quali informazioni vengono trasmesse dal client al server di autenticazione e quale funzionalità è associata a ciascuna informazione trasmessa.",
+    "answer": "Nelle time-based OTP la password dipende dal tempo e dal segreto dell'utente: p(ID; t) = h(t; SID). Il client trasmette la password e il server verifica la sua validità in base al tempo e al segreto condiviso. La password e ottenuta mediante un hash di tempo e segreto dell'utente.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "82. Spiegare brevemente il concetto di OTP e quale problema di sicurezza risolve. Spiegare, quindi, con l'ausilio di appropriate formule, le fasi di inizializzazione e verifica nel protocollo S/KEY.",
+    "answer": "Risolvono sniffing, MITM, replay.\\nS/KEY: inizializzazione sul server con l'ultima password PN = hN(s), verifica h(PN-1) = PN\\nOTP genera una password diversa per ogni autenticazione, risolvendo i problemi di password statiche.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "83. Spiegare come funziona il timestamp (sicuro).",
+    "answer": "Nonostante non sia presente una risposta nel testo, posso fornire una definizione generale. In un timestamp sicuro, il server genera un timestamp e lo firma digitalmente. Il client verifica la firma del timestamp e che il timestamp sia recente. Questo impedisce attacchi replay e garantisce l'integrità del timestamp. E' necessaria una sorgente di tempo affidabile.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "87. Dato un certificato X.509 spiegare quali sono le sue proprietà di sicurezza intrinseche e come sono ottenute.",
+    "answer": "Autenticazione e integrità tramite la firma della CA e la lista degli algoritmi usati per firmare.\\nIl certificato garantisce che la chiave pubblica appartiene all'entità specificata nel certificato.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "88. Cos'è un certificato X.509? Elencare gli attributi.",
+    "answer": "X.509 è un certificato a chiave pubblica, ovvero una struttura dati usata per legare in modo sicuro una chiave pubblica ad alcuni attributi; permette di distribuire le chiavi pubbliche per usare le firme digitali in modo sicuro: la chiave pubblica del mittente non è fornita dal mittente, ma è fornita da un'entità esterna fidata attraverso un certificato a chiave pubblica, altrimenti un attaccante potrebbe spacciare la sua chiave pubblica come la chiave pubblica del mittente legittimo.\\nAttributi: versione, serialNumber, signature, issuer, validity, subject, subjectPublicKeyInfo, extensions\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "90. Lei riceve una penna usb contenente un file che deve passare ad un destinatario. Poiché i due peer la ritengono una persona non fidata il mittente calcola anche un digest per proteggere il file contro le modifiche e lo trasmette direttamente al destinatario. È noto che il digest venga calcolato prendendo i 24 bit più significativi dell'hash sha256 del file. Proponga una tecnica per modificare il file senza che i peer se ne accorgano e fornisca anche una stima del numero di operazioni necessarie.",
+    "answer": "Birthday attack, con un lowerbound di 2^(24/2) = 2^12 hash parto col 50% di probabilità di trovare una hash che fa collisione\\nCon un attacco del compleanno si può trovare una collisione. \\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "91. Descrivere la tecnica della firma digitale ed elencare tutte le funzionalità di sicurezza offerte da essa, identificando quale componente del processo firma/verifica è fondamentale per le singole funzionalità. Spiegare anche il ruolo di un certificato X.509 in questo contesto.",
+    "answer": "Nella firma digitale viene calcolato un digest con un algoritmo crittografico e associato con un oggetto di dati in modo tale che qualsiasi destinatario dei dati può usare la firma per verificare l'origine e l'integrità dei dati\\nProprietà di sicurezza: + integrità: se i dati in chiaro vengono modificati, il digest mdR calcolato sui dati ricevuti sarà diverso dal digest mdF ricevuto e decriptato; + autenticazione: solo chi conosce la chiave privata può aver generato una firma digitale corrispondente ai dati; riservatezza: i dati sono inviati in chiaro; + non ripudio: il mittente non può negare di aver firmato i dati, a patto che la sua chiave pubblica sia fornita da un certificato a chiave pubblica.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "92. Come avviene la verifica di un documento firmato?",
+    "answer": "Verificare che il certificato sia nel periodo di validità (campi notBefore/notAfter)\\nVerificare che il certificato non sia stato revocato (CRL/OCSP)\\nVerificare la catena di certificati fino a un trusted root CA\\nVerificate la firma decrittandola con la chiave pubblica presente nel certificato e confrontando il risultato con il digest del messaggio (sempre calcolato con l'algoritmo specificato nel certificato\\nI controlli sul certificato sono fondamentali.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "94. Indicare gli errori di questa frase: ho un server che cifra i dati con certificato X.509 a 2048 bit, protetto con un reverse proxy che verifica le password con un algoritmo RIPEMD.",
+    "answer": "Il certificato x.509 non è un algoritmo di cifratura ma uno standard per le certificazione dell'autenticità di un utente/host. Mentre RIPEMED è una funzione di hash che può essere utilizzata per verificare una password. Il reverse proxy non protegge ma fa solo forwarding.\\nL'algoritmo x509 è uno standard per la certificazione e non per la cifratura\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "96. Descrivere il salvataggio di password lato server. Rischi e contromisure.",
+    "answer": "Il salvataggio di password lato server presenta rischi di furto e compromissione. Le contromisure includono l'hashing con sale (salt) e l'uso di algoritmi resistenti agli attacchi brute-force e dictionary (bcrypt, Argon2). Inoltre, è importante proteggere il database con controlli di accesso e crittografia.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "98. A vuole mandare a B un file F di 100 MB, avendo le proprietà di sicurezza di riservatezza, autenticazione e integrità. A ha il certificato X.509 di B (la chiave pubblica). Non usare strutture dati complesse e descrivere i passaggi con i nomi dei protocolli piuttosto che con il generico.",
+    "answer": "k=DH\\nC=AES128_CBC(F,k,IV)\\nK=RSA(k, Kpub) (Kpub from certifiate)\\nD=HMAC_SHA256(Kpub, C || K || IV)\\nsend A and B, M=C || K || IV || D\\nSi utilizza DH per la chiave simmetrica e RSA per proteggere le chiavi.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "100. Per un documento digitally signed: quali sono le possibilità (metodi)? Enveloping signature, enveloped, detached signature. Vantaggi e svantaggi.",
+    "answer": "enveloping signature: firma racchiude il documento. vantaggio: cifrare qualsiasi dato. svantaggio: modificare le applicazioni\\nenveloped signature: il documento racchiude la firma. vantaggio: la firma è wrappata nel documento. svantaggio: si usa solo per il PDF\\ndetached signature: documento e firma separati. vantaggio: flessibilità. svantaggio: il riusire a mantenere nel tempo l'associazione tra la firma e il documento\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "101. Se vogliamo inviare un messaggio PKCS#7 envelopedData a una persona, e a tre persone, cambierà la taglia del messaggio?",
+    "answer": "Si, dato che la envelopedData contiene un campo info per ogni ricevente\\nLa taglia aumenta all'aumentare del numero di persone, perché bisogna inviare per ciascuno un blocco dati cifrato.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "102. Descrivere almeno due tipi di attacchi possibili con ICMP e le contromisure da adottare per evitare tali attacchi.",
+    "answer": "Smurfing attack: viene mandato un pacchetto ICPM echo request broadcast ad un'intera sottorette fingedosi la vittima; la risposte ricevute dalla sottorette (detta anche reflector) causano una saturazione della scheda di rete della vittima. Per risolverlo bisogna far si di non accettare pacchetti broadcast da rete esterna.\\nICMP redirect: un MITM intercetta un pacchetto da host A diretto verso un altro un host e risponde preventivamente con un ICMP redirect verso se stesso\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "103. Spiegare l'ICMP redirect attack.",
+    "answer": "Un MITM intercetta un pacchetto da host A diretto verso un altro un host e risponde preventivamente con un ICMP redirect verso se stesso\\nL'attaccante fa credere all'host A che la strada migliore per raggiungere un altro host passi attraverso di lui.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Bruce Scheiner ha scritto \"security is a process, not a product\" spiegare il significato di questa affermazione e fornire un esempio pratico di sua implementazione con elementi tecnici.",
+    "answer": "L'affermazione \"security is a process, not a product\" sottolinea che la sicurezza non è un singolo acquisto, ma un'attività continua. Acquistare un firewall o un antivirus non garantisce una sicurezza completa. Un esempio pratico è l'implementazione di un sistema di rilevamento delle intrusioni (IDS) oltre a un firewall. Mentre il firewall blocca gli attacchi noti, l'IDS monitora il traffico di rete per attività sospette, fornendo un ulteriore livello di difesa e rilevando potenziali violazioni che potrebbero eludere il firewall.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivi la tecnica della firma digitale ed elencare tutte le funzionalità di sicurezza offerte da essa, identificando quale componente del processo firma/verifica è fondamentale per le singole funzionalità. Spiegare anche il ruolo di un certificato X.509 in questo contesto.",
+    "answer": "La firma digitale consiste nella cifratura dell'hash di un documento con la chiave privata del firmatario. Funzionalità: integrità (l'hash garantisce che il documento non sia stato alterato), autenticazione (la chiave privata garantisce l'identità del firmatario), non ripudio (il firmatario non può negare di aver firmato il documento). Il certificato X.509 fornisce una garanzia dell'identità del firmatario, associando la sua chiave pubblica a informazioni identificative verificate da un'autorità di certificazione (CA), consentendo ai destinatari di fidarsi della firma.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Algoritmi a chiave simmetrica.",
+    "answer": "La crittografia simmetrica utilizza una singola chiave per cifrare e decifrare. È più veloce ed efficiente per grandi quantità di dati rispetto alla crittografia asimmetrica. Esempi di algoritmi simmetrici includono AES, DES, 3DES, RC4 e Blowfish. La sicurezza dipende dalla protezione della chiave segreta, che deve essere condivisa in modo sicuro tra mittente e destinatario.  Se la chiave viene compromessa, anche i dati cifrati sono a rischio.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare brevemente la tipologia di cifratura simmetrica e quella asimmetrica, indicando i vantaggi e svantaggi di ciascuna tipologia.",
+    "answer": "Crittografia simmetrica: utilizza la stessa chiave per cifrare e decifrare. Vantaggi: veloce, efficiente. Svantaggi: richiede una chiave segreta condivisa, complessa gestione delle chiavi.  Crittografia asimmetrica: utilizza una coppia di chiavi (pubblica e privata). Vantaggi: semplifica la gestione delle chiavi, offre autenticazione. Svantaggi: più lenta della crittografia simmetrica e richiede una maggiore potenza di calcolo.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Cos'è un certificato X.509? Elencare gli attributi.",
+    "answer": "Un certificato X.509 è un documento elettronico che associa un'identità a una chiave pubblica.  È emesso da una Certificate Authority (CA) fidata. Attributi: *Versione*, *Numero di serie*, *Algoritmo di firma*, *Emettitore* (nome della CA), *Validità* (data di inizio e fine validità), *Oggetto* (nome dell'entità a cui è rilasciato il certificato), *Chiave pubblica dell'oggetto*, *Estensioni* (campi aggiuntivi).",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivere la tecnica della firma digitale ed elencare tutte le funzionalità di sicurezza offerte da essa, identificando quale componente del processo firma/verifica è fondamentale per le singole funzionalità. Spiegare anche il ruolo di un certificato X.509 in questo contesto.",
+    "answer": "La firma digitale consiste nel calcolo dell'hash del documento, seguito dalla cifratura dell'hash con la chiave privata del firmatario. Le funzionalità di sicurezza offerte sono integrità (il documento non è stato alterato, verificato tramite l'hash), autenticazione (la firma è generata dal firmatario, verificata tramite chiave pubblica) e non ripudio (il firmatario non può negare di aver firmato il documento, poiché è necessaria la chiave privata). Il certificato X.509 lega la chiave pubblica all'identità del firmatario, consentendo ai destinatari di verificare l'identità del firmatario.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare il termine security through obscurity. Spiegare perché alcuni dicono sia buono ed altri no.",
+    "answer": "Security through obscurity (sicurezza tramite l'oscurità) è la pratica di proteggere un sistema nascondendone il design, il codice o i meccanismi interni. Alcuni sostengono che può aggiungere un livello di difficoltà per gli attaccanti, mentre altri ritengono che sia una falsa sensazione di sicurezza. La sicurezza effettiva dovrebbe basarsi su principi solidi e aperti, e la segretezza del design non compensa le debolezze intrinseche.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare la authenticated encryption.",
+    "answer": "L'Authenticated Encryption (AE) combina la crittografia e l'autenticazione in un unico algoritmo. Lo scopo è fornire sia riservatezza (il messaggio è illeggibile a terzi) che integrità (il messaggio non è stato alterato) e autenticità (il messaggio proviene dalla fonte dichiarata). Algoritmi AE tipici includono AES-GCM e ChaCha20-Poly1305. L'AE semplifica l'uso della crittografia, riducendo il rischio di errori di configurazione e offrendo prestazioni migliori.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Cos'è un ARP spoofing attack?",
+    "answer": "Un ARP spoofing attack è un attacco in cui un aggressore invia messaggi ARP (Address Resolution Protocol) falsificati su una rete LAN. Ciò porta ad associare l'indirizzo MAC dell'aggressore con l'indirizzo IP di un altro dispositivo valido sulla rete (es. il gateway predefinito).  Di conseguenza, il traffico destinato a quel dispositivo viene invece reindirizzato all'aggressore, che può intercettarlo, modificarlo o semplicemente monitorarlo (attacco MITM).",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Dire che cos'è dns cache poisoning.",
+    "answer": "DNS cache poisoning (avvelenamento della cache DNS) è un attacco in cui un aggressore inietta record DNS falsificati nel resolver DNS di un server DNS. Quando un utente interroga il server DNS per un determinato dominio, il server restituisce l'indirizzo IP falsificato memorizzato nella sua cache. Questo reindirizza il traffico dell'utente verso un server controllato dall'aggressore. Questo può essere utilizzato per phishing o per diffondere malware.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivere lo sniffing e almeno due modi di effettuarlo.",
+    "answer": "Sniffing è l'intercettazione e l'analisi del traffico di rete per ottenere informazioni sensibili come password, numeri di carta di credito o dati personali. Modi per effettuarlo: 1) Modalità promiscua: configurando una scheda di rete in modalità promiscua, essa cattura tutto il traffico sulla rete, anche quello non direttamente destinato a essa (usando strumenti come Wireshark). 2) ARP Spoofing: reindirizzando il traffico attraverso la macchina dell'attaccante (vedi domanda precedente).",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivere l'architettura VPN end-to-end: che cos'è, l'implementazione, vantaggi e svantaggi.",
+    "answer": "Una VPN end-to-end (o host-to-host) cifra il traffico tra due host specifici. Implementazione: il software VPN (es. IPsec) è installato direttamente sui due host, che negoziano un tunnel crittografato. Vantaggi: protezione completa del traffico tra i due host, indipendentemente dalla sicurezza della rete sottostante. Svantaggi: richiede l'installazione del software su ogni host, difficile da gestire se ci sono molti host, può comportare overhead di prestazioni.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Disegnare e discutere della End-to-end security with basic VPN",
+    "answer": "End-to-end security with basic VPN: In una configurazione di questo tipo, IPsec viene implementato sia sui singoli host che sui gateway, offrendo quindi una doppia linea di difesa. Ad esempio, l'autenticazione AH (Authentication Header) può essere utilizzata sui singoli host per garantire l'integrità dei dati a livello di pacchetto, mentre la modalità tunnel viene utilizzata sui gateway per crittografare il traffico tra le reti, fornendo una maggiore riservatezza. Questo approccio garantisce un bilanciamento tra sicurezza e prestazioni.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Una azienda deve collegare due sue filiali con una VPN, quale infrastruttura si usa? Come è fatta? Disegnare lo schema, spiegare come viene configurata, vantaggi e svantaggi di questa soluzione.",
+    "answer": "VPN per collegare filiali: si usa una VPN site-to-site.  Schema: due router/firewall (uno per filiale) creano un tunnel crittografato attraverso Internet.  Configurazione: ogni router/firewall è configurato per terminare il tunnel VPN e per instradare il traffico tra la filiale locale e la filiale remota. Vantaggi: connette intere reti in modo trasparente, senza bisogno di configurare singoli host. Svantaggi: vulnerabilità ai router/firewall, il traffico tra le filiali è cifrato ma il traffico all'interno di ogni filiale non lo è.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Cos'è RADIUS, quali sono le caratteristiche di sicurezza e quale ruolo ha in una architettura di sicurezza.",
+    "answer": "RADIUS (Remote Authentication Dial-In User Service) è un protocollo per autenticare, autorizzare e contabilizzare l'accesso alla rete.  Sicurezza: autenticazione tramite password (spesso PAP, meno sicuro) o CHAP (più sicuro). Supporta attributi per autorizzare l'accesso a specifiche risorse. L'integrità dei pacchetti è protetta da un segreto condiviso. Ruolo: centralizza l'autenticazione, consentendo a più dispositivi di rete di utilizzare lo stesso server per convalidare le credenziali.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Quali sono i problemi di sicurezza del protocollo ICMP?",
+    "answer": "ICMP (Internet Control Message Protocol) è vulnerabile a spoofing, flooding e redirect attacks. ICMP spoofing può essere usato per mascherare la fonte di un attacco. ICMP flooding (ping flood) può sovraccaricare una rete. ICMP redirect può essere usato per reindirizzare il traffico attraverso un percorso controllato dall'attaccante (attacco MITM). Questi attacchi sono possibili perché ICMP non fornisce autenticazione o integrità intrinseche.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivere la tecnologia del packet filter e descrivere vantaggi e limitazioni.",
+    "answer": "Un packet filter esamina ogni pacchetto che passa attraverso il firewall, confrontandolo con un insieme di regole configurate. Le regole si basano su indirizzi IP sorgente/destinazione, porte, protocolli, ecc. I pacchetti vengono accettati o rifiutati in base alle regole. Vantaggi: semplice, veloce, economico. Limitazioni: non ispeziona il contenuto dei pacchetti (payload), non tiene traccia dello stato delle connessioni, difficile da configurare per politiche complesse.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Disegnare lo schema di un'architettura firewall di tipo dual homed gateway, illustrarne il ruolo dei componenti, vantaggi e svantaggi.",
+    "answer": "Dual-homed Gateway Firewall: uno schema di firewall in cui un host con due interfacce di rete funge da gateway tra due reti. L'host non inoltra pacchetti IP direttamente tra le interfacce (disabilitato IP forwarding). Un'applicazione a livello utente (es. proxy) esamina e inoltra esplicitamente il traffico. Vantaggi: isolamento tra le reti, controllo preciso del traffico. Svantaggi: prestazioni limitate, complessità di configurazione dell'applicazione proxy.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Packet filter e circuit gateway all'interno di un firewall: somiglianze, differenze, vantaggi e svantaggi di entrambi.",
+    "answer": "Somiglianze: entrambi filtrano il traffico in base alle intestazioni dei pacchetti.  Differenze: il packet filter opera a livello 3 (rete) e 4 (trasporto), esaminando indirizzi IP, porte e protocolli, mentre il circuit gateway opera a livello 5 (sessione) e successivi, esaminando il handshake TCP e creando un circuito virtuale. Vantaggi Packet filter: veloce, scalabile. Svantaggi Packet filter: controlli limitati. Vantaggi Circuit gateway: maggiore controllo. Svantaggi Circuit gateway: più lento, rottura del modello client/server",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Packet filter e application level gateway all'interno di un firewall: somiglianze, differenze, vantaggi e svantaggi di entrambi.",
+    "answer": "Somiglianze: Entrambi filtrano il traffico.  Differenze: Packet filter opera a livello di rete/trasporto. Application-level gateway (proxy) opera a livello applicazione, ispezionando i dati.  Vantaggi Packet filter: velocità, scalabilità. Svantaggi Packet filter: controlli limitati.  Vantaggi Application level gateway: controlli granulari, può applicare logiche specifiche all'applicazione. Svantaggi Application level gateway: prestazioni inferiori, richiede proxy specifici per ogni protocollo, rottura del modello client/server.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Parlare del firewall; dove si può piazzare in una grossa rete aziendale?",
+    "answer": "Il firewall è una componente essenziale della sicurezza di rete. Può essere piazzato in vari punti: 1) Perimetro della rete (per proteggere da attacchi esterni). 2) Tra segmenti di rete interni (per limitare la diffusione di attacchi interni). 3) Davanti a risorse critiche (per proteggere server web, database, ecc.). 4) Su singoli host (host-based firewall per la protezione individuale).  La scelta dipende dalle esigenze specifiche e dal modello di minaccia.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Qual'è la principale differenza tra un IDS e un IPS?",
+    "answer": "La principale differenza tra un Intrusion Detection System (IDS) e un Intrusion Prevention System (IPS) è la loro azione. Un IDS rileva attività sospette o attacchi in corso e genera un allarme. Un IPS, oltre a rilevare, ha la capacità di bloccare o mitigare attivamente l'attacco.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Illustrare il funzionamento di un componente application-level gateway all'interno di un firewall e discuterne vantaggi e svantaggi.",
+    "answer": "Un application-level gateway (o proxy) esamina il traffico a livello applicazione (HTTP, SMTP, FTP, ecc.). Funziona come intermediario tra client e server, terminando la connessione dal client e stabilendone una nuova verso il server.  Vantaggi: controllo granulare del traffico, può applicare policy specifiche all'applicazione, nasconde la struttura interna della rete. Svantaggi: più lento dei packet filter, richiede proxy specifici per ogni protocollo.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivere syn cookie e contro quale attacco è.",
+    "answer": "SYN cookie è una tecnica per mitigare gli attacchi SYN flood. In un attacco SYN flood, l'aggressore invia un gran numero di pacchetti SYN (richiesta di connessione TCP) a un server, senza completare il handshake. Il server consuma risorse cercando di gestire queste connessioni incomplete. Con i SYN cookie, il server non memorizza informazioni sulla connessione, ma calcola un cookie (valore) basato sull'indirizzo IP del client, il numero di porta e un segreto. Questo cookie viene inviato nel pacchetto SYN-ACK. Se il client risponde correttamente con l'ACK, il server può ricostruire le informazioni di connessione dal cookie.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "ESP: descrivere la procedura, le trasformazioni, come sono ottenute le informazioni richieste.",
+    "answer": "ESP (Encapsulating Security Payload) è un protocollo di IPsec che fornisce riservatezza, autenticazione e integrità del traffico IP. Procedura: 1) Il payload IP originale (dati) viene cifrato. 2) Un header ESP viene aggiunto, contenente Sequence Number e Security Parameters Index (SPI). 3) Un trailer ESP (padding) viene aggiunto per allineare la lunghezza del blocco e per l'autenticazione. 4) L'intero pacchetto (header ESP, payload cifrato, trailer ESP) viene autenticato con un codice MAC.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare che cos'è il social engineering, fare un esempio di questo attacco, indicare le contromisure che un'azienda può adottare per difendersi.",
+    "answer": "Il social engineering sfrutta le debolezze psicologiche delle persone per ottenere informazioni o accesso. Un esempio è il phishing via email con link malevoli. Le contromisure includono la formazione dei dipendenti sui rischi, l'implementazione di controlli di accesso e la verifica dell'identità.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "RC-4 stream",
+    "answer": "RC-4 stream algoritmo di cifratura simmetrica di tipo stream, ovvero che si applica ad un stream di bit continuo: il funzionamento di base è che sorgente e destinazione concordino un seme usato per cifrare e decifrare\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivere step-up (gated) cryptography.",
+    "answer": "La crittografia step-up, o gated cryptography, permette un accesso graduale ai dati cifrati, richiedendo livelli crescenti di autorizzazione o credenziali. Funziona tramite più strati di crittografia, dove ogni strato successivo decritta solo una porzione dei dati, rendendo visibile un livello più dettagliato. Ogni \"gate\" richiede un'autenticazione aggiuntiva (es. password, biometrica, OTP). Questo approccio offre flessibilità nel controllo dell'accesso, ideale per dati sensibili che necessitano diversi livelli di riservatezza e autorizzazione differenziata tra gli utenti. La sicurezza risiede nella robustezza di ogni strato crittografico e nella gestione delle chiavi associate ad ogni \"gate\". Esempi includono sistemi di accesso condizionale a documenti con informazioni progressivamente più sensibili.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Dato un certificato X.509 spiegare quali sono le sue proprietà di sicurezza intrinseche e come sono ottenute.",
+    "answer": "Autenticazione e integrità tramite la firma della CA e la lista degli algoritmi usati per firmare.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Come avviene la verifica di un documento firmato?",
+    "answer": "La verifica di un documento firmato avviene in questo modo: Verificare che il certificato sia nel periodo di validità. Verificare che il certificato non sia stato revocato. Verificare la catena di certificati fino a un trusted root CA. Verificate la firma decrittandola con la chiave pubblica\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Indicare gli errori di questa frase: ho un server che cifra i dati con certificato X.509 a 2048 bit, protetto con un reverse proxy che verifica le password con un algoritmo RIPEMD.",
+    "answer": "Il certificato x.509 non è un algoritmo di cifratura ma uno standard per le certificazione dell'autenticità di un utente/host. Mentre RIPEMED è una funzione di hash che può essere utilizzata per verificare una password. Il reverse proxy non protegge ma fa solo forwarding. 3 errori.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivere il salvataggio di password lato server. Rischi e contromisure.",
+    "answer": "Il salvataggio lato server prevede la memorizzazione delle password su un server, solitamente in un database. È fondamentale *non* memorizzare le password in chiaro. Si utilizzano funzioni di hash crittografiche (es. Argon2, bcrypt, scrypt) per generare un hash della password. A ogni password si aggiunge un \"salt\" univoco per prevenire attacchi rainbow table.\n\n**Rischi:** Data breach che espone gli hash; attacchi di brute force o dictionary sugli hash, anche con \"salt\" debole; codice dell'applicazione vulnerabile (es. SQL injection) che permette l'accesso al database.\n\n**Contromisure:** Utilizzo di funzioni di hash robuste e costose computazionalmente; \"salt\" casuali e univoci per ogni password; hardening del database e dell'applicazione; autenticazione a due fattori (2FA); monitoraggio costante per anomalie e intrusioni; limitazione degli accessi al database ai soli servizi necessari.",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Quali sono le principali caratteristiche di una smart-card che la rendono interessante per le applicazioni di ICT?",
+    "answer": "Protocollo storage KPR1, on board cryptography.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Per un documento digitally signed: quali sono le possibilità (metodi)? Enveloping signature, enveloped, detached signature. Vantaggi e svantaggi.",
+    "answer": "La firma digitale può essere allegata al documento in tre formati: enveloping signature, enveloped, detached signature. I vantaggi e svantaggi di ciascuno sono i seguenti: è flessibilità, è possibile alleggerire i controlli relativi ad alcuni servizi o host ev\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Se vogliamo inviare un messaggio PKCS#7 envelopedData a una persona, e a tre persone, cambierà la taglia del messaggio?",
+    "answer": "Si, dato che la envelopedData contiene un campo info per ogni ricevente\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivere almeno due tipi di attacchi possibili con ICMP e le contromisure da adottare per evitare tali attacchi.",
+    "answer": "Attacchi ICMP: 1) Smurfing attack: viene mandato un pacchetto ICPM echo request broadcast ad un'intera sottorette fingedosi la vittima; la risposte ricevute dalla sottorette causano una saturazione della scheda di rete della vittima 2) ICMP redirect: un MITM intercetta un pacchetto e risponde preventivamente con un ICMP redirect verso se stesso\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare l'ICMP redirect attack.",
+    "answer": "Un MITM intercetta un pacchetto da host A diretto verso un altro un host e risponde preventivamente con un ICMP redirect verso se stesso\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Descrivere l'architettura basic VPN: che cos'è, l'implementazione, vantaggi e svantaggi.",
+    "answer": "La basic-VPN e una soluzione piu leggera e permissiva, nella quale IPsec viene installata sui gateway e non sui dispositivi host. Si noti che i gateway costituiscono dei colli di bottiglia e devono essere potenti al livello computazionale.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Un'azienda decide di collegare due sue filiali con una vpn del fipo basic VPN: dire caratteristiche, vantaggi e rischi",
+    "answer": "La basic-VPN è una soluzione leggera e permissiva, nella quale IPsec viene installata sui gateway e non sui dispositivi host. I gateway costituiscono dei colli di bottiglia e devono essere potenti al livello computazionale. Fra le zone fidate e quelle non date viene collocato un gateway, punto in cui viene congurato appunto IPsec\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "DNS flash crowd: Spiegazione e contromisure",
+    "answer": "In un attacco del genere, molti nodi si collegano allo stesso tempo ad un server per metterlo fuori uso. Tale attacco e illegale solo se portato avanti attraverso dei bot. Il DNS ash crowd provoca un sovraccarico di request di un DNS server.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Ping flooding, cos'è e come difendersi in modo da non alterare il normale traffico tcp/ip",
+    "answer": "è un attacco di tipo DoS in cui si inviano in modo massivo messaggi ICMP Echo Request senza attenderne la risposta; come per tutti gli attacchi DoS, non esiste alcuna contromisura definitiva, ma solo dei rimedi palliativi basati sull'approccio quantitativo per mitigare gli effetti:\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Spiegare cos'è la modalità operativa CTS qual è l'idea principale su cui si basa la sua implementazione e perchè sta assumendo sempre più rilevanza",
+    "answer": "CTS (Ciphertext Stealing) è una modalità di cifratura a blocchi che elimina la necessità di padding. L'idea è di rubare ciphertext dall'ultimo blocco completo e aggiungerlo al penultimo blocco. Questo evita di aumentare la dimensione del ciphertext. CTS sta assumendo rilevanza perché è utile quando non si può/vuole aggiungere padding, ad esempio per mantenere la compatibilità con sistemi esistenti o per limitare la dimensione dei dati. È utile soprattutto quando la dimensione dei dati è quasi un multiplo della dimensione del blocco.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Si deve trasmettere cifrata una password da 12 caratteri con 2 byte di sale con AES. Cosa si usa tra ECB, CBC e CBF?",
+    "answer": "CTR (Counter Mode) è preferibile. AES ha un blocco da 128 bit. 12 caratteri ASCII (12 byte) più 2 byte di sale fanno 14 byte (112 bit), inferiore alla dimensione del blocco AES. CTR è una modalità stream che non richiede padding e permette di cifrare dati di dimensioni inferiori al blocco. ECB e CBC richiederebbero padding, che potrebbe introdurre vulnerabilità.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Dovendo cifrare con AES una password da 12 caratteri con 2 byte di sale è meglio usare ECB, CBC ο CTR?",
+    "answer": "È meglio usare CTR. AES ha un blocco da 128 bit, 12 caratteri ASCII (12 byte) più 2 byte di sale fanno 14 byte (112 bit), inferiore alla dimensione del blocco AES. CTR è una modalità stream che non richiede padding. ECB non è sicuro, CBC richiede un vettore di inizializzazione (IV) ma necessita comunque di padding.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Come possono inviarsi un file due tizi che condividono una password",
+    "answer": "Possono usare algoritmi a chiave simmetrica, usando la password come chiave. Si usa un algoritmo come AES o ChaCha20 per cifrare il file usando la password come chiave. Si può anche derivare una chiave più robusta dalla password usando una Key Derivation Function (KDF) come PBKDF2 o Argon2. Questo protegge meglio da attacchi brute force.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Quali algoritmi si possono usare per scambiare chiavi segrete?",
+    "answer": "Si possono usare algoritmi a chiave asimmetrica come RSA o Diffie-Hellman (DH). RSA permette di cifrare la chiave segreta con la chiave pubblica del destinatario. Diffie-Hellman permette a due parti di accordarsi su una chiave segreta senza scambiare direttamente la chiave. Entrambi gli algoritmi richiedono l'uso di chiavi pubbliche, che possono essere autenticate tramite certificati.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Quali algoritmi si possono usare per comunicare una certa chiave segreta a una controparte?",
+    "answer": "Si possono usare algoritmi a chiave asimmetrica come RSA o Diffie-Hellman (DH). RSA permette di cifrare la chiave segreta con la chiave pubblica del destinatario. DH permette a due parti di accordarsi su una chiave segreta senza scambiare direttamente la chiave, generando una nuova chiave ad-hoc. Gli algoritmi asimmetrici garantiscono che la chiave segreta non sia trasmessa in chiaro.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Per quale applicazione è stato inventato il CTS?",
+    "answer": "La tecnica del ciphertext stealing (CTS) permette di usare gli algoritmi a blocchi in modalità ECB o CBC senza ricorrere al padding. In questo modo, si evita di aumentare la dimensione dei dati cifrati e di introdurre potenziali vulnerabilità legate al padding.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Calcolare quanti dati devono essere salvati su disco per eseguire la decifratura e l'autenticazione di un file grande 1 kB con digest SHA-1 e chiave RSA 1024 bit.",
+    "answer": "Per la decifratura e l'autenticazione, devono essere salvati: 1) 1 kB per il plaintext (il file stesso). 2) 1024 bit (128 byte) per la chiave pubblica RSA del mittente, necessaria per verificare la firma. 3) 160 bit (20 byte) per il digest SHA-1 del file, usato per verificare l'integrità. In totale, 1024 + 128 + 20 = 1172 byte (9376 bit) devono essere salvati su disco.\\n",
+    "source": "Raccolta di esami.pdf"
+  },
+  {
+    "question": "Quali algoritmi base (non strutture dati complesse) si possono utilizzare per garantire riservatezza di un file situato su un server di cui non ci si fida?",
+    "answer": "Per garantire la riservatezza, si può usare la cifratura simmetrica (AES, ChaCha20) o asimmetrica (RSA, ECC). Con la simmetrica, il file viene cifrato con una chiave condivisa solo tra l'utente e il server. Con l'asimmetrica, il file viene cifrato con la chiave pubblica dell'utente. Inoltre, si possono combinare con tecniche di padding per evitare attacchi. La scelta dipende dalle esigenze di sicurezza, performance e gestione delle chiavi.\\n",
+    "source": "Raccolta di esami.pdf"
+  }
+]

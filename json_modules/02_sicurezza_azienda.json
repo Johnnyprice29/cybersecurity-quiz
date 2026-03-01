@@ -1,0 +1,345 @@
+[
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Come è definito dal NIST il Vulnerability Assessment?",
+        "options": [
+            "È un processo diviso in 4 fasi volto a implementare le misure di sicurezza per la mitigazione dei rischi",
+            "È un processo diviso in 4 fasi volto a valutare l'esposizione aziendale a vulnerabilità al fine di proteggerla",
+            "È un processo di formazione dei dipendenti che permetta di gestire meglio le vulnerabilità",
+            "È un processo volto a correggere vulnerabilità su uno specifico sistema informativo"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Il Vulnerability Assessment secondo NIST è un processo ciclico in 4 fasi: identificazione, analisi, valutazione e trattamento delle vulnerabilità."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Cos'è il MITRE D3FEND?",
+        "options": [
+            "Una suite avanzata di strumenti per rilevare comportamenti sospetti",
+            "Una categorizzazione avanzata degli attacchi informatici",
+            "Knowledge base strutturato con asset, piattaforme, tecniche di attacco e contromisure",
+            "Una piattaforma di simulazione e testing per valutare la resistenza dei sistemi"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "D3FEND è il complemento difensivo di ATT&CK: mappa contromisure a specifiche tecniche di attacco, aiutando nella pianificazione della difesa."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Quale affermazione su Enterprise Patch Management (NIST SP 800-40) è vera?",
+        "options": [
+            "È un processo che gestisce l'installazione e la verifica delle patch",
+            "È un processo che prevede unicamente l'installazione delle patch",
+            "È un processo che consente la verifica della correttezza delle patch installate",
+            "È un processo che prevede identificazione, acquisizione, installazione e verifica delle patch"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "L'Enterprise Patch Management secondo NIST SP 800-40 comprende le 4 fasi complete: identificazione, acquisizione, installazione e verifica."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Quale affermazione sull'approccio threat-oriented per l'analisi dei rischi è vera?",
+        "options": [
+            "L'approccio threat-oriented parte dalle minacce per poi valutare vulnerabilità e impatti",
+            "Questo approccio ignora la minaccia di attacchi da fonti interne",
+            "Questo approccio analizza le conseguenze senza considerare capacità e obiettivi degli avversari",
+            "Questo approccio ignora la minaccia di attacchi da fonti esterne"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "L'approccio threat-oriented parte dall'identificazione delle minacce (chi potrebbe attaccare e come) per poi valutare vulnerabilità e impatti."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Cosa si intende per vulnerabilità zero-day?",
+        "options": [
+            "Vulnerabilità per la quale non è possibile effettuare una patch",
+            "Vulnerabilità non ancora scoperta",
+            "Vulnerabilità scoperta e con patch pronta a essere installata",
+            "Vulnerabilità scoperta per cui non esiste ancora una patch"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Una vulnerabilità zero-day è già nota (scoperta) ma non esiste ancora una patch disponibile, lasciando i sistemi esposti."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Quale affermazione sul Patch Management è vera?",
+        "options": [
+            "Il processo include testing delle patch, applicazione basata su priorità e considerazione di possibili errori",
+            "Le patch dovrebbero essere applicate a tutte le risorse simultaneamente senza priorità",
+            "Le patch dovrebbero essere applicate immediatamente senza considerare interruzioni di servizio",
+            "Le patch devono sempre essere installate immediatamente, indipendentemente dalla gravità",
+            "Le aggregated patch risolvono solo i problemi più gravi, ignorando quelli meno critici"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "Un buon processo di Patch Management include testing, prioritizzazione basata sul rischio e pianificazione per gestire errori potenziali."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Quale affermazione sul Vulnerability Management (NIST IR 8011) è vera?",
+        "options": [
+            "È un processo che non tiene conto del desired state",
+            "È un processo continuo che effettua controlli basati sulla situazione corrente e sugli obiettivi di sicurezza",
+            "È un processo che si basa principalmente sulla prevenzione piuttosto che sulla mitigazione",
+            "È un processo che non tiene conto dell'actual state"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "Il Vulnerability Management confronta continuamente lo stato attuale (actual state) con quello desiderato (desired state) per identificare gap."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Quali aspetti sono interessanti nella valutazione del rischio nella cybersecurity?",
+        "options": [
+            "Analisi delle prestazioni del sistema, analisi di danno e tempi di recupero",
+            "Probabilità che accada, stime di danno e tempi di recupero",
+            "Probabilità che accada, analisi delle prestazioni e stime di danno",
+            "Probabilità che accada, analisi delle prestazioni e tempi di recupero"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "La valutazione del rischio considera: probabilità dell'evento, impatto/danno potenziale e tempi di ripristino (RTO)."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Quale affermazione sui rischi associati all'applicazione delle patch è vera?",
+        "options": [
+            "Le patch non possono portare alcun rischio",
+            "Non ci sono rischi associati al fatto che le patch siano pubbliche",
+            "I tool di Enterprise Patch Management sono progettati per non avere vulnerabilità",
+            "Un attaccante potrebbe compromettere il tool di Patch Management e distribuire malware",
+            "Non usare tool automatici per le patch perché i rischi sono troppo alti"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "I tool di patch management sono obiettivi attraenti per gli attaccanti (es. SolarWinds): compromettendoli possono distribuire malware su larga scala."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Cosa si intende per minaccia (threat) secondo il modello presentato a lezione?",
+        "options": [
+            "Il verificarsi di un danno intenzionale o accidentale",
+            "Una persona o organizzazione intenzionata a compiere un attacco",
+            "La predisposizione dei sistemi a manifestare problemi di sicurezza",
+            "Un evento intenzionale o accidentale che, se sfruttato, può causare danno a uno o più asset"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Una minaccia è un potenziale evento negativo (attacco, errore, disastro naturale) che potrebbe sfruttare vulnerabilità e causare danni."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Cosa sono le CVE (Common Vulnerabilities and Exposures)?",
+        "options": [
+            "Un elenco di vulnerabilità note riportate alla MITRE Corporation",
+            "Un elenco di vulnerabilità note per cui non esistono mitigazioni",
+            "Un elenco di vulnerabilità nel dark web per attacchi",
+            "Un elenco di errori di programmazione da non fare"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "CVE è un sistema di identificazione univoco per vulnerabilità note, gestito da MITRE. Ogni CVE ha un ID univoco (es. CVE-2021-44228)."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Quale affermazione sull'approccio vulnerability-oriented per l'analisi dei rischi è vera?",
+        "options": [
+            "L'analisi degli impatti è un aspetto marginale",
+            "L'analisi delle possibilità di sfruttare le vulnerabilità è marginale",
+            "Ignora le vulnerabilità agli attacchi esterni",
+            "Parte dall'identificazione delle vulnerabilità e delle debolezze per analizzare come le minacce potrebbero sfruttarle",
+            "Ignora la vulnerabilità agli attacchi interni"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "L'approccio vulnerability-oriented inizia identificando le vulnerabilità esistenti, poi analizza quali minacce potrebbero sfruttarle e con quali impatti."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Come dev'essere idealmente il processo di identificazione dei rischi di sicurezza aziendale?",
+        "options": [
+            "Tarato in base agli asset di maggior valore per il proprietario",
+            "Effettuato in autonomia dai vari dipendenti",
+            "Preventivo, effettuato prima di mettere in azione i sistemi",
+            "Il più possibile ripetibile e oggettivo"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Un processo di risk assessment efficace deve essere standardizzato, ripetibile e oggettivo per permettere confronti nel tempo e tra aziende."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Quale affermazione sull'approccio asset/impact-oriented per l'analisi dei rischi è vera?",
+        "options": [
+            "Le minacce sono identificate indipendentemente dagli asset",
+            "Questo approccio ignora le conseguenze della compromissione degli asset",
+            "Non viene eseguita alcuna analisi delle probabilità e conseguenze",
+            "L'approccio parte dagli asset e dalle conseguenze della loro compromissione"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "L'approccio asset/impact-oriented inizia identificando gli asset critici e l'impatto (business, reputazionale, legale) della loro compromissione."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Quale approccio usa OWASP per il calcolo del rischio?",
+        "options": [
+            "Approccio quantitativo basato su 'vulnerability facts' che non quantifica minacce e impatti",
+            "Approccio semi-qualitativo basato su 'vulnerability facts' che non quantifica minacce e impatti",
+            "Approccio quantitativo che quantifica principalmente minacce e impatti",
+            "Approccio semi-qualitativo che quantifica principalmente minacce e impatti"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "OWASP usa un approccio semi-qualitativo (Low/Medium/High/Critical) basato su vulnerability facts senza quantificazione numerica precisa."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Come costruire threat model più affidabili nella gestione dei rischi?",
+        "options": [
+            "Ignorando le minacce future e concentrandosi su quelle recenti",
+            "Sfruttando database ufficiali che catalogano tattiche e tecniche di attacco (es. MITRE)",
+            "Ignorando le minacce passate e concentrandosi su quelle più frequenti",
+            "Ignorando le vulnerabilità meno comuni per dare priorità a quelle diffuse"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "MITRE ATT&CK fornisce una knowledge base completa di tattiche, tecniche e procedure (TTP) usate dagli attaccanti per costruire threat model accurati."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Qual è l'obiettivo principale dell'OWASP?",
+        "options": [
+            "Fornire un database di tutte le vulnerabilità note nelle applicazioni web",
+            "Fornire un database di vulnerabilità in applicazioni web",
+            "Fornire strumenti e risorse per migliorare la sicurezza delle applicazioni web",
+            "Fornire un metodo standardizzato per classificare la gravità delle vulnerabilità web"
+        ],
+        "correct": [
+            2
+        ],
+        "justification": "OWASP (Open Web Application Security Project) fornisce guide, tool e risorse gratuite per migliorare la sicurezza delle applicazioni web."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Collega le fasi del Risk Management Process: Framing, Monitoring, Respond, Assessment",
+        "options": [
+            "Framing = Descrizione del sistema, identificazione asset e definizione formale del processo",
+            "Monitoring = Valutazione dell'efficacia e correttezza del processo sul campo",
+            "Respond = Identificazione di soluzioni per la mitigazione dei rischi",
+            "Assessment = Identificazione minacce, vulnerabilità, debolezze e stima degli impatti"
+        ],
+        "correct": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "justification": "Le 4 fasi secondo NIST: Framing (definizione scope), Assessment (analisi), Respond (mitigazione), Monitoring (verifica continua)."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Quali sono gli approcci per misurare le grandezze nella valutazione dei rischi?",
+        "options": [
+            "Approccio preventivo, correttivo e predittivo",
+            "Approccio correttivo, adattivo e quantitativo",
+            "Approccio reattivo, proattivo e adattivo",
+            "Approccio quantitativo, qualitativo e semi-quantitativo"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "Gli approcci sono: quantitativo (valori numerici), qualitativo (scale come Low/Medium/High) e semi-quantitativo (combinazione)."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Qual è l'obiettivo principale del CVSS?",
+        "options": [
+            "Fornire un database di tutte le tecniche difensive",
+            "Fornire un database di tattiche e tecniche di attacco",
+            "Fornire un database di tecniche di attacco e difesa",
+            "Fornire un metodo standardizzato per classificare la gravità delle vulnerabilità"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "CVSS (Common Vulnerability Scoring System) assegna un punteggio 0-10 alle vulnerabilità basato su fattori come vettore di attacco, impatto e exploit."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Quale strategia per l'applicazione delle patch è consigliata dal NIST?",
+        "options": [
+            "Le patch dovrebbero essere applicate prima ai sistemi che si prevede avranno più problemi",
+            "Le patch dovrebbero essere applicate prima a piccoli gruppi di sistemi",
+            "Le patch dovrebbero essere applicate prima ai sistemi multi-piattaforma o con configurazioni speciali",
+            "Le patch dovrebbero essere applicate a tutti i sistemi contemporaneamente",
+            "Non è necessario applicare patch ai sistemi legacy"
+        ],
+        "correct": [
+            1
+        ],
+        "justification": "NIST raccomanda un rollout graduale: prima test su ambiente pilota, poi gruppi piccoli, infine deployment completo per limitare danni da patch difettose."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Quale affermazione sui Vulnerability Assessment tools è vera?",
+        "options": [
+            "Fanno scansioni su interi sistemi informativi per identificare le vulnerabilità",
+            "Disabilitano le funzionalità non necessarie",
+            "Applicano le patch automaticamente",
+            "Modificano le impostazioni del firewall"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "I tool di Vulnerability Assessment (es. Nessus, OpenVAS, Qualys) scansionano sistemi e reti per identificare vulnerabilità note."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Cosa sono le CWE (Common Weakness Enumeration)?",
+        "options": [
+            "Un elenco di errori di programmazione o configurazione che potrebbero generare vulnerabilità",
+            "Un elenco di debolezze critiche da patchare il prima possibile",
+            "Un elenco di debolezze note da usare per attacchi",
+            "Un elenco di debolezze note riportate alla MITRE Corporation"
+        ],
+        "correct": [
+            0
+        ],
+        "justification": "CWE cataloga le debolezze (weakness) nel codice che possono portare a vulnerabilità. Es: CWE-89 (SQL Injection), CWE-79 (XSS)."
+    },
+    {
+        "module": "Sicurezza in Azienda",
+        "question": "Qual è l'obiettivo primario dell'analisi del rischio informatico?",
+        "options": [
+            "Classificare gli asset per essere coperti legalmente se avvengono attacchi",
+            "Classificare i rischi per attuare le massime misure di sicurezza possibili",
+            "Identificare minacce e vulnerabilità per implementare metodi di mitigazione adeguati",
+            "Classificare gli asset e identificare minacce per prevenire e mitigare le conseguenze di eventi negativi"
+        ],
+        "correct": [
+            3
+        ],
+        "justification": "L'analisi del rischio classifica gli asset per valore, identifica minacce potenziali e permette di prioritizzare le contromisure."
+    }
+]
