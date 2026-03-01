@@ -15,13 +15,14 @@ Quiz interattivo con domande a scelta multipla estratte dai test Moodle del cors
 - Funzione "Raffina Errori" per studiare solo le domande sbagliate
 - Design responsive per mobile
 
-### 2. Flashcard Quiz Moodle
-**[flashcards_moodle.html](flashcards_moodle.html)**
+### 2. Relazioni e Laboratori (Academic Reports)
+**[academic_reports_it.html](academic_reports_it.html)**
 
-Flashcard con domande trasformate dai quiz Moodle (~150 card).
-- Domande da tutti i moduli
-- Filtro per sorgente
-- Navigazione con frecce
+Hub per la visualizzazione delle relazioni tecniche redatte per i laboratori di "Didattica Attiva Cybersecurity".
+- Analisi Vulnerabilità e Mitigazione Attack
+- Crittografia Applicata
+- Incident Response e Threat Analysis
+- Interfaccia dedicata in Italiano (predisposta per il portfolio trilingue)
 
 ### 3. Flashcard Domande Aperte d'Esame ⭐
 **[flashcards_esami.html](flashcards_esami.html)**
@@ -37,10 +38,10 @@ Flashcard con domande trasformate dai quiz Moodle (~150 card).
 
 ```
 ├── quiz_cybersecurity.html      # Quiz a scelta multipla
-├── flashcards_moodle.html       # Flashcard dai quiz Moodle
+├── academic_reports_it.html     # Pagina relazioni universitarie
 ├── flashcards_esami.html        # Flashcard domande aperte d'esame
-├── json_modules/                # Dati quiz (11 moduli)
-├── flashcards_json/             # Dati flashcard Moodle
+├── json_modules/                # Dati quiz
+├── reports_pdf/                 # PDF delle relazioni originali
 └── flashcards_quiz_json/        # Dati flashcard esami
     └── raccolta_esami.json      # 161 domande aperte
 ```
@@ -50,7 +51,7 @@ Flashcard con domande trasformate dai quiz Moodle (~150 card).
 ## 🌐 Link Diretti (GitHub Pages)
 
 - **Quiz**: https://johnnyprice29.github.io/cybersecurity-quiz/quiz_cybersecurity.html
-- **Flashcard Moodle**: https://johnnyprice29.github.io/cybersecurity-quiz/flashcards_moodle.html
+- **Academic Reports**: https://johnnyprice29.github.io/cybersecurity-quiz/academic_reports_it.html
 - **Flashcard Esami**: https://johnnyprice29.github.io/cybersecurity-quiz/flashcards_esami.html
 
 ---
